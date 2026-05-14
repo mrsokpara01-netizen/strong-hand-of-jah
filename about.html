@@ -1,0 +1,2654 @@
+bash cat > /home/claude/about.html << 'ENDDOC'
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About Prophet Odolo Joshua | Strong Hand of Jehovah Prophetic Ministry
+    </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0a1c2e;
+        --navy2: #0d2540;
+        --gold: #c8a84b;
+        --gold2: #e8c96b;
+        --white: #ffffff;
+        --offwhite: #f7f4ef;
+        --gray: #f0ece4;
+        --text: #1a1a1a;
+        --muted: #666;
+        --topbar-h: 36px;
+        --nav-h: 76px;
+        --total-h: calc(var(--topbar-h) + var(--nav-h));
+        --f-display: "Playfair Display", Georgia, serif;
+        --f-serif: "Cormorant Garamond", Georgia, serif;
+        --f-body: "DM Sans", sans-serif;
+        --shadow-soft: 0 4px 32px rgba(0, 0, 0, 0.08);
+        --shadow-gold: 0 8px 40px rgba(200, 168, 75, 0.18);
+        --radius: 2px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: #fff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* ── SCROLL PROGRESS ── */
+      .scroll-prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+        z-index: 9999;
+        pointer-events: none;
+        transition: width 0.1s linear;
+      }
+
+      /* ── TOP BAR ── */
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--topbar-h);
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.25);
+      }
+      .topbar-left {
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .topbar-link {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+      }
+      .topbar-link:hover {
+        color: var(--gold);
+      }
+      .topbar-sep {
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.7rem;
+      }
+
+      /* ── MAIN NAVBAR ── */
+      nav#mainNav {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 2px solid var(--gold);
+        transition: box-shadow 0.3s;
+      }
+      nav#mainNav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .logo-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+      }
+      .logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: stretch;
+        height: var(--nav-h);
+        margin-left: auto;
+        margin-right: 1.2rem;
+      }
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+        padding: 0 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        cursor: pointer;
+      }
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-item:hover > .nav-link {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .nav-link svg {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.5;
+        transition: transform 0.2s;
+      }
+      .nav-item:hover > .nav-link svg {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.22s,
+          transform 0.22s,
+          visibility 0.22s;
+        z-index: 998;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dd-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 1.1rem;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.02em;
+        border-bottom: 1px solid #eee;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .dd-link:last-child {
+        border-bottom: none;
+      }
+      .dd-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.4rem;
+      }
+      .dd-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .btn-give-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.55rem 1.4rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .btn-give-nav:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+
+      /* ── HAMBURGER ── */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1001;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        left: auto;
+        width: min(320px, 88vw);
+        height: 100%;
+        height: 100dvh;
+        background: #fff;
+        z-index: 1002;
+        overflow-y: auto;
+        transition: right 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 40px rgba(0, 0, 0, 0.25);
+      }
+      .sidebar.open {
+        right: 0;
+      }
+      .sb-header {
+        background: var(--navy);
+        padding: 1.2rem 1.2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--gold);
+        flex-shrink: 0;
+      }
+      .sb-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sb-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy2);
+        flex-shrink: 0;
+      }
+      .sb-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .sb-name {
+        font-family: var(--f-display);
+        font-size: 0.72rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .sb-sub {
+        font-family: var(--f-serif);
+        font-size: 0.6rem;
+        color: var(--gold);
+        font-style: italic;
+      }
+      .sb-close {
+        background: none;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-close:hover {
+        background: rgba(200, 168, 75, 0.12);
+      }
+      .sb-give-strip {
+        display: block;
+        background: var(--gold);
+        color: var(--navy);
+        text-align: center;
+        padding: 0.75rem;
+        font-family: var(--f-display);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-give-strip:hover {
+        background: var(--gold2);
+      }
+      .sb-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .sb-section {
+        border-bottom: 1px solid #eee;
+      }
+      .sb-section-title {
+        padding: 0.7rem 1.2rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--offwhite);
+        border-bottom: 1px solid #e8e0d0;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.82rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--navy);
+        border-bottom: 1px solid #f0f0f0;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .sb-link:last-child {
+        border-bottom: none;
+      }
+      .sb-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.7rem;
+      }
+      .sb-link-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+
+      /* ── PAGE OFFSET ── */
+      .page-top {
+        padding-top: var(--total-h);
+      }
+
+      /* ── SHARED ── */
+      .eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .sh {
+        font-family: var(--f-display);
+        font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .sh-white {
+        color: #fff;
+      }
+      .body-p {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 168, 75, 0.25),
+          transparent
+        );
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--gold2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(200, 168, 75, 0.4);
+      }
+      .btn-outline-w {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: transparent;
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.2s;
+      }
+      .btn-outline-w:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .link-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--gold);
+        transition: gap 0.25s;
+      }
+      .link-arrow:hover {
+        gap: 16px;
+      }
+
+      /* ── REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-l {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-l.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-r {
+        opacity: 0;
+        transform: translateX(40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-r.show {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.36s;
+      }
+      .d4 {
+        transition-delay: 0.5s;
+      }
+
+      /* ══ HERO ══ */
+      .hero-about {
+        position: relative;
+        width: 100%;
+        min-height: calc(100vh - var(--total-h));
+        background: var(--navy);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+      }
+      .hero-about-left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 5rem;
+        z-index: 2;
+        background: var(--navy);
+      }
+      .hero-about-left::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(200, 168, 75, 0.4) 40%,
+          rgba(200, 168, 75, 0.4) 60%,
+          transparent
+        );
+      }
+      .hero-large-initial {
+        position: absolute;
+        top: -2rem;
+        left: 3rem;
+        font-family: var(--f-display);
+        font-size: 22rem;
+        font-weight: 900;
+        line-height: 1;
+        color: rgba(200, 168, 75, 0.04);
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -0.06em;
+      }
+      .hero-about-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.02em;
+      }
+      .hero-about-eyebrow::before {
+        content: "";
+        width: 36px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-about-h1 {
+        font-family: var(--f-display);
+        font-size: clamp(2.2rem, 4.5vw, 4rem);
+        color: #fff;
+        line-height: 1.05;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .hero-about-h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-about-title {
+        font-family: var(--f-serif);
+        font-size: 1.1rem;
+        font-style: italic;
+        color: rgba(200, 168, 75, 0.7);
+        letter-spacing: 0.06em;
+        margin-bottom: 2.5rem;
+      }
+      .hero-about-quote {
+        font-family: var(--f-serif);
+        font-size: 1.05rem;
+        font-style: italic;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.75;
+        border-left: 2px solid rgba(200, 168, 75, 0.4);
+        padding-left: 1.2rem;
+        max-width: 420px;
+        margin-bottom: 2.5rem;
+      }
+      .hero-about-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero-about-right {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-about-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        filter: grayscale(15%) contrast(1.05);
+        transition: transform 8s ease;
+      }
+      .hero-about-right:hover img {
+        transform: scale(1.04);
+      }
+      .hero-about-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, transparent 60%, var(--navy) 100%);
+      }
+      .prophet-photo-ph {
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+        background: linear-gradient(
+          135deg,
+          #0d2540 0%,
+          #1a3a5c 50%,
+          #0a1c2e 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+      .hero-about-rule {
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--navy),
+          var(--gold) 40%,
+          var(--gold2) 60%,
+          transparent
+        );
+      }
+
+      /* ══ STATS ══ */
+      .anointing-strip {
+        background: var(--navy);
+        padding: 3.5rem 5rem;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+        position: relative;
+        overflow: hidden;
+      }
+      .anointing-strip::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 120% at 50% 50%,
+          rgba(200, 168, 75, 0.04) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .anoint-stat {
+        text-align: center;
+        flex: 1;
+        min-width: 140px;
+        position: relative;
+        z-index: 1;
+      }
+      .anoint-num {
+        font-family: var(--f-display);
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+        font-weight: 900;
+        color: var(--gold2);
+        line-height: 1;
+        margin-bottom: 0.3rem;
+      }
+      .anoint-label {
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .anoint-divider {
+        width: 1px;
+        height: 60px;
+        background: rgba(200, 168, 75, 0.15);
+        flex-shrink: 0;
+      }
+
+      /* ══ BIOGRAPHY ══ */
+      .bio-section {
+        background: #fff;
+        padding: 6rem 5rem;
+      }
+      .bio-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .bio-sticky {
+        position: sticky;
+        top: calc(var(--total-h) + 2rem);
+      }
+      .bio-portrait {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        box-shadow: var(--shadow-soft);
+      }
+      .bio-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.6s ease;
+      }
+      .bio-portrait:hover img {
+        transform: scale(1.03);
+      }
+      .bio-portrait::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--navy), var(--gold));
+      }
+      .bio-caption {
+        margin-top: 1rem;
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--gold);
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+      .bio-lead {
+        font-family: var(--f-serif);
+        font-size: 1.35rem;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--navy);
+        line-height: 1.65;
+        margin-bottom: 2rem;
+        border-left: 3px solid var(--gold);
+        padding-left: 1.5rem;
+      }
+      .bio-body {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.9;
+        margin-bottom: 1.4rem;
+        font-weight: 300;
+      }
+      .bio-body strong {
+        color: var(--navy);
+        font-weight: 500;
+      }
+      .bio-signature {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(200, 168, 75, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      .bio-sig-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        flex-shrink: 0;
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bio-sig-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .bio-sig-name {
+        font-family: var(--f-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .bio-sig-title {
+        font-family: var(--f-serif);
+        font-size: 0.8rem;
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      /* ══ PILLARS ══ */
+      .pillars-section {
+        background: var(--navy);
+        padding: 6rem 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .pillars-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 80% at 80% 20%,
+          rgba(200, 168, 75, 0.06) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+      .pillars-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .pillars-header {
+        margin-bottom: 4rem;
+      }
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(200, 168, 75, 0.1);
+      }
+      .pillar-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 2.8rem 2.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+      }
+      .pillar-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .pillar-card:hover::before {
+        transform: scaleX(1);
+      }
+      .pillar-card:hover {
+        background: rgba(200, 168, 75, 0.05);
+      }
+      .pillar-num {
+        font-family: var(--f-display);
+        font-size: 4rem;
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.08);
+        line-height: 1;
+        margin-bottom: 1.2rem;
+        letter-spacing: -0.04em;
+      }
+      .pillar-icon {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.4rem;
+      }
+      .pillar-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .pillar-name {
+        font-family: var(--f-display);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.6rem;
+      }
+      .pillar-desc {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      /* ══ VIDEO SECTION — UPGRADED ══ */
+      .video-church-section {
+        background: var(--offwhite);
+        padding: 6rem 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .video-church-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+      }
+      .video-church-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      /* ── Video player container ── */
+      .church-video-wrap {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: var(--navy);
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(10, 28, 46, 0.25);
+      }
+      .church-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Custom video overlay / controls area */
+      .video-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 28, 46, 0.2) 0%,
+          rgba(10, 28, 46, 0.6) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        z-index: 2;
+      }
+      .video-overlay.hidden {
+        pointer-events: none;
+        background: transparent;
+        opacity: 0;
+      }
+      .video-overlay:hover {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 28, 46, 0.1) 0%,
+          rgba(10, 28, 46, 0.5) 100%
+        );
+      }
+      .video-play-btn {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid rgba(200, 168, 75, 0.7);
+        background: rgba(200, 168, 75, 0.15);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .video-play-btn:hover,
+      .video-overlay:hover .video-play-btn {
+        border-color: var(--gold);
+        background: rgba(200, 168, 75, 0.3);
+        transform: scale(1.08);
+        box-shadow: 0 0 40px rgba(200, 168, 75, 0.3);
+      }
+      .video-play-btn svg {
+        width: 32px;
+        height: 32px;
+        fill: var(--gold2);
+        margin-left: 5px;
+      }
+      .video-overlay-tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.9rem;
+        z-index: 3;
+      }
+      .video-overlay-label {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.06em;
+      }
+
+      /* Gold accent frame */
+      .church-video-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(200, 168, 75, 0.1);
+        pointer-events: none;
+        z-index: 4;
+      }
+
+      .video-church-text .verse-q {
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--muted);
+        border-left: 2px solid var(--gold);
+        padding-left: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      /* ══ VIDEO NEW MEMBERS ══ */
+      .video-new-section {
+        background: var(--navy);
+        padding: 6rem 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .video-new-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 50% 80% at 20% 50%,
+          rgba(200, 168, 75, 0.06) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+      .video-new-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .new-members-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        padding: 0.4rem 1rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+      .new-members-badge span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: blink 1.4s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      .welcome-list {
+        list-style: none;
+        margin-top: 1.5rem;
+      }
+      .welcome-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-family: var(--f-body);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.55);
+        font-weight: 300;
+        line-height: 1.6;
+      }
+      .welcome-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        margin-top: 0.55rem;
+      }
+      .new-video-wrap {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: var(--navy2);
+        border: 1px solid rgba(200, 168, 75, 0.15);
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+      .new-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .new-video-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 28, 46, 0.2) 0%,
+          rgba(10, 28, 46, 0.6) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        z-index: 2;
+      }
+      .new-video-overlay.hidden {
+        pointer-events: none;
+        background: transparent;
+        opacity: 0;
+      }
+      .new-video-overlay:hover {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 28, 46, 0.1) 0%,
+          rgba(10, 28, 46, 0.5) 100%
+        );
+      }
+      .new-video-gold-tag {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        background: rgba(200, 168, 75, 0.9);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.9rem;
+        z-index: 3;
+      }
+
+      /* ══ TIMELINE ══ */
+      .timeline-section {
+        background: var(--offwhite);
+        padding: 6rem 5rem;
+      }
+      .timeline-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .timeline-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(200, 168, 75, 0.5) 10%,
+          rgba(200, 168, 75, 0.5) 90%,
+          transparent
+        );
+      }
+      .tl-item {
+        position: relative;
+        padding: 0 0 3rem 3rem;
+      }
+      .tl-item:last-child {
+        padding-bottom: 0;
+      }
+      .tl-dot {
+        position: absolute;
+        left: -8px;
+        top: 6px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: var(--offwhite);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+      .tl-dot::after {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+      .tl-item:hover .tl-dot {
+        background: var(--gold);
+      }
+      .tl-item:hover .tl-dot::after {
+        background: #fff;
+      }
+      .tl-year {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+      }
+      .tl-title {
+        font-family: var(--f-display);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+      .tl-body {
+        font-family: var(--f-body);
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      /* ══ SCRIPTURE BAND ══ */
+      .scripture-band {
+        background: var(--navy);
+        padding: 5rem;
+        text-align: center;
+        border-top: 1px solid rgba(200, 168, 75, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .scripture-band::before {
+        content: "\201C";
+        position: absolute;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--f-display);
+        font-size: 18rem;
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.04);
+        line-height: 1;
+        pointer-events: none;
+      }
+      .scripture-band blockquote {
+        font-family: var(--f-serif);
+        font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(245, 230, 190, 0.9);
+        line-height: 1.65;
+        max-width: 860px;
+        margin: 0 auto 14px;
+        position: relative;
+        z-index: 1;
+      }
+      .scripture-band cite {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+      }
+
+      /* ══ CTA ══ */
+      .cta-section {
+        background: #fff;
+        padding: 5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 80% at 50% 50%,
+          rgba(200, 168, 75, 0.05) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .cta-inner {
+        max-width: 680px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+      .wa-btn-gold {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.88rem 2.2rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .wa-btn-gold:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+      .wa-btn-gold svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy);
+        padding: 4rem 5rem 2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .ft-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 1.8rem;
+      }
+      .ft-brand p {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.7;
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .ft-motto {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 0.7rem;
+      }
+      .ft-col h5 {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .ft-col li {
+        margin-bottom: 0.5rem;
+      }
+      .ft-col a {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        transition:
+          color 0.2s,
+          padding-left 0.15s;
+        display: inline-block;
+      }
+      .ft-col a:hover {
+        color: #fff;
+        padding-left: 5px;
+      }
+      .ft-btm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .ft-btm p {
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.35);
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background: rgba(200, 168, 75, 0.08);
+        transform: translateY(-2px);
+      }
+      .socials svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .hero-about {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .hero-about-right {
+          aspect-ratio: 16/9;
+        }
+        .hero-about-left {
+          padding: 3rem 2rem;
+        }
+        .hero-large-initial {
+          font-size: 10rem;
+          top: -1rem;
+          left: 1rem;
+        }
+        .bio-inner,
+        .video-church-inner,
+        .video-new-inner {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .bio-sticky {
+          position: static;
+        }
+        .pillars-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .anointing-strip {
+          padding: 3rem 2rem;
+          gap: 2rem;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-menu,
+        .btn-give-nav {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav#mainNav,
+        .topbar {
+          padding: 0 1rem;
+        }
+        .topbar-left {
+          display: none;
+        }
+        .bio-section,
+        .pillars-section,
+        .video-church-section,
+        .video-new-section,
+        .timeline-section,
+        .scripture-band,
+        .cta-section,
+        footer {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+        .hero-about-left {
+          padding: 2.5rem 1.2rem;
+        }
+        .anointing-strip {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 2.5rem 1.2rem;
+        }
+        .anoint-divider {
+          display: none;
+        }
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-about-btns {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 540px) {
+        .ft-top {
+          grid-template-columns: 1fr;
+        }
+        .cta-btns {
+          flex-direction: column;
+        }
+        .anoint-stat {
+          min-width: 100px;
+        }
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
+        .video-play-btn {
+          width: 60px;
+          height: 60px;
+        }
+        .video-play-btn svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-prog" id="scrollProg"></div>
+    <div class="sidebar-backdrop" id="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-header">
+        <div class="sb-brand">
+          <div class="sb-circle">
+            <img
+              src="images/prophetlogo.jpeg"
+              alt="SHJ"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div>
+            <div class="sb-name">Strong Hand of Jehovah</div>
+            <div class="sb-sub">Prophetic Ministry</div>
+          </div>
+        </div>
+        <button class="sb-close" onclick="closeSidebar()">&#x2715;</button>
+      </div>
+      <a class="sb-give-strip" href="give.html" onclick="closeSidebar()"
+        >&#9829; Give / Partner With Us</a
+      >
+      <div class="sb-body">
+        <div class="sb-section">
+          <div class="sb-section-title">Help Me With</div>
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Faith</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Prayer</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Healing</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Counseling</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Explore</div>
+          <a class="sb-link" href="testimonies.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Testimonies</a
+          >
+          <a class="sb-link" href="services.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Services</a
+          >
+          <a class="sb-link" href="shop.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Shop</a
+          >
+          <a class="sb-link" href="give.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Give</a
+          >
+          <a class="sb-link" href="index.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Home</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span class="topbar-left">Through Faith and Belief</span>
+      <div class="topbar-right">
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+          >Prayer Request</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420"
+          target="_blank"
+          >WhatsApp: 09019733420</a
+        >
+        <span class="topbar-sep">|</span>
+        <a class="topbar-link" href="index.html#watch">Watch Live</a>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="mainNav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <div class="logo-circle">
+          <img
+            src="images/prophetlogo.jpeg"
+            alt="SHJ Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Strong Hand of Jehovah</div>
+          <div class="logo-sub">Prophetic Ministry</div>
+        </div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#help"
+            role="button"
+            aria-haspopup="true"
+            >Help Me With
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+              target="_blank"
+              ><span class="dd-dot"></span>Faith</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+              target="_blank"
+              ><span class="dd-dot"></span>Prayer</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+              target="_blank"
+              ><span class="dd-dot"></span>Healing</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+              target="_blank"
+              ><span class="dd-dot"></span>Counseling</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonies.html">Testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="services.html"
+            role="button"
+            aria-haspopup="true"
+            >Services
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="services.html"
+              ><span class="dd-dot"></span>All Services</a
+            >
+            <a class="dd-link" href="services.html#sunday"
+              ><span class="dd-dot"></span>Sunday Worship</a
+            >
+            <a class="dd-link" href="services.html#wednesday"
+              ><span class="dd-dot"></span>Midweek Prayer</a
+            >
+            <a class="dd-link" href="services.html#friday"
+              ><span class="dd-dot"></span>Prophetic Night</a
+            >
+            <a class="dd-link" href="services.html#saturday"
+              ><span class="dd-dot"></span>Youth Service</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#watch"
+            role="button"
+            aria-haspopup="true"
+            >Watch
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #ff0000"></span
+              >YouTube</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #1877f2"></span
+              >Facebook</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #00f2ea"></span>TikTok</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" href="about.html">About</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="give.html">Give</a></li>
+      </ul>
+      <a class="btn-give-nav" href="give.html">Give Now</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-top">
+      <!-- ═══ HERO ═══ -->
+      <div class="hero-about">
+        <div class="hero-about-left">
+          <div class="hero-large-initial">O</div>
+          <span class="hero-about-eyebrow">Man of God</span>
+          <h1 class="hero-about-h1">Prophet<br /><em>Odolo Joshua</em></h1>
+          <p class="hero-about-title">
+            Founder & Senior Prophet — Strong Hand of Jehovah Prophetic Ministry
+          </p>
+          <blockquote class="hero-about-quote">
+            "Before I formed you in the womb I knew you; before you were born I
+            sanctified you; I ordained you a prophet to the nations." — Jeremiah
+            1:5
+          </blockquote>
+          <div class="hero-about-btns">
+            <a href="#biography" class="btn-primary">His Story</a>
+            <a href="#message" class="btn-outline-w">Watch His Message</a>
+          </div>
+        </div>
+        <div class="hero-about-right">
+          <img
+            src="images/prophet2.jpeg"
+            alt="Prophet Odolo Joshua"
+            onerror="
+              this.parentNode.innerHTML =
+                '<div class=prophet-photo-ph><svg viewBox=\'0 0 64 64\'><path d=\'M32 4a14 14 0 1 1 0 28 14 14 0 0 1 0-28zm0 34c15.464 0 28 7.163 28 16v4H4v-4c0-8.837 12.536-16 28-16z\'/></svg></div>'
+            "
+          />
+        </div>
+      </div>
+      <div class="hero-about-rule"></div>
+
+      <!-- ═══ STATS ═══ -->
+      <div class="anointing-strip">
+        <div class="anoint-stat reveal">
+          <div class="anoint-num">15+</div>
+          <div class="anoint-label">Years in Ministry</div>
+        </div>
+        <div class="anoint-divider"></div>
+        <div class="anoint-stat reveal d1">
+          <div class="anoint-num">1,000+</div>
+          <div class="anoint-label">Lives Transformed</div>
+        </div>
+        <div class="anoint-divider"></div>
+        <div class="anoint-stat reveal d2">
+          <div class="anoint-num">4</div>
+          <div class="anoint-label">Weekly Services</div>
+        </div>
+        <div class="anoint-divider"></div>
+        <div class="anoint-stat reveal d3">
+          <div class="anoint-num">Nations</div>
+          <div class="anoint-label">Reached by the Word</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ═══ BIOGRAPHY ═══ -->
+      <section class="bio-section" id="biography">
+        <div class="bio-inner">
+          <div class="bio-sticky reveal-l">
+            <div class="bio-portrait">
+              <img
+                src="images/prophet1.jpeg"
+                alt="Prophet Odolo Joshua portrait"
+                onerror="
+                  this.parentNode.innerHTML =
+                    '<div class=bio-portrait-ph><p>Add Portrait Photo</p></div>'
+                "
+              />
+            </div>
+            <p class="bio-caption">
+              Prophet Odolo Joshua — Servant of the Most High
+            </p>
+            <div class="bio-signature" style="margin-top: 1.5rem">
+              <div class="bio-sig-icon">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div>
+                <div class="bio-sig-name">Prophet Odolo Joshua</div>
+                <div class="bio-sig-title">Founder, Strong Hand of Jehovah</div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-r">
+            <span class="eyebrow">The Man Behind the Ministry</span>
+            <h2 class="sh">
+              Raised, Refined,<br />and
+              <em style="font-style: italic; color: var(--gold)">Sent</em>
+            </h2>
+            <p class="bio-lead">
+              Prophet Odolo Joshua is not a man who chose the pulpit — he is a
+              man chosen by God from before his birth, shaped in the furnace of
+              faith, and released in fire to this generation.
+            </p>
+            <p class="bio-body">
+              From an early age, Prophet Odolo Joshua encountered the living God
+              in ways that set him apart. Marked by prophetic dreams, divine
+              visitations, and an insatiable hunger for the Word, he understood
+              from his youth that his life was not his own — it was consecrated
+              to the purposes of heaven.
+            </p>
+            <p class="bio-body">
+              Called into full-time ministry after a
+              <strong>profound encounter with the Holy Spirit</strong>, Prophet
+              Odolo Joshua founded the Strong Hand of Jehovah Prophetic Ministry
+              with one mandate: to be a house where the lost are found, the
+              broken are made whole, the sick are healed, and the called are
+              equipped.
+            </p>
+            <p class="bio-body">
+              His ministry is marked by
+              <strong
+                >accuracy in prophecy, demonstrable signs and wonders, and a
+                fierce commitment to discipleship</strong
+              >. Under his leadership, SHJ has become a spiritual family that
+              reaches not only Lagos but nations — through online broadcasts,
+              prophetic gatherings, and anointed resources that carry the
+              tangible presence of God.
+            </p>
+            <p class="bio-body">
+              Prophet Odolo Joshua moves in the fivefold office of the prophet —
+              declaring the word of the Lord with boldness, interceding with
+              intensity, and equipping believers to walk in supernatural
+              authority over every area of their lives. He carries a
+              <strong
+                >special burden for the poor, the overlooked, and the
+                broken</strong
+              >, operating from the conviction that God's power is most
+              glorified through human impossibility.
+            </p>
+            <p class="bio-body">
+              His motto —
+              <em style="font-style: italic; color: var(--gold)"
+                >"Through Faith and Belief"</em
+              >
+              — is not a tagline. It is the bedrock of every prayer prayed,
+              every sermon preached, and every miracle manifested under this
+              ministry.
+            </p>
+            <a
+              href="https://wa.me/2349019733420?text=I%20would%20like%20to%20speak%20with%20Prophet%20Odolo%20Joshua"
+              target="_blank"
+              class="link-arrow"
+              style="margin-top: 0.5rem"
+              >Connect Directly →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ═══ PILLARS ═══ -->
+      <section class="pillars-section">
+        <div class="pillars-inner">
+          <div class="pillars-header reveal">
+            <span class="eyebrow" style="color: rgba(200, 168, 75, 0.7)"
+              >The Anointing He Carries</span
+            >
+            <h2 class="sh sh-white" style="margin-bottom: 0">
+              Three Pillars<br /><em
+                style="font-style: italic; color: var(--gold)"
+                >of His Calling</em
+              >
+            </h2>
+          </div>
+          <div class="pillars-grid">
+            <div class="pillar-card reveal d1">
+              <div class="pillar-num">01</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div class="pillar-name">The Prophetic Word</div>
+              <p class="pillar-desc">
+                Prophet Odolo Joshua operates with razor-sharp prophetic
+                precision. The word he delivers has been verified by countless
+                testimonies of healings, breakthroughs, and divine redirections.
+                When he speaks, heaven backs it.
+              </p>
+            </div>
+            <div class="pillar-card reveal d2">
+              <div class="pillar-num">02</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="pillar-name">Deliverance & Healing</div>
+              <p class="pillar-desc">
+                This ministry carries a strong grace for total deliverance.
+                Cancers, infirmities, strongholds, and generational curses have
+                bowed under the power of God flowing through this anointed
+                vessel. No chain is too heavy.
+              </p>
+            </div>
+            <div class="pillar-card reveal d3">
+              <div class="pillar-num">03</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div class="pillar-name">Discipleship & Kingdom Building</div>
+              <p class="pillar-desc">
+                Beyond miracles, Prophet Odolo Joshua is a builder of men and
+                women. He disciples a generation to walk not just in momentary
+                encounters but in sustained, consistent, covenant relationship
+                with God.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ VIDEO — MESSAGE TO THE CHURCH ═══ -->
+      <section class="video-church-section" id="message">
+        <div class="video-church-inner">
+          <!-- VIDEO -->
+          <div class="reveal-l">
+            <div class="church-video-wrap">
+              <video id="churchVid" preload="metadata" controls poster="">
+                <source src="videos/prophetaddressing.mp4" type="video/mp4" />
+                <source src="videos/prophethero.mp4" type="video/mp4" />
+              </video>
+              <div class="video-overlay" id="churchOverlay">
+                <div class="video-overlay-tag">Prophetic Word</div>
+                <div
+                  class="video-play-btn"
+                  onclick="playVideo('churchVid', 'churchOverlay')"
+                  aria-label="Play video"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+                <span class="video-overlay-label"
+                  >A Message from the Prophet</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- TEXT -->
+          <div class="reveal-r">
+            <span class="eyebrow">A Word to the Body</span>
+            <h2 class="sh">
+              A Message From<br /><em
+                style="font-style: italic; color: var(--gold)"
+                >the Prophet</em
+              >
+            </h2>
+            <blockquote class="verse-q">
+              "Surely the Lord God does nothing, unless He reveals His secret to
+              His servants the prophets." — Amos 3:7
+            </blockquote>
+            <p class="body-p">
+              In this message, Prophet Odolo Joshua addresses the SHJ family —
+              those who gather week after week to receive the word, the fire,
+              and the breakthrough that God has prepared for them. This word
+              will challenge you, align you, and thrust you forward.
+            </p>
+            <p class="body-p">
+              Whether you are a longtime member or you've just found your way
+              here — this message is for you. Receive it with an open heart and
+              expect the God of heaven to move in your situation as you listen.
+            </p>
+            <a href="services.html" class="link-arrow">Join Us in Service →</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ═══ VIDEO — WELCOME TO NEW MEMBERS ═══ -->
+      <section class="video-new-section" id="new-members">
+        <div class="video-new-inner">
+          <div class="reveal-l">
+            <div class="new-members-badge">
+              <span></span> Welcome, New Family
+            </div>
+            <h2 class="sh sh-white">
+              A Personal Welcome<br /><em
+                style="font-style: italic; color: var(--gold)"
+                >for You</em
+              >
+            </h2>
+            <p class="body-p" style="color: rgba(255, 255, 255, 0.5)">
+              If you are new here — welcome. You didn't find this ministry by
+              accident. God directed your steps to this house because He has
+              something specific waiting for you in this season. Prophet Odolo
+              Joshua speaks directly to you.
+            </p>
+            <ul class="welcome-list">
+              <li>
+                You are safe here — this is a house of healing, not judgment
+              </li>
+              <li>
+                You are seen — God knows your name, your need, and your next
+              </li>
+              <li>You are not too broken — we specialise in the impossible</li>
+              <li>
+                You belong — the SHJ family will walk this journey with you
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/2349019733420?text=Hello%2C%20I%20am%20a%20new%20member%20and%20would%20love%20to%20connect"
+              target="_blank"
+              class="btn-primary"
+              style="margin-top: 2rem; display: inline-block"
+              >Connect With Us →</a
+            >
+          </div>
+          <!-- VIDEO -->
+          <div class="reveal-r">
+            <div class="new-video-wrap">
+              <video id="newVid" preload="metadata" controls poster="">
+                <source src="videos/prophetpraying.mp4" type="video/mp4" />
+                <source src="videos/prophetknelling.mp4" type="video/mp4" />
+              </video>
+              <div class="new-video-overlay" id="newOverlay">
+                <div class="new-video-gold-tag">Welcome Message</div>
+                <div
+                  class="video-play-btn"
+                  onclick="playVideo('newVid', 'newOverlay')"
+                  aria-label="Play welcome video"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+                <span
+                  class="video-overlay-label"
+                  style="color: rgba(255, 255, 255, 0.5)"
+                  >A Word for Every New Member</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ═══ TIMELINE ═══ -->
+      <section class="timeline-section">
+        <div class="timeline-inner">
+          <div class="timeline-header reveal">
+            <span class="eyebrow" style="text-align: center; display: block"
+              >The Journey of a Prophet</span
+            >
+            <h2 class="sh" style="text-align: center; margin-bottom: 0">
+              Milestones of<br /><em
+                style="font-style: italic; color: var(--gold)"
+                >This Ministry</em
+              >
+            </h2>
+          </div>
+          <div class="timeline">
+            <div class="tl-item reveal">
+              <div class="tl-dot"></div>
+              <div class="tl-year">The Beginning</div>
+              <div class="tl-title">A Divine Encounter</div>
+              <p class="tl-body">
+                Prophet Odolo Joshua receives a life-altering encounter with the
+                Holy Spirit — a moment that would define the rest of his days.
+                He surrenders fully to the call of God and begins to move in the
+                prophetic gifts that had quietly stirred within him from
+                childhood.
+              </p>
+            </div>
+            <div class="tl-item reveal d1">
+              <div class="tl-dot"></div>
+              <div class="tl-year">The Mandate</div>
+              <div class="tl-title">Strong Hand of Jehovah Is Founded</div>
+              <p class="tl-body">
+                Driven by a clear mandate from God, Prophet Odolo Joshua
+                establishes the Strong Hand of Jehovah Prophetic Ministry. What
+                begins as a small gathering of hungry believers quickly grows
+                into a powerful spiritual community marked by signs, wonders,
+                and radical life transformations.
+              </p>
+            </div>
+            <div class="tl-item reveal d2">
+              <div class="tl-dot"></div>
+              <div class="tl-year">The Expansion</div>
+              <div class="tl-title">A House of Encounter Is Built</div>
+              <p class="tl-body">
+                The ministry grows beyond expectations. New converts flood the
+                doors, testimonies of healing and deliverance spread through
+                communities, and SHJ becomes known as a place where the presence
+                of God is tangible and the miraculous is normal.
+              </p>
+            </div>
+            <div class="tl-item reveal d3">
+              <div class="tl-dot"></div>
+              <div class="tl-year">The Vision</div>
+              <div class="tl-title">Building God's Permanent House</div>
+              <p class="tl-body">
+                Prophet Odolo Joshua receives a clear vision from the Lord: a
+                permanent sanctuary — a physical altar and centre of operations
+                that will serve this generation and the next. The building
+                project is launched, funded by faithful partners who believe in
+                this God-given vision.
+              </p>
+            </div>
+            <div class="tl-item reveal d4">
+              <div class="tl-dot"></div>
+              <div class="tl-year">Today & Beyond</div>
+              <div class="tl-title">Nations, Not Just Neighbourhoods</div>
+              <p class="tl-body">
+                The ministry has extended its reach through online broadcasts,
+                anointed resources, and prophetic gatherings that touch lives
+                across Nigeria and beyond. The best chapters of this story are
+                still being written — and you are a part of them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SCRIPTURE BAND ═══ -->
+      <div class="scripture-band">
+        <blockquote>
+          "The Spirit of the Lord is upon Me, because He has anointed Me to
+          preach the gospel to the poor; He has sent Me to heal the
+          brokenhearted, to proclaim liberty to the captives and recovery of
+          sight to the blind, to set at liberty those who are oppressed."
+        </blockquote>
+        <cite>Luke 4:18 — NKJV</cite>
+      </div>
+
+      <!-- ═══ CTA ═══ -->
+      <section class="cta-section">
+        <div class="cta-inner">
+          <span
+            class="eyebrow reveal"
+            style="text-align: center; display: block"
+            >Your Next Step</span
+          >
+          <h2
+            class="sh reveal d1"
+            style="text-align: center; margin-bottom: 0.75rem"
+          >
+            This Ministry<br />Was Built
+            <em style="font-style: italic; color: var(--gold)">For You</em>
+          </h2>
+          <p
+            class="body-p reveal d2"
+            style="text-align: center; max-width: 500px; margin: 0 auto"
+          >
+            Whether you need prayer, a word from the Lord, or simply a place to
+            belong — Strong Hand of Jehovah is open to you. Prophet Odolo Joshua
+            and the entire SHJ family are waiting to receive you.
+          </p>
+          <div class="cta-btns reveal d3">
+            <a href="services.html" class="btn-primary">Join a Service</a>
+            <a
+              href="https://wa.me/2349019733420?text=Hello%2C%20I%20want%20to%20connect%20with%20SHJ"
+              target="_blank"
+              class="wa-btn-gold"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              WhatsApp Us
+            </a>
+            <a
+              href="give.html"
+              class="btn-primary"
+              style="
+                background: var(--navy);
+                color: #fff;
+                border: 2px solid var(--navy);
+              "
+              >Partner With Us</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="ft-top">
+          <div class="ft-brand">
+            <div class="logo">
+              <div class="logo-circle">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="logo-text-wrap">
+                <div class="logo-name" style="color: #fff">
+                  Strong Hand of Jehovah
+                </div>
+                <div class="logo-sub">Prophetic Ministry</div>
+              </div>
+            </div>
+            <p>
+              A prophetic community burning with purpose — declaring the word,
+              demonstrating the power, discipling a generation of
+              world-changers.
+            </p>
+            <span class="ft-motto">Through Faith and Belief</span>
+          </div>
+          <div class="ft-col">
+            <h5>Ministry</h5>
+            <ul>
+              <li><a href="index.html#faith">Faith</a></li>
+              <li><a href="index.html#prayer">Prayer</a></li>
+              <li><a href="index.html#healing">Healing</a></li>
+              <li><a href="testimonies.html">Testimonies</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Pages</h5>
+            <ul>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="give.html">Give / Partner</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="index.html#contact">Contact Us</a></li>
+              <li>
+                <a href="https://wa.me/2349019733420" target="_blank"
+                  >WhatsApp</a
+                >
+              </li>
+              <li><a href="#" target="_blank">YouTube</a></li>
+              <li><a href="#" target="_blank">Facebook</a></li>
+              <li><a href="#" target="_blank">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-btm">
+          <p>
+            &copy; 2025 Strong Hand of Jehovah Prophetic Ministry &middot;
+            <em>Through Faith and Belief</em>
+          </p>
+          <div class="socials">
+            <a href="#" target="_blank" aria-label="YouTube"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+            ></a>
+            <a href="#" target="_blank" aria-label="Facebook"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a
+              href="https://wa.me/2349019733420"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      /* SCROLL PROGRESS */
+      (function () {
+        var bar = document.getElementById("scrollProg");
+        window.addEventListener(
+          "scroll",
+          function () {
+            var max =
+              document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (window.scrollY / max) * 100 + "%";
+          },
+          { passive: true },
+        );
+      })();
+
+      /* NAV SHADOW */
+      (function () {
+        var nav = document.getElementById("mainNav");
+        window.addEventListener(
+          "scroll",
+          function () {
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+          },
+          { passive: true },
+        );
+      })();
+
+      /* SIDEBAR */
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      var backdrop = document.getElementById("backdrop");
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      /* SCROLL REVEAL */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        document
+          .querySelectorAll(".reveal,.reveal-l,.reveal-r")
+          .forEach(function (el) {
+            io.observe(el);
+          });
+      })();
+
+      /* VIDEO PLAYER — click overlay to play, hide overlay */
+      function playVideo(vidId, overlayId) {
+        var vid = document.getElementById(vidId);
+        var overlay = document.getElementById(overlayId);
+        if (vid && overlay) {
+          vid
+            .play()
+            .then(function () {
+              overlay.classList.add("hidden");
+            })
+            .catch(function () {
+              // Autoplay blocked — show native controls anyway
+              overlay.classList.add("hidden");
+            });
+        }
+      }
+
+      /* Hide overlay if video already has data (e.g. cached) */
+      ["churchVid", "newVid"].forEach(function (id) {
+        var v = document.getElementById(id);
+        if (!v) return;
+        function tryHide(overlayId) {
+          if (v.readyState >= 2) {
+            // HAVE_CURRENT_DATA
+            var o = document.getElementById(overlayId);
+            // Only hide if actually playing
+          }
+        }
+        var overlayId = id === "churchVid" ? "churchOverlay" : "newOverlay";
+        // Show overlay on pause, hide on play
+        v.addEventListener("play", function () {
+          var o = document.getElementById(overlayId);
+          if (o) o.classList.add("hidden");
+        });
+        v.addEventListener("pause", function () {
+          // Keep overlay hidden once dismissed — don't re-show
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Give | Strong Hand of Jehovah Prophetic Ministry</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+      :root {
+        --navy: #0a1c2e;
+        --navy2: #0d2540;
+        --gold: #c8a84b;
+        --gold2: #e8c96b;
+        --white: #ffffff;
+        --offwhite: #f7f4ef;
+        --gray: #f0ece4;
+        --text: #1a1a1a;
+        --muted: #666;
+        --topbar-h: 36px;
+        --nav-h: 76px;
+        --total-h: calc(var(--topbar-h) + var(--nav-h));
+        --f-display: "Playfair Display", Georgia, serif;
+        --f-serif: "Cormorant Garamond", Georgia, serif;
+        --f-body: "DM Sans", sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: #fff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* ── TOP BAR ── */
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--topbar-h);
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.35);
+      }
+      .topbar-left {
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .topbar-link {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+      }
+      .topbar-link:hover {
+        color: var(--gold);
+      }
+      .topbar-sep {
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.7rem;
+      }
+
+      /* ── MAIN NAVBAR ── */
+      nav#mainNav {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 2px solid var(--gold);
+        transition: box-shadow 0.3s;
+      }
+      nav#mainNav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .logo-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+      }
+      .logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: stretch;
+        height: var(--nav-h);
+        margin-left: auto;
+        margin-right: 1.2rem;
+      }
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+        padding: 0 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        cursor: pointer;
+      }
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-item:hover > .nav-link {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .nav-link svg {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.5;
+        transition: transform 0.2s;
+      }
+      .nav-item:hover > .nav-link svg {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.22s,
+          transform 0.22s,
+          visibility 0.22s;
+        z-index: 998;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dd-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 1.1rem;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.02em;
+        border-bottom: 1px solid #eee;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .dd-link:last-child {
+        border-bottom: none;
+      }
+      .dd-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.4rem;
+      }
+      .dd-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .btn-give-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.55rem 1.4rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .btn-give-nav:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+
+      /* ── HAMBURGER ── */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1001;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        left: auto;
+        width: min(320px, 88vw);
+        height: 100%;
+        height: 100dvh;
+        background: #fff;
+        z-index: 1002;
+        overflow-y: auto;
+        transition: right 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 40px rgba(0, 0, 0, 0.25);
+      }
+      .sidebar.open {
+        right: 0;
+      }
+      .sb-header {
+        background: var(--navy);
+        padding: 1.2rem 1.2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--gold);
+        flex-shrink: 0;
+      }
+      .sb-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sb-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy2);
+        flex-shrink: 0;
+      }
+      .sb-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .sb-name {
+        font-family: var(--f-display);
+        font-size: 0.72rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .sb-sub {
+        font-family: var(--f-serif);
+        font-size: 0.6rem;
+        color: var(--gold);
+        font-style: italic;
+      }
+      .sb-close {
+        background: none;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-close:hover {
+        background: rgba(200, 168, 75, 0.12);
+      }
+      .sb-give-strip {
+        display: block;
+        background: var(--gold);
+        color: var(--navy);
+        text-align: center;
+        padding: 0.75rem;
+        font-family: var(--f-display);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-give-strip:hover {
+        background: var(--gold2);
+      }
+      .sb-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .sb-section {
+        border-bottom: 1px solid #eee;
+      }
+      .sb-section-title {
+        padding: 0.7rem 1.2rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--offwhite);
+        border-bottom: 1px solid #e8e0d0;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.82rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--navy);
+        border-bottom: 1px solid #f0f0f0;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .sb-link:last-child {
+        border-bottom: none;
+      }
+      .sb-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.7rem;
+      }
+      .sb-link-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+
+      /* ── PAGE OFFSET ── */
+      .page-top {
+        padding-top: var(--total-h);
+      }
+
+      /* ── SCROLL PROGRESS ── */
+      .scroll-prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--gold);
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      /* ════════════════════════════════
+       HERO VIDEO
+    ════════════════════════════════ */
+      .hero-give {
+        position: relative;
+        width: 100%;
+        height: calc(92vh - var(--total-h));
+        min-height: 540px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--navy);
+      }
+      .hero-give video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.55;
+      }
+      .hero-give-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          rgba(10, 28, 46, 0.88) 0%,
+          rgba(10, 28, 46, 0.45) 55%,
+          rgba(10, 28, 46, 0.1) 100%
+        );
+      }
+      /* placeholder shown until video loads */
+      .hero-ph {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          #0a1c2e 0%,
+          #142a44 60%,
+          #0a1c2e 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+      }
+      .hero-ph-ring {
+        width: 74px;
+        height: 74px;
+        border: 1.5px solid rgba(200, 168, 75, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-ph p {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .hero-give-content {
+        position: relative;
+        z-index: 2;
+        padding: 0 5rem;
+        max-width: 700px;
+      }
+      .hero-give-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+      }
+      .hero-give-eyebrow::before {
+        content: "";
+        width: 36px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-give-h1 {
+        font-family: var(--f-display);
+        font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+        color: #fff;
+        line-height: 1.06;
+        font-weight: 900;
+        margin-bottom: 1.2rem;
+        letter-spacing: -0.01em;
+      }
+      .hero-give-h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-give-p {
+        font-family: var(--f-serif);
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.75;
+        max-width: 500px;
+        margin-bottom: 2rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .hero-give-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* ── BTN STYLES ── */
+      .btn-primary {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--gold2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(200, 168, 75, 0.4);
+      }
+      .btn-outline-w {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: transparent;
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.2s;
+      }
+      .btn-outline-w:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+
+      /* ── SHARED SECTION HELPERS ── */
+      .eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .sh {
+        font-family: var(--f-display);
+        font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .sh-white {
+        color: #fff;
+      }
+      .body-p {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 168, 75, 0.25),
+          transparent
+        );
+      }
+      .section {
+        padding: 5rem;
+      }
+      .max-w {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .bg-white {
+        background: #fff;
+      }
+      .bg-off {
+        background: var(--offwhite);
+      }
+      .bg-navy {
+        background: var(--navy);
+      }
+
+      /* ════════════════════════════════
+       SCRIPTURE BAND
+    ════════════════════════════════ */
+      .scripture-band {
+        background: var(--navy);
+        padding: 56px 5rem;
+        text-align: center;
+        border-top: 1px solid rgba(200, 168, 75, 0.2);
+      }
+      .scripture-band blockquote {
+        font-family: var(--f-serif);
+        font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(245, 230, 190, 0.9);
+        line-height: 1.65;
+        max-width: 860px;
+        margin: 0 auto 14px;
+      }
+      .scripture-band cite {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+      }
+
+      /* ════════════════════════════════
+       BUILDING SECTION
+    ════════════════════════════════ */
+      .building-section {
+        background: var(--offwhite);
+        padding: 5rem;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+      }
+      .building-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .progress-wrap {
+        margin-top: 2.5rem;
+      }
+      .progress-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+      }
+      .progress-lbl {
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .progress-pct {
+        font-family: var(--f-display);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .progress-bar {
+        height: 4px;
+        background: rgba(0, 0, 0, 0.09);
+        position: relative;
+        overflow: hidden;
+      }
+      .progress-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(90deg, var(--navy), var(--gold));
+        width: 0;
+        transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .progress-amts {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-family: var(--f-body);
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+      .progress-amts strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .building-video-wrap {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        background: var(--navy2);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+      }
+      .building-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .building-vid-ph {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: linear-gradient(135deg, #0a1c2e, #1a2e47);
+      }
+      .building-vid-ph svg {
+        width: 52px;
+        height: 52px;
+        opacity: 0.18;
+        fill: var(--gold);
+      }
+      .building-vid-ph p {
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      /* ════════════════════════════════
+       GIVING CARDS
+    ════════════════════════════════ */
+      .giving-section {
+        background: #fff;
+        padding: 5rem;
+      }
+      .giving-section .max-w {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .giving-header {
+        margin-bottom: 3.5rem;
+      }
+      .giving-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(200, 168, 75, 0.15);
+      }
+      .giving-row2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: rgba(200, 168, 75, 0.15);
+        margin-top: 1px;
+      }
+
+      .give-card {
+        background: #fff;
+        padding: 2.5rem 2.2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          background 0.3s,
+          transform 0.3s;
+      }
+      .give-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .give-card:hover {
+        background: var(--offwhite);
+        transform: translateY(-3px);
+      }
+      .give-card:hover::after {
+        transform: scaleX(1);
+      }
+      .give-card.featured {
+        background: var(--navy);
+      }
+      .give-card.featured::after {
+        transform: scaleX(1);
+      }
+      .give-card.featured:hover {
+        background: var(--navy2);
+        transform: translateY(-3px);
+      }
+      .give-card.featured .card-tag {
+        color: var(--gold2);
+      }
+      .give-card.featured .card-name {
+        color: #fff;
+      }
+      .give-card.featured .card-desc {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .give-card.featured .card-icon-wrap {
+        border-color: rgba(200, 168, 75, 0.25);
+      }
+      .give-card.featured .card-icon-wrap svg {
+        stroke: var(--gold2);
+      }
+      .give-card.featured .pill {
+        border-color: rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.45);
+        background: transparent;
+      }
+      .give-card.featured .pill:hover,
+      .give-card.featured .pill.active {
+        border-color: var(--gold);
+        color: var(--gold2);
+        background: rgba(200, 168, 75, 0.1);
+      }
+      .give-card.featured .c-sym {
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .give-card.featured .amt-inp {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+      .give-card.featured .amt-inp::placeholder {
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      .card-icon-wrap {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+      .card-icon-wrap svg {
+        width: 19px;
+        height: 19px;
+        stroke: var(--navy);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .card-tag {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .card-name {
+        font-family: var(--f-display);
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.7rem;
+        line-height: 1.15;
+      }
+      .card-desc {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 1.6rem;
+      }
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-bottom: 1rem;
+      }
+      .pill {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+        color: var(--muted);
+        font-family: var(--f-body);
+        font-size: 0.78rem;
+        padding: 6px 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .pill:hover,
+      .pill.active {
+        border-color: var(--gold);
+        color: var(--navy);
+        background: rgba(200, 168, 75, 0.06);
+      }
+      .amt-wrap {
+        position: relative;
+        margin-bottom: 1rem;
+      }
+      .c-sym {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--f-display);
+        font-size: 1.1rem;
+        color: var(--muted);
+      }
+      .amt-inp {
+        width: 100%;
+        background: var(--offwhite);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--text);
+        font-family: var(--f-display);
+        font-size: 1.25rem;
+        padding: 12px 12px 12px 30px;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .amt-inp:focus {
+        border-color: var(--gold);
+      }
+      .card-btn {
+        width: 100%;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 15px;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .card-btn:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+      .card-btn.outline {
+        background: transparent;
+        color: var(--navy);
+        border: 2px solid rgba(0, 0, 0, 0.15);
+      }
+      .card-btn.outline:hover {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+      .give-card.featured .card-btn {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+      .give-card.featured .card-btn:hover {
+        background: var(--gold2);
+        border-color: var(--gold2);
+      }
+      .give-card.featured .card-btn.outline {
+        background: transparent;
+        border-color: rgba(200, 168, 75, 0.4);
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .give-card.featured .card-btn.outline:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+
+      /* ════════════════════════════════
+       WHATSAPP SECTION
+    ════════════════════════════════ */
+      .wa-section {
+        background: var(--offwhite);
+        padding: 5rem;
+        text-align: center;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+      }
+      .wa-section .max-w {
+        max-width: 580px;
+        margin: 0 auto;
+      }
+      .wa-section .sh {
+        color: var(--navy);
+      }
+      .wa-section .body-p {
+        max-width: 460px;
+        margin: 0 auto 2rem;
+      }
+
+      /* Gold WhatsApp button — NO green */
+      .wa-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.88rem 2.2rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .wa-cta:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+      .wa-cta svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+
+      /* ════════════════════════════════
+       ACCOUNT BANNER
+    ════════════════════════════════ */
+      .account-banner {
+        background: var(--navy);
+        padding: 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .account-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 70% at 50% 50%,
+          rgba(200, 168, 75, 0.07) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .account-banner-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      .account-banner-eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .account-banner-h {
+        font-family: var(--f-display);
+        font-size: clamp(2rem, 3.5vw, 3.2rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+      .account-banner-h em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .account-banner-sub {
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.35);
+        letter-spacing: 0.04em;
+        margin-bottom: 3rem;
+      }
+      .account-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .acct-card {
+        flex: 1;
+        min-width: 200px;
+        max-width: 300px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        position: relative;
+      }
+      .acct-card + .acct-card {
+        border-left: 1px solid rgba(200, 168, 75, 0.12);
+      }
+      .acct-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .acct-label {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .acct-val {
+        font-family: var(--f-display);
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+      }
+      .acct-val.gold {
+        color: var(--gold2);
+      }
+      .copy-btn {
+        display: inline-block;
+        margin-top: 10px;
+        background: transparent;
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        color: rgba(255, 255, 255, 0.35);
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .copy-btn:hover,
+      .copy-btn.done {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .account-note {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        font-family: var(--f-serif);
+        font-size: 0.9rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.3);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      /* ════════════════════════════════
+       TESTIMONIES STRIP
+    ════════════════════════════════ */
+      .testi-section {
+        background: var(--gray);
+        padding: 5rem;
+      }
+      .testi-section .max-w {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .t-card {
+        background: #fff;
+        border: 1px solid #e8e0d0;
+        padding: 2rem 1.8rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .t-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s;
+      }
+      .t-card:hover::before {
+        transform: scaleX(1);
+      }
+      .t-stars {
+        color: var(--gold);
+        font-size: 0.85rem;
+        margin-bottom: 0.8rem;
+        letter-spacing: 2px;
+      }
+      .t-text {
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.65;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      .t-name {
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+
+      /* ════════════════════════════════
+       PAYSTACK MODAL
+    ════════════════════════════════ */
+      .ps-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 28, 46, 0.88);
+        z-index: 9000;
+        align-items: center;
+        justify-content: center;
+      }
+      .ps-overlay.open {
+        display: flex;
+      }
+      .ps-box {
+        background: #fff;
+        width: 94%;
+        max-width: 460px;
+        padding: 3rem 2.5rem;
+        position: relative;
+      }
+      .ps-close {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        font-size: 1.4rem;
+        line-height: 1;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--muted);
+      }
+      .ps-box h3 {
+        font-family: var(--f-display);
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 4px;
+      }
+      .ps-type {
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+      .ps-amt-disp {
+        background: var(--navy);
+        padding: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .ps-amt-disp span {
+        font-family: var(--f-display);
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--gold2);
+      }
+      .ps-field {
+        margin-bottom: 1rem;
+      }
+      .ps-field label {
+        display: block;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .ps-field input {
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        background: var(--offwhite);
+        font-family: var(--f-body);
+        font-size: 0.9rem;
+        padding: 12px 14px;
+        outline: none;
+        color: var(--text);
+        transition: border-color 0.2s;
+      }
+      .ps-field input:focus {
+        border-color: var(--gold);
+      }
+      .ps-pay {
+        width: 100%;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 17px;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        margin-top: 6px;
+        transition: all 0.2s;
+      }
+      .ps-pay:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+      .ps-note {
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 1rem;
+        line-height: 1.6;
+      }
+      .ps-secure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 8px;
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .ps-secure svg {
+        width: 11px;
+        height: 11px;
+        fill: var(--muted);
+      }
+
+      /* ── REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-l {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-l.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-r {
+        opacity: 0;
+        transform: translateX(40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-r.show {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.36s;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy);
+        padding: 4rem 5rem 2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .ft-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 1.8rem;
+      }
+      .ft-brand p {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.7;
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .ft-motto {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 0.7rem;
+      }
+      .ft-col h5 {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .ft-col li {
+        margin-bottom: 0.5rem;
+      }
+      .ft-col a {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        transition:
+          color 0.2s,
+          padding-left 0.15s;
+        display: inline-block;
+      }
+      .ft-col a:hover {
+        color: #fff;
+        padding-left: 5px;
+      }
+      .ft-btm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .ft-btm p {
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.35);
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background: rgba(200, 168, 75, 0.08);
+        transform: translateY(-2px);
+      }
+      .socials svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .building-inner {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .giving-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .testi-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-menu,
+        .btn-give-nav {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav#mainNav,
+        .topbar {
+          padding: 0 1rem;
+        }
+        .topbar-left {
+          display: none;
+        }
+        .giving-section,
+        .building-section,
+        .wa-section,
+        .account-banner,
+        .testi-section,
+        footer,
+        .hero-give-content {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+        .section {
+          padding: 3rem 1.2rem;
+        }
+      }
+      @media (max-width: 640px) {
+        .giving-grid,
+        .giving-row2 {
+          grid-template-columns: 1fr;
+        }
+        .testi-grid {
+          grid-template-columns: 1fr;
+        }
+        .account-cards {
+          flex-direction: column;
+        }
+        .acct-card + .acct-card {
+          border-left: none;
+          border-top: 1px solid rgba(200, 168, 75, 0.12);
+        }
+        .ft-top {
+          grid-template-columns: 1fr;
+        }
+        .hero-give-btns {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-prog" id="scrollProg"></div>
+    <div class="sidebar-backdrop" id="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-header">
+        <div class="sb-brand">
+          <div class="sb-circle">
+            <img
+              src="images/prophetlogo.jpeg"
+              alt="SHJ"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div>
+            <div class="sb-name">Strong Hand of Jehovah</div>
+            <div class="sb-sub">Prophetic Ministry</div>
+          </div>
+        </div>
+        <button class="sb-close" onclick="closeSidebar()">&#x2715;</button>
+      </div>
+      <a class="sb-give-strip" href="give.html" onclick="closeSidebar()"
+        >&#9829; Give / Partner With Us</a
+      >
+      <div class="sb-body">
+        <div class="sb-section">
+          <div class="sb-section-title">Help Me With</div>
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Faith</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Prayer</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Healing</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Counseling</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Explore</div>
+          <a class="sb-link" href="testimonies.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Testimonies</a
+          >
+          <a class="sb-link" href="services.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Services</a
+          >
+          <a class="sb-link" href="shop.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Shop</a
+          >
+          <a class="sb-link" href="give.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Give</a
+          >
+          <a class="sb-link" href="index.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Home</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span class="topbar-left">Through Faith and Belief</span>
+      <div class="topbar-right">
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+          >Prayer Request</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420"
+          target="_blank"
+          >WhatsApp: 09019733420</a
+        >
+        <span class="topbar-sep">|</span>
+        <a class="topbar-link" href="index.html#watch">Watch Live</a>
+      </div>
+    </div>
+
+    <!-- NAVBAR — exact match to index.html -->
+    <nav id="mainNav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <div class="logo-circle">
+          <img
+            src="images/prophetlogo.jpeg"
+            alt="SHJ Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Strong Hand of Jehovah</div>
+          <div class="logo-sub">Prophetic Ministry</div>
+        </div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#help"
+            role="button"
+            aria-haspopup="true"
+            >Help Me With
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+              target="_blank"
+              ><span class="dd-dot"></span>Faith</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+              target="_blank"
+              ><span class="dd-dot"></span>Prayer</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+              target="_blank"
+              ><span class="dd-dot"></span>Healing</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+              target="_blank"
+              ><span class="dd-dot"></span>Counseling</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonies.html">Testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="services.html"
+            role="button"
+            aria-haspopup="true"
+            >Services
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="services.html"
+              ><span class="dd-dot"></span>All Services</a
+            >
+            <a class="dd-link" href="services.html#sunday"
+              ><span class="dd-dot"></span>Sunday Worship</a
+            >
+            <a class="dd-link" href="services.html#wednesday"
+              ><span class="dd-dot"></span>Midweek Prayer</a
+            >
+            <a class="dd-link" href="services.html#friday"
+              ><span class="dd-dot"></span>Prophetic Night</a
+            >
+            <a class="dd-link" href="services.html#saturday"
+              ><span class="dd-dot"></span>Youth Service</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#watch"
+            role="button"
+            aria-haspopup="true"
+            >Watch
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #ff0000"></span
+              >YouTube</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #1877f2"></span
+              >Facebook</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #00f2ea"></span>TikTok</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="give.html">Give</a>
+        </li>
+      </ul>
+      <a class="btn-give-nav" href="give.html">Give Now</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+       PAGE CONTENT
+  ════════════════════════════════════════ -->
+    <div class="page-top">
+      <!-- HERO — replace videos/hero-give.mp4 -->
+      <div class="hero-give">
+        <video autoplay muted loop playsinline id="heroVid">
+          <source src="videos/building.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-ph" id="heroPh">
+          <div class="hero-ph-ring">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <polygon points="5 3 19 12 5 21 5 3" fill="rgba(200,168,75,.7)" />
+            </svg>
+          </div>
+          <p>Add video · src="videos/hero-give.mp4"</p>
+        </div>
+        <div class="hero-give-overlay"></div>
+        <div class="hero-give-content">
+          <span class="hero-give-eyebrow">Building the House of God</span>
+          <h1 class="hero-give-h1">
+            Partner With<br /><em>Something Eternal</em>
+          </h1>
+          <p class="hero-give-p">
+            Every seed you sow is a stone in the temple being raised. Your
+            giving is not a transaction — it is a covenant.
+          </p>
+          <div class="hero-give-btns">
+            <a href="#give-now" class="btn-primary">Give Today</a>
+            <a href="#building" class="btn-outline-w">See the Vision</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCRIPTURE -->
+      <div class="scripture-band">
+        <blockquote>
+          "Bring all the tithes into the storehouse, that there may be food in
+          My house, and try Me now in this, says the Lord of hosts, if I will
+          not open for you the windows of heaven and pour out for you such
+          blessing that there will not be room enough to receive it."
+        </blockquote>
+        <cite>Malachi 3:10 — NKJV</cite>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- BUILDING PROJECT — replace videos/building-project.mp4 -->
+      <section class="building-section" id="building">
+        <div class="building-inner">
+          <div class="reveal-l">
+            <span class="eyebrow">Capital Project 2025</span>
+            <h2 class="sh">
+              We Are
+              <em style="font-style: italic; color: var(--gold)">Building</em
+              ><br />God's House
+            </h2>
+            <p class="body-p">
+              The Strong Hand of Jehovah Prophetic Ministry is raising a
+              permanent sanctuary — a place of encounter, deliverance, and
+              worship that will serve this generation and the generations to
+              come.
+            </p>
+            <p class="body-p">
+              This is more than bricks and mortar. It is an altar. Your seed
+              into the Building Fund is a declaration of faith that the Kingdom
+              of God must have a dwelling place in this city.
+            </p>
+            <div class="progress-wrap">
+              <div class="progress-header">
+                <span class="progress-lbl">Building Fund Progress</span>
+                <span class="progress-pct">38%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="pFill"></div>
+              </div>
+              <div class="progress-amts">
+                <span>₦<strong>38M</strong> raised</span>
+                <span>Goal: ₦<strong>100M</strong></span>
+              </div>
+            </div>
+          </div>
+          <div class="building-video-wrap reveal-r">
+            <video autoplay muted loop playsinline id="buildVid">
+              <source src="videos/building.mp4" type="video/mp4" />
+            </video>
+            <div class="building-vid-ph" id="buildPh">
+              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M32 4L4 20v40h56V20L32 4zM30 56V40h4v16h-4zM56 56H38V38H26v18H8V22l24-14 24 14v34z"
+                />
+              </svg>
+              <p>Add video · src="videos/building-project.mp4"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- GIVING CARDS -->
+      <section class="giving-section" id="give-now">
+        <div class="max-w">
+          <div class="giving-header reveal">
+            <span class="eyebrow">Ways to Give</span>
+            <h2 class="sh" style="margin-bottom: 0">
+              Choose
+              <em style="font-style: italic; color: var(--gold)"
+                >Your Offering</em
+              >
+            </h2>
+          </div>
+
+          <!-- Row 1: 3 cols -->
+          <div class="giving-grid">
+            <!-- TITHES -->
+            <div class="give-card featured reveal d1">
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <span class="card-tag">Monthly Covenant</span>
+              <div class="card-name">Tithes</div>
+              <p class="card-desc">
+                The tithe is holy to the Lord. Give your 10% faithfully and
+                unlock the windows of heaven over your life, household, and
+                business.
+              </p>
+              <div class="pills">
+                <button class="pill" onclick="setAmt(this, 'tithe', 5000)">
+                  ₦5,000
+                </button>
+                <button
+                  class="pill active"
+                  onclick="setAmt(this, 'tithe', 10000)"
+                >
+                  ₦10,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'tithe', 25000)">
+                  ₦25,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'tithe', 50000)">
+                  ₦50,000
+                </button>
+              </div>
+              <div class="amt-wrap">
+                <span class="c-sym">₦</span
+                ><input
+                  type="number"
+                  class="amt-inp"
+                  id="tithe-amt"
+                  placeholder="Enter tithe"
+                  value="10000"
+                />
+              </div>
+              <button class="card-btn" onclick="openModal('Tithes', 'tithe')">
+                Give My Tithe
+              </button>
+            </div>
+            <!-- OFFERINGS -->
+            <div class="give-card reveal d2">
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <span class="card-tag">Weekly / Monthly</span>
+              <div class="card-name">Offerings</div>
+              <p class="card-desc">
+                Your offering is an act of worship — given cheerfully, received
+                by God. Sow into the ministry and watch provision flow back to
+                you.
+              </p>
+              <div class="pills">
+                <button class="pill" onclick="setAmt(this, 'offering', 1000)">
+                  ₦1,000
+                </button>
+                <button
+                  class="pill active"
+                  onclick="setAmt(this, 'offering', 3000)"
+                >
+                  ₦3,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'offering', 5000)">
+                  ₦5,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'offering', 10000)">
+                  ₦10,000
+                </button>
+              </div>
+              <div class="amt-wrap">
+                <span class="c-sym">₦</span
+                ><input
+                  type="number"
+                  class="amt-inp"
+                  id="offering-amt"
+                  placeholder="Enter offering"
+                  value="3000"
+                />
+              </div>
+              <button
+                class="card-btn outline"
+                onclick="openModal('Offering', 'offering')"
+              >
+                Give an Offering
+              </button>
+            </div>
+            <!-- BUILDING FUND -->
+            <div class="give-card reveal d3">
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="9" width="18" height="13" />
+                  <path d="M1 9l11-7 11 7" />
+                  <line x1="9" y1="22" x2="9" y2="13" />
+                  <line x1="15" y1="22" x2="15" y2="13" />
+                </svg>
+              </div>
+              <span class="card-tag">Capital Project</span>
+              <div class="card-name">Building Fund</div>
+              <p class="card-desc">
+                Plant a stone in the House of God. Every naira given to the
+                building project is multiplied and rewarded in your own life.
+              </p>
+              <div class="pills">
+                <button class="pill" onclick="setAmt(this, 'building', 5000)">
+                  ₦5,000
+                </button>
+                <button
+                  class="pill active"
+                  onclick="setAmt(this, 'building', 20000)"
+                >
+                  ₦20,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'building', 50000)">
+                  ₦50,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'building', 100000)">
+                  ₦100,000
+                </button>
+              </div>
+              <div class="amt-wrap">
+                <span class="c-sym">₦</span
+                ><input
+                  type="number"
+                  class="amt-inp"
+                  id="building-amt"
+                  placeholder="Enter seed"
+                  value="20000"
+                />
+              </div>
+              <button
+                class="card-btn outline"
+                onclick="openModal('Building Fund', 'building')"
+              >
+                Give to the Building
+              </button>
+            </div>
+          </div>
+
+          <!-- Row 2: 2 cols -->
+          <div class="giving-row2">
+            <!-- SEED OF FAITH -->
+            <div class="give-card reveal d1">
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span class="card-tag">Prophetic Giving</span>
+              <div class="card-name">Seed of Faith</div>
+              <p class="card-desc">
+                A seed of faith is a specific, intentional gift sown in
+                expectation of a divine harvest. Name your seed, declare your
+                expectation, and release it into the anointing of this ministry.
+                Whatever you need God to do — sow towards it.
+              </p>
+              <div class="pills">
+                <button class="pill" onclick="setAmt(this, 'seed', 1000)">
+                  ₦1,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'seed', 7000)">
+                  ₦7,000
+                </button>
+                <button
+                  class="pill active"
+                  onclick="setAmt(this, 'seed', 14000)"
+                >
+                  ₦14,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'seed', 70000)">
+                  ₦70,000
+                </button>
+              </div>
+              <div class="amt-wrap">
+                <span class="c-sym">₦</span
+                ><input
+                  type="number"
+                  class="amt-inp"
+                  id="seed-amt"
+                  placeholder="Name your seed"
+                  value="14000"
+                />
+              </div>
+              <button
+                class="card-btn"
+                onclick="openModal('Seed of Faith', 'seed')"
+              >
+                Sow My Seed
+              </button>
+            </div>
+            <!-- SPECIAL OFFERING -->
+            <div class="give-card reveal d2">
+              <div class="card-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                  />
+                </svg>
+              </div>
+              <span class="card-tag">First Fruits & Special</span>
+              <div class="card-name">Special Offering</div>
+              <p class="card-desc">
+                First Fruits, Vow Payments, First-of-Month, Anniversary
+                Offerings, Missions & Outreach support. Give a targeted,
+                designated offering into a specific area of the ministry's work.
+              </p>
+              <div class="pills">
+                <button class="pill" onclick="setAmt(this, 'special', 10000)">
+                  ₦10,000
+                </button>
+                <button
+                  class="pill active"
+                  onclick="setAmt(this, 'special', 50000)"
+                >
+                  ₦50,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'special', 100000)">
+                  ₦100,000
+                </button>
+                <button class="pill" onclick="setAmt(this, 'special', 0)">
+                  Custom
+                </button>
+              </div>
+              <div class="amt-wrap">
+                <span class="c-sym">₦</span
+                ><input
+                  type="number"
+                  class="amt-inp"
+                  id="special-amt"
+                  placeholder="Enter amount"
+                  value="50000"
+                />
+              </div>
+              <button
+                class="card-btn outline"
+                onclick="openModal('Special Offering', 'special')"
+              >
+                Give a Special Offering
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- WHATSAPP -->
+      <div class="wa-section">
+        <div class="max-w">
+          <span
+            class="eyebrow reveal"
+            style="text-align: center; display: block"
+            >Direct Contact</span
+          >
+          <h2
+            class="sh reveal d1"
+            style="text-align: center; margin-bottom: 0.75rem"
+          >
+            Give Directly Via WhatsApp
+          </h2>
+          <p class="body-p reveal d2">
+            Prefer to give directly? Send your seed via WhatsApp and our team
+            will confirm receipt and pray over your offering personally.
+          </p>
+          <div class="reveal d3">
+            <a
+              href="https://wa.me/2349019733420"
+              class="wa-cta"
+              target="_blank"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Send via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCOUNT BANNER -->
+      <div class="account-banner">
+        <div class="account-banner-inner reveal">
+          <span class="account-banner-eyebrow">Direct Bank Transfer</span>
+          <h2 class="account-banner-h">
+            Prefer to <em>Transfer Directly?</em>
+          </h2>
+          <p class="account-banner-sub">
+            Use the details below — then send proof of payment on WhatsApp so we
+            can pray over your offering
+          </p>
+          <div class="account-cards">
+            <div class="acct-card">
+              <span class="acct-label">Bank</span>
+              <div class="acct-val gold">PalmPay</div>
+            </div>
+            <div class="acct-card">
+              <span class="acct-label">Account Name</span>
+              <div class="acct-val">Okpara Divine</div>
+            </div>
+            <div class="acct-card">
+              <span class="acct-label">Account Number</span>
+              <div class="acct-val gold">9019733420</div>
+              <button class="copy-btn" id="copyBtn" onclick="copyAcct()">
+                Copy Number
+              </button>
+            </div>
+          </div>
+          <p class="account-note">
+            After transferring, please send proof of payment to our WhatsApp
+            (09019733420) so we can confirm and pray over your offering
+            personally.
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- TESTIMONIES -->
+      <section class="testi-section">
+        <div class="max-w">
+          <span
+            class="eyebrow reveal"
+            style="text-align: center; display: block"
+            >Harvest Reports</span
+          >
+          <h2 class="sh reveal d1" style="text-align: center; margin-bottom: 0">
+            What
+            <em style="font-style: italic; color: var(--gold)">Givers</em> Are
+            Saying
+          </h2>
+          <div class="testi-grid">
+            <div class="t-card reveal d1">
+              <p class="t-stars">★★★★★</p>
+              <p class="t-text">
+                "I sowed a seed of ₦50,000 into the Building Fund and within 30
+                days I received a contract worth over ₦2 million. God is
+                faithful!"
+              </p>
+              <p class="t-name">— Blessing O., Lagos</p>
+            </div>
+            <div class="t-card reveal d2">
+              <p class="t-stars">★★★★★</p>
+              <p class="t-text">
+                "I started my tithes faithfully through this ministry and my
+                business that was stagnant for 3 years suddenly broke open.
+                Glory to God."
+              </p>
+              <p class="t-name">— Emmanuel A., Abuja</p>
+            </div>
+            <div class="t-card reveal d3">
+              <p class="t-stars">★★★★★</p>
+              <p class="t-text">
+                "I gave a first fruits offering and the Lord promoted me at work
+                that same month. I have never stopped giving to this house."
+              </p>
+              <p class="t-name">— Grace N., Port Harcourt</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER — matches index.html exactly -->
+      <footer>
+        <div class="ft-top">
+          <div class="ft-brand">
+            <div class="logo">
+              <div class="logo-circle">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="logo-text-wrap">
+                <div class="logo-name" style="color: #fff">
+                  Strong Hand of Jehovah
+                </div>
+                <div class="logo-sub">Prophetic Ministry</div>
+              </div>
+            </div>
+            <p>
+              A prophetic community burning with purpose — declaring the word,
+              demonstrating the power, discipling a generation of
+              world-changers.
+            </p>
+            <span class="ft-motto">Through Faith and Belief</span>
+          </div>
+          <div class="ft-col">
+            <h5>Ministry</h5>
+            <ul>
+              <li><a href="index.html#faith">Faith</a></li>
+              <li><a href="index.html#prayer">Prayer</a></li>
+              <li><a href="index.html#healing">Healing</a></li>
+              <li><a href="testimonies.html">Testimonies</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Pages</h5>
+            <ul>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="give.html">Give / Partner</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="index.html#contact">Contact Us</a></li>
+              <li>
+                <a href="https://wa.me/2349019733420" target="_blank"
+                  >WhatsApp</a
+                >
+              </li>
+              <li><a href="#" target="_blank">YouTube</a></li>
+              <li><a href="#" target="_blank">Facebook</a></li>
+              <li><a href="#" target="_blank">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-btm">
+          <p>
+            &copy; 2025 Strong Hand of Jehovah Prophetic Ministry &middot;
+            <em>Through Faith and Belief</em>
+          </p>
+          <div class="socials">
+            <a href="#" target="_blank" aria-label="YouTube"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+            ></a>
+            <a href="#" target="_blank" aria-label="Facebook"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a
+              href="https://wa.me/2349019733420"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /page-top -->
+
+    <!-- PAYSTACK MODAL -->
+    <div class="ps-overlay" id="psOverlay" onclick="overlayClick(event)">
+      <div class="ps-box">
+        <button class="ps-close" onclick="closeModal()">&#x2715;</button>
+        <h3 id="psTitle">Give</h3>
+        <p class="ps-type" id="psType">
+          Strong Hand of Jehovah Prophetic Ministry
+        </p>
+        <div class="ps-amt-disp"><span id="psAmt">₦0</span></div>
+        <div class="ps-field">
+          <label>Full Name</label
+          ><input type="text" id="psName" placeholder="Your full name" />
+        </div>
+        <div class="ps-field">
+          <label>Email Address</label
+          ><input type="email" id="psEmail" placeholder="your@email.com" />
+        </div>
+        <button class="ps-pay" onclick="pay()">Proceed to Pay Securely</button>
+        <p class="ps-note">
+          Payments processed securely by Paystack.<br />Your information is safe
+          and encrypted.
+        </p>
+        <div class="ps-secure">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+            />
+          </svg>
+          Secured by Paystack
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const PK = "pk_live_e961705d36c07a1334a5f9ff16fad3705b3dd601";
+      let currentAmt = 0,
+        currentType = "";
+
+      /* SCROLL PROGRESS */
+      (function () {
+        var bar = document.getElementById("scrollProg");
+        window.addEventListener(
+          "scroll",
+          function () {
+            var max =
+              document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (window.scrollY / max) * 100 + "%";
+          },
+          { passive: true },
+        );
+      })();
+
+      /* NAV SHADOW */
+      (function () {
+        var nav = document.getElementById("mainNav");
+        window.addEventListener(
+          "scroll",
+          function () {
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+          },
+          { passive: true },
+        );
+      })();
+
+      /* SIDEBAR */
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      var backdrop = document.getElementById("backdrop");
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      /* SCROLL REVEAL */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        document
+          .querySelectorAll(".reveal,.reveal-l,.reveal-r")
+          .forEach(function (el) {
+            io.observe(el);
+          });
+      })();
+
+      /* PROGRESS BAR */
+      new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting)
+            document.getElementById("pFill").style.width = "38%";
+        },
+        { threshold: 0.5 },
+      ).observe(document.getElementById("pFill"));
+
+      /* VIDEO PLACEHOLDER HIDE */
+      document
+        .getElementById("heroVid")
+        .addEventListener("loadeddata", function () {
+          document.getElementById("heroPh").style.display = "none";
+        });
+      document
+        .getElementById("buildVid")
+        .addEventListener("loadeddata", function () {
+          document.getElementById("buildPh").style.display = "none";
+        });
+
+      /* PILLS */
+      function setAmt(btn, prefix, amount) {
+        btn
+          .closest(".give-card")
+          .querySelectorAll(".pill")
+          .forEach(function (p) {
+            p.classList.remove("active");
+          });
+        btn.classList.add("active");
+        var el = document.getElementById(prefix + "-amt");
+        if (el) el.value = amount > 0 ? amount : "";
+      }
+
+      /* MODAL OPEN */
+      function openModal(type, prefix) {
+        var el = document.getElementById(prefix + "-amt");
+        var amt = el ? parseFloat(el.value) : 0;
+        if (!amt || amt < 100) {
+          alert("Please enter a valid amount (minimum ₦100).");
+          return;
+        }
+        currentAmt = amt;
+        currentType = type;
+        document.getElementById("psTitle").textContent = type;
+        document.getElementById("psAmt").textContent =
+          "₦" + amt.toLocaleString("en-NG");
+        document.getElementById("psOverlay").classList.add("open");
+        setTimeout(function () {
+          document.getElementById("psName").focus();
+        }, 100);
+      }
+      function closeModal() {
+        document.getElementById("psOverlay").classList.remove("open");
+      }
+      function overlayClick(e) {
+        if (e.target.id === "psOverlay") closeModal();
+      }
+
+      /* PAYSTACK PAY */
+      function pay() {
+        var name = document.getElementById("psName").value.trim();
+        var email = document.getElementById("psEmail").value.trim();
+        if (!name) {
+          alert("Please enter your name.");
+          return;
+        }
+        if (!email || !email.includes("@")) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+        var handler = PaystackPop.setup({
+          key: PK,
+          email: email,
+          amount: Math.round(currentAmt * 100),
+          currency: "NGN",
+          ref: "SHJ-" + Date.now(),
+          metadata: {
+            custom_fields: [
+              {
+                display_name: "Giver Name",
+                variable_name: "giver_name",
+                value: name,
+              },
+              {
+                display_name: "Offering Type",
+                variable_name: "offering_type",
+                value: currentType,
+              },
+            ],
+          },
+          callback: function () {
+            closeModal();
+            showSuccess(name, currentType, currentAmt);
+          },
+          onClose: function () {},
+        });
+        handler.openIframe();
+      }
+
+      /* SUCCESS SCREEN */
+      function showSuccess(name, type, amt) {
+        var d = document.createElement("div");
+        d.style.cssText =
+          "position:fixed;inset:0;background:rgba(10,28,46,.92);z-index:99999;display:flex;align-items:center;justify-content:center;";
+        d.innerHTML =
+          '<div style="background:#fff;max-width:420px;width:92%;padding:3.5rem 2.5rem;text-align:center;">' +
+          '<div style="width:60px;height:60px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.4rem;">' +
+          '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+          "<h3 style=\"font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#0a1c2e;margin-bottom:6px;\">Thank You, " +
+          name +
+          "!</h3>" +
+          "<p style=\"font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c8a84b;margin-bottom:1rem;\">" +
+          type +
+          "</p>" +
+          "<p style=\"font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;font-weight:300;color:#666;line-height:1.7;margin-bottom:1.8rem;\">" +
+          'Your offering of <strong style="font-style:normal;color:#0a1c2e">₦' +
+          amt.toLocaleString("en-NG") +
+          "</strong> has been received.<br>Heaven is taking record of your faithfulness.</p>" +
+          "<button onclick=\"this.closest('div[style]').remove()\" style=\"background:#0a1c2e;color:#fff;border:2px solid #0a1c2e;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:13px 32px;cursor:pointer;\">Close</button>" +
+          "</div>";
+        document.body.appendChild(d);
+      }
+
+      /* COPY ACCOUNT */
+      function copyAcct() {
+        navigator.clipboard.writeText("9019733420").then(function () {
+          var b = document.getElementById("copyBtn");
+          b.textContent = "Copied!";
+          b.classList.add("done");
+          setTimeout(function () {
+            b.textContent = "Copy Number";
+            b.classList.remove("done");
+          }, 2500);
+        });
+      }
+    </script>
+  </body>
+</html>

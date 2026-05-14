@@ -1,0 +1,3702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Watch Live | Strong Hand of Jehovah Prophetic Ministry</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0a1c2e;
+        --navy2: #0d2540;
+        --gold: #c8a84b;
+        --gold2: #e8c96b;
+        --offwhite: #f7f4ef;
+        --gray: #f0ece4;
+        --text: #1a1a1a;
+        --muted: #666;
+        --topbar-h: 36px;
+        --nav-h: 76px;
+        --total-h: calc(var(--topbar-h) + var(--nav-h));
+        --f-display: "Playfair Display", Georgia, serif;
+        --f-serif: "Cormorant Garamond", Georgia, serif;
+        --f-body: "DM Sans", sans-serif;
+        --yt: #ff0000;
+        --fb: #1877f2;
+        --tt: #010101;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: #fff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .scroll-prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--gold);
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--topbar-h);
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.35);
+      }
+      .topbar-left {
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .topbar-link {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+      .topbar-link:hover {
+        color: var(--gold);
+      }
+      .topbar-sep {
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.7rem;
+      }
+
+      nav#mainNav {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 2px solid var(--gold);
+        transition: box-shadow 0.3s;
+      }
+      nav#mainNav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .logo-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: stretch;
+        height: var(--nav-h);
+        margin-left: auto;
+        margin-right: 1.2rem;
+      }
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+        padding: 0 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        cursor: pointer;
+      }
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-item:hover > .nav-link {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .nav-link svg {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.5;
+        transition: transform 0.2s;
+      }
+      .nav-item:hover > .nav-link svg {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.22s,
+          transform 0.22s,
+          visibility 0.22s;
+        z-index: 998;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dd-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 1.1rem;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--navy);
+        border-bottom: 1px solid #eee;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .dd-link:last-child {
+        border-bottom: none;
+      }
+      .dd-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.4rem;
+      }
+      .dd-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .btn-give-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.55rem 1.4rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .btn-give-nav:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1001;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        left: auto;
+        width: min(320px, 88vw);
+        height: 100dvh;
+        background: #fff;
+        z-index: 1002;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: right 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 40px rgba(0, 0, 0, 0.25);
+      }
+      .sidebar.open {
+        right: 0;
+      }
+      .sb-header {
+        background: var(--navy);
+        padding: 1.2rem 1.2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--gold);
+        flex-shrink: 0;
+      }
+      .sb-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sb-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy2);
+        flex-shrink: 0;
+      }
+      .sb-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .sb-name {
+        font-family: var(--f-display);
+        font-size: 0.72rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .sb-sub {
+        font-family: var(--f-serif);
+        font-size: 0.6rem;
+        color: var(--gold);
+        font-style: italic;
+      }
+      .sb-close {
+        background: none;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-close:hover {
+        background: rgba(200, 168, 75, 0.12);
+      }
+      .sb-give-strip {
+        display: block;
+        background: var(--gold);
+        color: var(--navy);
+        text-align: center;
+        padding: 0.75rem;
+        font-family: var(--f-display);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-give-strip:hover {
+        background: var(--gold2);
+      }
+      .sb-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .sb-section {
+        border-bottom: 1px solid #eee;
+      }
+      .sb-section-title {
+        padding: 0.7rem 1.2rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--offwhite);
+        border-bottom: 1px solid #e8e0d0;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.82rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--navy);
+        border-bottom: 1px solid #f0f0f0;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .sb-link:last-child {
+        border-bottom: none;
+      }
+      .sb-link:hover,
+      .sb-link.active {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.7rem;
+      }
+      .sb-link-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+
+      .page-top {
+        padding-top: var(--total-h);
+      }
+      .max-w {
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 168, 75, 0.22),
+          transparent
+        );
+      }
+      .eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .sh {
+        font-family: var(--f-display);
+        font-size: clamp(1.9rem, 3vw, 2.9rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.6rem;
+      }
+      .sh-white {
+        color: #fff;
+      }
+      .body-p {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-l {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-l.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-r {
+        opacity: 0;
+        transform: translateX(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-r.show {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.36s;
+      }
+      .d4 {
+        transition-delay: 0.5s;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        background: var(--navy);
+        overflow: hidden;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+      }
+      .hero-slash {
+        position: absolute;
+        top: -10%;
+        right: 25%;
+        width: 2px;
+        height: 130%;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(200, 168, 75, 0.15) 30%,
+          rgba(200, 168, 75, 0.3) 50%,
+          rgba(200, 168, 75, 0.15) 70%,
+          transparent
+        );
+        transform: rotate(-8deg);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-slash2 {
+        position: absolute;
+        top: -10%;
+        right: 28%;
+        width: 1px;
+        height: 130%;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(200, 168, 75, 0.07) 40%,
+          rgba(200, 168, 75, 0.12) 60%,
+          transparent
+        );
+        transform: rotate(-8deg);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-ticker {
+        position: relative;
+        z-index: 2;
+        background: rgba(200, 168, 75, 0.08);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.2);
+        padding: 0.55rem 4rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        overflow: hidden;
+      }
+      .ticker-label {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        white-space: nowrap;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .ticker-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ef4444;
+        animation: blink 1.1s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      .ticker-scroll {
+        overflow: hidden;
+        flex: 1;
+      }
+      .ticker-text {
+        font-family: var(--f-serif);
+        font-size: 0.8rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.45);
+        white-space: nowrap;
+        animation: tickerMove 18s linear infinite;
+      }
+      @keyframes tickerMove {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .hero-body {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+      .hero-left {
+        padding: 5rem 4rem 5rem 5rem;
+        position: relative;
+      }
+      .hero-ghost {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        font-family: var(--f-display);
+        font-size: 11rem;
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.04);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -0.04em;
+      }
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.8rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .hero-kicker::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .hero-kicker em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .hero-h1 {
+        font-family: var(--f-display);
+        font-size: clamp(3rem, 5.5vw, 5.5rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+      }
+      .hero-h1 .line-gold {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .hero-h1 .line-stroke {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        color: transparent;
+        display: block;
+      }
+      .hero-sub {
+        font-family: var(--f-serif);
+        font-size: 1.1rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.7;
+        font-weight: 300;
+        max-width: 380px;
+        margin-bottom: 3rem;
+        border-left: 2px solid rgba(200, 168, 75, 0.3);
+        padding-left: 1.2rem;
+      }
+      .platform-row {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .plat-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 0.75rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition: all 0.25s;
+        position: relative;
+        overflow: hidden;
+      }
+      .plat-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: currentColor;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .plat-btn:hover::before {
+        opacity: 0.12;
+      }
+      .plat-btn svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .plat-btn span {
+        position: relative;
+        z-index: 1;
+      }
+      .plat-btn.yt {
+        border: 1.5px solid rgba(255, 0, 0, 0.5);
+        color: #ff6b6b;
+      }
+      .plat-btn.yt:hover {
+        border-color: #ff0000;
+        color: #fff;
+        background: rgba(255, 0, 0, 0.15);
+      }
+      .plat-btn.fb {
+        border: 1.5px solid rgba(24, 119, 242, 0.5);
+        color: #6ba3ff;
+      }
+      .plat-btn.fb:hover {
+        border-color: #1877f2;
+        color: #fff;
+        background: rgba(24, 119, 242, 0.15);
+      }
+      .plat-btn.tt {
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .plat-btn.tt:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .hero-right {
+        padding: 4rem 5rem 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .player-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #000;
+        border: 1px solid rgba(200, 168, 75, 0.15);
+        overflow: hidden;
+      }
+      .player-wrap::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 28px;
+        height: 28px;
+        border-top: 2px solid var(--gold);
+        border-left: 2px solid var(--gold);
+        z-index: 3;
+        pointer-events: none;
+      }
+      .player-wrap::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 28px;
+        height: 28px;
+        border-bottom: 2px solid var(--gold);
+        border-right: 2px solid var(--gold);
+        z-index: 3;
+        pointer-events: none;
+      }
+      .player-wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── HERO VIDEO PLAYER (replaces offline state) ── */
+      .player-offline {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: #000;
+        padding: 0;
+        overflow: hidden;
+      }
+      .player-offline video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .player-offline-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 28, 46, 0.88) 0%,
+          transparent 55%
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
+      .player-offline-info {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        right: 1.2rem;
+        z-index: 3;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .player-offline-label {
+        font-family: var(--f-body);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.35rem;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .player-offline-label .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ef4444;
+        display: inline-block;
+        animation: blink 1.1s ease-in-out infinite;
+      }
+      .player-offline-next {
+        font-family: var(--f-display);
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .player-offline-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.5rem 1rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .player-offline-cta:hover {
+        background: var(--gold2);
+      }
+
+      .next-badge {
+        background: rgba(200, 168, 75, 0.1);
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        padding: 0.4rem 0.9rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .platform-tabs {
+        display: flex;
+        gap: 0;
+        border: 1px solid rgba(200, 168, 75, 0.12);
+      }
+      .ptab {
+        flex: 1;
+        padding: 0.65rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        border-right: 1px solid rgba(200, 168, 75, 0.1);
+        cursor: pointer;
+        transition: all 0.2s;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .ptab:last-child {
+        border-right: none;
+      }
+      .ptab:hover,
+      .ptab.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .ptab.active-yt {
+        background: rgba(255, 0, 0, 0.1);
+        color: #ff6b6b;
+      }
+      .ptab.active-fb {
+        background: rgba(24, 119, 242, 0.1);
+        color: #6ba3ff;
+      }
+      .ptab-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .live-prompt {
+        background: rgba(200, 168, 75, 0.08);
+        border: 1px solid rgba(200, 168, 75, 0.15);
+        padding: 0.9rem 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .live-prompt-text {
+        font-family: var(--f-serif);
+        font-size: 0.88rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.5;
+      }
+      .live-prompt-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.5rem 1rem;
+        background: #1877f2;
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+      .live-prompt-btn:hover {
+        background: #1465d0;
+      }
+      .live-prompt-btn svg {
+        width: 13px;
+        height: 13px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+
+      /* SCHEDULE */
+      .schedule-section {
+        background: var(--navy);
+        padding: 5rem;
+      }
+      .schedule-header {
+        max-width: 1240px;
+        margin: 0 auto 3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .schedule-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .sched-card {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 2rem 1.8rem;
+        border-top: 1px solid rgba(200, 168, 75, 0.1);
+        position: relative;
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          background 0.3s;
+      }
+      .sched-card.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .sched-card:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .sched-card.next-up {
+        border-top-color: var(--gold);
+        background: rgba(200, 168, 75, 0.07);
+      }
+      .sched-card.next-up::before {
+        content: "NEXT";
+        position: absolute;
+        top: 0.9rem;
+        right: 1rem;
+        font-family: var(--f-body);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+      }
+      .sched-day {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .sched-name {
+        font-family: var(--f-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.3rem;
+        line-height: 1.15;
+      }
+      .sched-time {
+        font-family: var(--f-serif);
+        font-size: 0.88rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        margin-bottom: 0.8rem;
+      }
+      .sched-platforms {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 1rem;
+      }
+      .sched-plat {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+      }
+      .sched-desc {
+        font-family: var(--f-body);
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.35);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+      .sched-remind {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 1rem;
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(200, 168, 75, 0.6);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.2);
+        padding-bottom: 1px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .sched-remind:hover {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+
+      /* PLATFORMS */
+      .platforms-section {
+        padding: 5rem;
+        background: var(--offwhite);
+      }
+      .platforms-grid {
+        max-width: 1240px;
+        margin: 3rem auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .plat-card {
+        background: #fff;
+        border: 1px solid #e5ddd0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+      .plat-card.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .plat-card:hover {
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.09);
+        transform: translateY(-6px) !important;
+      }
+      .plat-card-top {
+        padding: 2.5rem 2rem 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.2rem;
+        border-bottom: 1px solid #f0ece4;
+      }
+      .plat-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .plat-logo svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+      .plat-logo.yt {
+        background: var(--yt);
+      }
+      .plat-logo.fb {
+        background: var(--fb);
+      }
+      .plat-logo.tt {
+        background: var(--tt);
+      }
+      .plat-name {
+        font-family: var(--f-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.2rem;
+      }
+      .plat-handle {
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      .plat-card-body {
+        padding: 1.4rem 2rem;
+      }
+      .plat-desc {
+        font-family: var(--f-body);
+        font-size: 0.83rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 1.4rem;
+      }
+      .plat-features {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1.5rem;
+      }
+      .plat-feat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--f-body);
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 300;
+      }
+      .plat-feat::before {
+        content: "✦";
+        color: var(--gold);
+        font-size: 0.5rem;
+        flex-shrink: 0;
+      }
+      .plat-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .plat-cta.yt {
+        background: var(--yt);
+        color: #fff;
+      }
+      .plat-cta.yt:hover {
+        background: #cc0000;
+        transform: translateY(-2px);
+      }
+      .plat-cta.fb {
+        background: var(--fb);
+        color: #fff;
+      }
+      .plat-cta.fb:hover {
+        background: #1465d0;
+        transform: translateY(-2px);
+      }
+      .plat-cta.tt {
+        background: #010101;
+        color: #fff;
+      }
+      .plat-cta.tt:hover {
+        background: #333;
+        transform: translateY(-2px);
+      }
+      .plat-cta svg {
+        width: 16px;
+        height: 16px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+
+      /* SERMON ARCHIVE */
+      .archive-section {
+        padding: 5rem;
+        background: #fff;
+      }
+      .archive-header {
+        max-width: 1240px;
+        margin: 0 auto 3rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .filter-tabs {
+        display: flex;
+        gap: 0;
+        border: 1px solid #e5ddd0;
+        max-width: 1240px;
+        margin: 0 auto 2.5rem;
+      }
+      .filter-tab {
+        padding: 0.7rem 1.3rem;
+        font-family: var(--f-body);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: #fff;
+        border: none;
+        border-right: 1px solid #e5ddd0;
+        cursor: pointer;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .filter-tab:last-child {
+        border-right: none;
+      }
+      .filter-tab:hover,
+      .filter-tab.active {
+        background: var(--navy);
+        color: #fff;
+      }
+      .sermons-grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .sermon-card {
+        background: #fff;
+        border: 1px solid #e5ddd0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+      .sermon-card.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .sermon-card:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+        transform: translateY(-5px) !important;
+      }
+      .sermon-video-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #000;
+        overflow: hidden;
+      }
+      .sermon-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .vid-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(5, 12, 22, 0.4);
+        cursor: pointer;
+        transition: background 0.25s;
+      }
+      .vid-overlay:hover {
+        background: rgba(5, 12, 22, 0.2);
+      }
+      .vid-overlay.hidden {
+        display: none;
+      }
+      .play-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(200, 168, 75, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.25s,
+          background 0.25s;
+      }
+      .sermon-card:hover .play-circle {
+        transform: scale(1.12);
+        background: var(--gold);
+      }
+      .play-circle svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--navy);
+        margin-left: 3px;
+      }
+      .thumb-plat {
+        position: absolute;
+        top: 0.7rem;
+        left: 0.7rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0.25rem 0.6rem;
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        backdrop-filter: blur(4px);
+      }
+      .thumb-plat-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .cap-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 28, 46, 0.97),
+          rgba(7, 20, 34, 0.97)
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        z-index: 5;
+        animation: fadeInCap 0.4s ease;
+      }
+      @keyframes fadeInCap {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .cap-overlay.hidden {
+        display: none;
+      }
+      .cap-title {
+        font-family: var(--f-display);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        line-height: 1.2;
+      }
+      .cap-sub {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.45);
+        text-align: center;
+        max-width: 220px;
+        line-height: 1.5;
+      }
+      .cap-btns {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .cap-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 0.55rem 1rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: all 0.2s;
+      }
+      .cap-btn.fb-btn {
+        background: #1877f2;
+        color: #fff;
+      }
+      .cap-btn.fb-btn:hover {
+        background: #1465d0;
+      }
+      .cap-btn.yt-btn {
+        background: rgba(255, 0, 0, 0.8);
+        color: #fff;
+      }
+      .cap-btn.yt-btn:hover {
+        background: #ff0000;
+      }
+      .cap-btn svg {
+        width: 13px;
+        height: 13px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+      .vid-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: var(--gold);
+        width: 0%;
+        transition: width 0.5s linear;
+        z-index: 4;
+      }
+      .vid-timer {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.7rem;
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.75);
+        color: #fff;
+        padding: 0.15rem 0.45rem;
+        z-index: 4;
+        display: none;
+      }
+      .vid-timer.visible {
+        display: block;
+      }
+      .sermon-body {
+        padding: 1.2rem 1.4rem 1.6rem;
+      }
+      .sermon-cat {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+      }
+      .sermon-title {
+        font-family: var(--f-display);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.35rem;
+        line-height: 1.25;
+      }
+      .sermon-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        color: rgba(0, 0, 0, 0.35);
+        font-weight: 400;
+        padding-top: 0.7rem;
+        border-top: 1px solid #f0ece4;
+        margin-top: 0.7rem;
+      }
+      .sermon-meta svg {
+        width: 11px;
+        height: 11px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+      .sermon-meta span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .load-more-wrap {
+        max-width: 1240px;
+        margin: 2.5rem auto 0;
+        text-align: center;
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--gold2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(200, 168, 75, 0.35);
+      }
+
+      /* NOTIFY */
+      .notify-strip {
+        background: var(--navy);
+        padding: 4rem 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .notify-strip::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 80% at 50% 50%,
+          rgba(200, 168, 75, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .notify-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .notify-form {
+        display: flex;
+        gap: 0;
+      }
+      .notify-input {
+        flex: 1;
+        padding: 0.9rem 1.2rem;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-right: none;
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.88rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .notify-input:focus {
+        border-color: var(--gold);
+      }
+      .notify-input::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .notify-btn {
+        padding: 0.9rem 1.6rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+      .notify-btn:hover {
+        background: var(--gold2);
+      }
+      .notify-platforms {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+      }
+      .notify-plat {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.85rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.6);
+        font-family: var(--f-body);
+        font-size: 0.78rem;
+        transition: all 0.2s;
+      }
+      .notify-plat:hover {
+        border-color: rgba(200, 168, 75, 0.35);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .notify-plat-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .notify-plat-icon svg {
+        width: 15px;
+        height: 15px;
+        fill: #fff;
+      }
+      .notify-plat-icon.yt {
+        background: var(--yt);
+      }
+      .notify-plat-icon.fb {
+        background: var(--fb);
+      }
+      .notify-plat-icon.tt {
+        background: var(--tt);
+      }
+      .notify-plat-icon.wa {
+        background: #25d366;
+      }
+      .notify-plat-arrow {
+        margin-left: auto;
+        font-size: 0.8rem;
+        color: rgba(200, 168, 75, 0.5);
+        transition: transform 0.2s;
+      }
+      .notify-plat:hover .notify-plat-arrow {
+        transform: translateX(5px);
+        color: var(--gold);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--navy);
+        padding: 4rem 5rem 2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .ft-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 1.8rem;
+      }
+      .ft-logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .ft-logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .ft-brand-p {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.7;
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .ft-motto {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 0.7rem;
+      }
+      .ft-col h5 {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .ft-col li {
+        margin-bottom: 0.5rem;
+      }
+      .ft-col a {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        transition:
+          color 0.2s,
+          padding-left 0.15s;
+        display: inline-block;
+      }
+      .ft-col a:hover {
+        color: #fff;
+        padding-left: 5px;
+      }
+      .ft-btm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .ft-btm p {
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.35);
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .socials svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1100px) {
+        .schedule-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .sermons-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .hero-body {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          padding: 2rem 5rem 4rem;
+        }
+        .notify-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .platforms-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-menu,
+        .btn-give-nav {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav#mainNav,
+        .topbar {
+          padding: 0 1rem;
+        }
+        .topbar-left {
+          display: none;
+        }
+        .hero,
+        .schedule-section,
+        .platforms-section,
+        .archive-section,
+        .notify-strip,
+        footer {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+        .hero-left {
+          padding: 3rem 1.2rem;
+        }
+        .hero-right {
+          padding: 2rem 1.2rem 3rem;
+        }
+        .hero-ticker {
+          padding: 0.55rem 1.2rem;
+        }
+        .schedule-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .schedule-grid,
+        .sermons-grid,
+        .platforms-grid {
+          grid-template-columns: 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr;
+        }
+        .notify-form {
+          flex-direction: column;
+        }
+        .notify-input {
+          border-right: 1px solid rgba(255, 255, 255, 0.14);
+          border-bottom: none;
+        }
+        .cap-btns {
+          flex-direction: column;
+          align-items: center;
+        }
+        .platform-row {
+          gap: 0.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-prog" id="scrollProg"></div>
+    <div class="sidebar-backdrop" id="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-header">
+        <div class="sb-brand">
+          <div class="sb-circle">
+            <img
+              src="images/prophetlogo.jpeg"
+              alt="SHJ"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div>
+            <div class="sb-name">Strong Hand of Jehovah</div>
+            <div class="sb-sub">Prophetic Ministry</div>
+          </div>
+        </div>
+        <button class="sb-close" onclick="closeSidebar()">&#x2715;</button>
+      </div>
+      <a class="sb-give-strip" href="give.html" onclick="closeSidebar()"
+        >&#9829; Give / Partner With Us</a
+      >
+      <div class="sb-body">
+        <div class="sb-section">
+          <div class="sb-section-title">Help Me With</div>
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Faith</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Prayer</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Healing</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Counseling</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Explore</div>
+          <a class="sb-link" href="index.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Home</a
+          >
+          <a class="sb-link" href="testimonies.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Testimonies</a
+          >
+          <a class="sb-link" href="services.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Services</a
+          >
+          <a class="sb-link active" href="watch.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Watch Live</a
+          >
+          <a class="sb-link" href="shop.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Shop</a
+          >
+          <a class="sb-link" href="index.html#about" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>About Us</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Watch On</div>
+          <a
+            class="sb-link"
+            href="https://www.youtube.com/@thestronghandofjehovah"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #ff0000"></span
+            >YouTube</a
+          >
+          <a
+            class="sb-link"
+            href="https://www.facebook.com/profile.php?id=100063787395975"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #1877f2"></span
+            >Facebook</a
+          >
+          <a
+            class="sb-link"
+            href="https://www.tiktok.com/@prophet_joshua1"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #010101"></span
+            >TikTok</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span class="topbar-left">Through Faith and Belief</span>
+      <div class="topbar-right">
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+          >Prayer Request</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420"
+          target="_blank"
+          >WhatsApp: 09019733420</a
+        >
+        <span class="topbar-sep">|</span>
+        <a class="topbar-link" href="services.html">All Services</a>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="mainNav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <div class="logo-circle">
+          <img
+            src="images/prophetlogo.jpeg"
+            alt="SHJ Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <div>
+          <div class="logo-name">Strong Hand of Jehovah</div>
+          <div class="logo-sub">Prophetic Ministry</div>
+        </div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#help"
+            >Help Me With
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+              target="_blank"
+              ><span class="dd-dot"></span>Faith</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+              target="_blank"
+              ><span class="dd-dot"></span>Prayer</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+              target="_blank"
+              ><span class="dd-dot"></span>Healing</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+              target="_blank"
+              ><span class="dd-dot"></span>Counseling</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonies.html">Testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html"
+            >Services
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="services.html"
+              ><span class="dd-dot"></span>All Services</a
+            >
+            <a class="dd-link" href="services.html#sunday"
+              ><span class="dd-dot"></span>Sunday Worship</a
+            >
+            <a class="dd-link" href="services.html#wednesday"
+              ><span class="dd-dot"></span>Midweek Prayer</a
+            >
+            <a class="dd-link" href="services.html#friday"
+              ><span class="dd-dot"></span>Prophetic Night</a
+            >
+            <a class="dd-link" href="services.html#saturday"
+              ><span class="dd-dot"></span>Youth Service</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="watch.html"
+            >Watch
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://www.youtube.com/@thestronghandofjehovah"
+              target="_blank"
+              ><span class="dd-dot" style="background: #ff0000"></span
+              >YouTube</a
+            >
+            <a
+              class="dd-link"
+              href="https://www.facebook.com/profile.php?id=100063787395975"
+              target="_blank"
+              ><span class="dd-dot" style="background: #1877f2"></span
+              >Facebook</a
+            >
+            <a
+              class="dd-link"
+              href="https://www.tiktok.com/@prophet_joshua1"
+              target="_blank"
+              ><span class="dd-dot" style="background: #010101"></span>TikTok</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#contact">Contact</a>
+        </li>
+      </ul>
+      <a class="btn-give-nav" href="give.html">Give Now</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- PAGE -->
+    <div class="page-top">
+      <!-- HERO -->
+      <section class="hero" aria-label="Watch Live">
+        <div class="hero-slash"></div>
+        <div class="hero-slash2"></div>
+
+        <div class="hero-ticker">
+          <span class="ticker-label"
+            ><span class="ticker-dot"></span>Broadcasting Live</span
+          >
+          <div class="ticker-scroll">
+            <span class="ticker-text">
+              Join us every Sunday 8AM &amp; 10:30AM · Wednesday Prayer 6PM ·
+              Friday Prophetic Night 7PM · Saturday Youth 4PM
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Join us every Sunday 8AM &amp; 10:30AM · Wednesday Prayer 6PM ·
+              Friday Prophetic Night 7PM · Saturday Youth 4PM
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-body">
+          <!-- LEFT -->
+          <div class="hero-left">
+            <div class="hero-ghost">LIVE</div>
+            <div class="hero-kicker">
+              Strong Hand of Jehovah · <em>On Air Now</em>
+            </div>
+            <h1 class="hero-h1">
+              Watch<br />
+              <span class="line-gold">SHJ</span><br />
+              <span class="line-stroke">Anywhere</span>
+            </h1>
+            <p class="hero-sub">
+              Every service, every prophetic word, every miracle — streamed live
+              and on demand. Wherever you are, God meets you there.
+            </p>
+            <div class="platform-row">
+              <a
+                class="plat-btn yt"
+                href="https://www.youtube.com/@thestronghandofjehovah"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                  />
+                  <polygon points="10 15 15.19 12 10 9 10 15" />
+                </svg>
+                <span>YouTube</span>
+              </a>
+              <a
+                class="plat-btn fb"
+                href="https://www.facebook.com/profile.php?id=100063787395975"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+                <span>Facebook</span>
+              </a>
+              <a
+                class="plat-btn tt"
+                href="https://www.tiktok.com/@prophet_joshua1"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.15a8.16 8.16 0 0 0 4.77 1.52V7.24a4.85 4.85 0 0 1-1.01-.55z"
+                  />
+                </svg>
+                <span>TikTok</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT — player -->
+          <div class="hero-right">
+            <div class="player-wrap" id="playerFrame">
+              <iframe
+                id="liveIframe"
+                src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID&autoplay=1&mute=1"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                title="SHJ Live Stream"
+                style="display: none"
+              ></iframe>
+
+              <!-- ── OFFLINE STATE: hero showreel video ── -->
+              <div class="player-offline" id="playerOffline">
+                <video
+                  id="heroShowreel"
+                  src="videos/prophetpraying.mp4"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                ></video>
+                <div class="player-offline-overlay"></div>
+                <div class="player-offline-info">
+                  <div>
+                    <div class="player-offline-label">
+                      <span class="dot"></span>
+                      Upcoming Service
+                    </div>
+                    <div class="player-offline-next" id="nextServiceBadge">
+                      Loading…
+                    </div>
+                  </div>
+                  <a
+                    class="player-offline-cta"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    >Watch Live →</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- platform tabs -->
+            <div class="platform-tabs">
+              <button
+                class="ptab active active-yt"
+                onclick="switchPlatform('yt', this)"
+              >
+                <span class="ptab-dot" style="background: #ff0000"></span
+                >YouTube
+              </button>
+              <button class="ptab" onclick="switchPlatform('fb', this)">
+                <span class="ptab-dot" style="background: #1877f2"></span
+                >Facebook
+              </button>
+              <button class="ptab" onclick="switchPlatform('tt', this)">
+                <span
+                  class="ptab-dot"
+                  style="
+                    background: #555;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                  "
+                ></span
+                >TikTok
+              </button>
+            </div>
+
+            <div class="live-prompt">
+              <p class="live-prompt-text">
+                Prophet Odolo Joshua goes live most often on Facebook — follow
+                &amp; turn on notifications.
+              </p>
+              <a
+                class="live-prompt-btn"
+                href="https://www.facebook.com/profile.php?id=100063787395975"
+                target="_blank"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+                Follow Live
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section class="schedule-section" id="schedule">
+        <div class="schedule-header reveal">
+          <div>
+            <span class="eyebrow" style="color: rgba(200, 168, 75, 0.7)"
+              >We Stream Every Week</span
+            >
+            <h2 class="sh sh-white" style="margin-bottom: 0">
+              Broadcast Schedule
+            </h2>
+          </div>
+          <p
+            style="
+              font-family: var(--f-serif);
+              font-size: 0.95rem;
+              font-style: italic;
+              color: rgba(255, 255, 255, 0.35);
+              max-width: 280px;
+              line-height: 1.7;
+              font-weight: 300;
+              text-align: right;
+            "
+          >
+            Streamed live on YouTube, Facebook, and TikTok simultaneously.
+          </p>
+        </div>
+        <div class="schedule-grid">
+          <div class="sched-card next-up">
+            <div class="sched-day">Sunday</div>
+            <div class="sched-name">Praise &amp; Worship</div>
+            <div class="sched-time">8:00 AM &amp; 10:30 AM</div>
+            <div class="sched-platforms">
+              <span class="sched-plat" style="background: #ff0000"></span>
+              <span class="sched-plat" style="background: #1877f2"></span>
+              <span class="sched-plat" style="background: #555"></span>
+            </div>
+            <p class="sched-desc">
+              Spirit-filled worship, anointed preaching, and community
+              fellowship. The main gathering of the SHJ family.
+            </p>
+            <a
+              href="https://wa.me/2349019733420?text=Remind%20me%20about%20Sunday%20service"
+              target="_blank"
+              class="sched-remind"
+              >Set Reminder →</a
+            >
+          </div>
+          <div class="sched-card">
+            <div class="sched-day">Wednesday</div>
+            <div class="sched-name">Midweek Prayer</div>
+            <div class="sched-time">6:00 PM</div>
+            <div class="sched-platforms">
+              <span class="sched-plat" style="background: #ff0000"></span>
+              <span class="sched-plat" style="background: #1877f2"></span>
+            </div>
+            <p class="sched-desc">
+              Corporate intercession and a mid-week prophetic word to keep you
+              rooted in victory all week long.
+            </p>
+            <a
+              href="https://wa.me/2349019733420?text=Remind%20me%20about%20Midweek%20Prayer"
+              target="_blank"
+              class="sched-remind"
+              >Set Reminder →</a
+            >
+          </div>
+          <div class="sched-card">
+            <div class="sched-day">Friday</div>
+            <div class="sched-name">Prophetic Night</div>
+            <div class="sched-time">7:00 PM — Late</div>
+            <div class="sched-platforms">
+              <span class="sched-plat" style="background: #ff0000"></span>
+              <span class="sched-plat" style="background: #1877f2"></span>
+              <span class="sched-plat" style="background: #555"></span>
+            </div>
+            <p class="sched-desc">
+              An open prophetic gathering — fresh words, healings, signs, and
+              divine encounters. Unscripted and powerful.
+            </p>
+            <a
+              href="https://wa.me/2349019733420?text=Remind%20me%20about%20Prophetic%20Night"
+              target="_blank"
+              class="sched-remind"
+              >Set Reminder →</a
+            >
+          </div>
+          <div class="sched-card">
+            <div class="sched-day">Saturday</div>
+            <div class="sched-name">Youth Service</div>
+            <div class="sched-time">4:00 PM</div>
+            <div class="sched-platforms">
+              <span class="sched-plat" style="background: #ff0000"></span>
+              <span class="sched-plat" style="background: #555"></span>
+            </div>
+            <p class="sched-desc">
+              Energy, truth, and purpose for the next generation. Vibrant,
+              relevant, and rooted in God's word.
+            </p>
+            <a
+              href="https://wa.me/2349019733420?text=Remind%20me%20about%20Youth%20Service"
+              target="_blank"
+              class="sched-remind"
+              >Set Reminder →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- PLATFORMS -->
+      <section class="platforms-section" id="platforms">
+        <div class="max-w">
+          <div style="text-align: center; margin-bottom: 0.5rem">
+            <span class="eyebrow reveal">Choose Your Platform</span>
+            <h2 class="sh reveal d1">Watch Where You Are</h2>
+            <p
+              class="body-p reveal d2"
+              style="max-width: 520px; margin: 0 auto"
+            >
+              Subscribe, follow, and turn on notifications on all platforms so
+              you never miss a service, prophetic word, or miracle testimony.
+            </p>
+          </div>
+          <div class="platforms-grid" id="platGrid">
+            <div class="plat-card">
+              <div class="plat-card-top">
+                <div class="plat-logo yt">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                    />
+                    <polygon points="10 15 15.19 12 10 9 10 15" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="plat-name">YouTube</div>
+                  <div class="plat-handle">@thestronghandofjehovah</div>
+                </div>
+              </div>
+              <div class="plat-card-body">
+                <p class="plat-desc">
+                  Our primary broadcast platform. All services, sermon series,
+                  testimonies, and prophetic messages are archived here in full
+                  HD quality.
+                </p>
+                <div class="plat-features">
+                  <div class="plat-feat">
+                    Full HD live streams every service
+                  </div>
+                  <div class="plat-feat">
+                    Complete sermon archive — searchable
+                  </div>
+                  <div class="plat-feat">Prophetic Night replays available</div>
+                  <div class="plat-feat">Subtitles and chapter markers</div>
+                </div>
+                <a
+                  href="https://www.youtube.com/@thestronghandofjehovah"
+                  target="_blank"
+                  class="plat-cta yt"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                    />
+                    <polygon points="10 15 15.19 12 10 9 10 15" />
+                  </svg>
+                  Subscribe on YouTube
+                </a>
+              </div>
+            </div>
+            <div class="plat-card">
+              <div class="plat-card-top">
+                <div class="plat-logo fb">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="plat-name">Facebook</div>
+                  <div class="plat-handle">Strong Hand of Jehovah</div>
+                </div>
+              </div>
+              <div class="plat-card-body">
+                <p class="plat-desc">
+                  Where Prophet Odolo Joshua goes live the most. Connect with
+                  the SHJ community, leave prayer requests in the comments, and
+                  catch the most spontaneous prophetic moments.
+                </p>
+                <div class="plat-features">
+                  <div class="plat-feat">Most frequent live sessions here</div>
+                  <div class="plat-feat">
+                    Interactive live prayer in comments
+                  </div>
+                  <div class="plat-feat">
+                    Prophetic word clips and highlights
+                  </div>
+                  <div class="plat-feat">
+                    Community announcements and events
+                  </div>
+                </div>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063787395975"
+                  target="_blank"
+                  class="plat-cta fb"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    />
+                  </svg>
+                  Follow on Facebook
+                </a>
+              </div>
+            </div>
+            <div class="plat-card">
+              <div class="plat-card-top">
+                <div class="plat-logo tt">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.15a8.16 8.16 0 0 0 4.77 1.52V7.24a4.85 4.85 0 0 1-1.01-.55z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="plat-name">TikTok</div>
+                  <div class="plat-handle">@prophet_joshua1</div>
+                </div>
+              </div>
+              <div class="plat-card-body">
+                <p class="plat-desc">
+                  Short-form prophetic content, miracle testimonies, worship
+                  moments, and live ministry clips for a new generation reaching
+                  you where you scroll.
+                </p>
+                <div class="plat-features">
+                  <div class="plat-feat">Live service simulcasts</div>
+                  <div class="plat-feat">1–3 minute prophetic clips daily</div>
+                  <div class="plat-feat">Testimony highlights and miracles</div>
+                  <div class="plat-feat">Behind-the-scenes ministry life</div>
+                </div>
+                <a
+                  href="https://www.tiktok.com/@prophet_joshua1"
+                  target="_blank"
+                  class="plat-cta tt"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.15a8.16 8.16 0 0 0 4.77 1.52V7.24a4.85 4.85 0 0 1-1.01-.55z"
+                    />
+                  </svg>
+                  Follow on TikTok
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- PAST SERMONS -->
+      <section class="archive-section" id="sermons">
+        <div class="archive-header reveal">
+          <div>
+            <span class="eyebrow">On Demand</span>
+            <h2 class="sh" style="margin-bottom: 0">
+              Past Messages &amp; Sermons
+            </h2>
+          </div>
+          <p
+            style="
+              font-family: var(--f-serif);
+              font-size: 0.95rem;
+              font-style: italic;
+              color: var(--muted);
+              max-width: 300px;
+              line-height: 1.7;
+              font-weight: 300;
+              text-align: right;
+            "
+          >
+            Preview 2 minutes — then continue watching the full message on
+            Facebook or YouTube.
+          </p>
+        </div>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">
+            All Messages
+          </button>
+          <button class="filter-tab" data-filter="sunday">
+            Sunday Service
+          </button>
+          <button class="filter-tab" data-filter="prophetic">
+            Prophetic Night
+          </button>
+          <button class="filter-tab" data-filter="teaching">
+            Teaching Series
+          </button>
+          <button class="filter-tab" data-filter="healing">
+            Healing Service
+          </button>
+          <button class="filter-tab" data-filter="youth">Youth</button>
+        </div>
+
+        <div class="sermons-grid" id="sermonsGrid">
+          <!-- Sermon 1 — Sunday Service -->
+          <article class="sermon-card" data-cat="sunday">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid1"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/prophetaddressing.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog1"></div>
+              <div class="vid-timer" id="timer1"></div>
+              <div class="vid-overlay" id="overlay1" onclick="startSermon(1)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="background: #ff0000"
+                  ></span
+                  >YouTube
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap1">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Sunday Service</div>
+              <h3 class="sermon-title">The Word That Transforms Nations</h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Sunday Service</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Sermon 2 — Prophetic Night -->
+          <article class="sermon-card" data-cat="prophetic">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid2"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/prophethero.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog2"></div>
+              <div class="vid-timer" id="timer2"></div>
+              <div class="vid-overlay" id="overlay2" onclick="startSermon(2)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="background: #1877f2"
+                  ></span
+                  >Facebook
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap2">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Prophetic Night</div>
+              <h3 class="sermon-title">Open Heavens — A Prophetic Encounter</h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Prophetic Night</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Sermon 3 — Teaching Series -->
+          <article class="sermon-card" data-cat="teaching">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid3"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/prophetknelling.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog3"></div>
+              <div class="vid-timer" id="timer3"></div>
+              <div class="vid-overlay" id="overlay3" onclick="startSermon(3)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="background: #1877f2"
+                  ></span
+                  >Facebook
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap3">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Teaching Series</div>
+              <h3 class="sermon-title">
+                Humility Before the Throne — A Study in Prayer
+              </h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Teaching Series</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Sermon 4 — Healing Service -->
+          <article class="sermon-card" data-cat="healing">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid4"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/prophetpraying.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog4"></div>
+              <div class="vid-timer" id="timer4"></div>
+              <div class="vid-overlay" id="overlay4" onclick="startSermon(4)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="background: #ff0000"
+                  ></span
+                  >YouTube
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap4">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Healing Service</div>
+              <h3 class="sermon-title">
+                By His Stripes — Divine Healing is Yours
+              </h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Healing Service</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Sermon 5 — Youth -->
+          <article class="sermon-card" data-cat="youth">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid5"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/building.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog5"></div>
+              <div class="vid-timer" id="timer5"></div>
+              <div class="vid-overlay" id="overlay5" onclick="startSermon(5)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="
+                      background: #555;
+                      border: 1px solid rgba(255, 255, 255, 0.2);
+                    "
+                  ></span
+                  >TikTok
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap5">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Youth Service</div>
+              <h3 class="sermon-title">
+                Built for Purpose — Rise Up, Generation
+              </h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Youth Service</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Sermon 6 — Sunday Service -->
+          <article class="sermon-card" data-cat="sunday">
+            <div class="sermon-video-wrap">
+              <video
+                id="vid6"
+                preload="metadata"
+                data-fb="https://www.facebook.com/profile.php?id=100063787395975"
+                data-yt="https://www.youtube.com/@thestronghandofjehovah"
+              >
+                <source src="videos/prophetaddressing.mp4" type="video/mp4" />
+              </video>
+              <div class="vid-progress" id="prog6"></div>
+              <div class="vid-timer" id="timer6"></div>
+              <div class="vid-overlay" id="overlay6" onclick="startSermon(6)">
+                <div class="thumb-plat">
+                  <span
+                    class="thumb-plat-dot"
+                    style="background: #ff0000"
+                  ></span
+                  >YouTube
+                </div>
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+              <div class="cap-overlay hidden" id="cap6">
+                <div class="cap-title">That's your 2-minute preview</div>
+                <p class="cap-sub">
+                  Watch the full message on Facebook or YouTube
+                </p>
+                <div class="cap-btns">
+                  <a
+                    class="cap-btn fb-btn"
+                    href="https://www.facebook.com/profile.php?id=100063787395975"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      /></svg
+                    >Continue on Facebook</a
+                  >
+                  <a
+                    class="cap-btn yt-btn"
+                    href="https://www.youtube.com/@thestronghandofjehovah"
+                    target="_blank"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                      />
+                      <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                    >Continue on YouTube</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="sermon-body">
+              <div class="sermon-cat">Sunday Service</div>
+              <h3 class="sermon-title">
+                Fire on the Altar — Consecration &amp; Revival
+              </h3>
+              <div class="sermon-meta">
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" /></svg
+                  >Sunday Service</span
+                >
+                <span
+                  ><svg viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" /></svg
+                  >Prophet Odolo Joshua</span
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="load-more-wrap reveal">
+          <a
+            href="https://www.facebook.com/profile.php?id=100063787395975"
+            target="_blank"
+            class="btn-primary"
+            >View Full Archive on Facebook →</a
+          >
+          &nbsp;&nbsp;
+          <a
+            href="https://www.youtube.com/@thestronghandofjehovah"
+            target="_blank"
+            class="btn-primary"
+            style="background: var(--navy); color: #fff; margin-top: 0.5rem"
+            >YouTube Archive →</a
+          >
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- NOTIFY -->
+      <section class="notify-strip">
+        <div class="notify-inner">
+          <div class="reveal-l">
+            <span class="eyebrow" style="color: rgba(200, 168, 75, 0.7)"
+              >Never Miss a Service</span
+            >
+            <h2 class="sh sh-white" style="margin-bottom: 0.8rem">
+              Get Notified<br />When We Go Live
+            </h2>
+            <p
+              class="body-p"
+              style="color: rgba(255, 255, 255, 0.4); margin-bottom: 1.8rem"
+            >
+              Enter your WhatsApp number and we'll send you a message every time
+              we go live — straight to your phone.
+            </p>
+            <div class="notify-form">
+              <input
+                class="notify-input"
+                type="tel"
+                id="notifyPhone"
+                placeholder="+234 800 000 0000 (WhatsApp number)"
+              />
+              <button class="notify-btn" onclick="sendNotifyRequest()">
+                Notify Me
+              </button>
+            </div>
+            <p
+              style="
+                font-family: var(--f-body);
+                font-size: 0.62rem;
+                color: rgba(255, 255, 255, 0.22);
+                margin-top: 0.6rem;
+                font-weight: 300;
+              "
+            >
+              We will only message you when we go live. No spam, ever.
+            </p>
+          </div>
+          <div class="reveal-r">
+            <span
+              style="
+                font-family: var(--f-body);
+                font-size: 0.6rem;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: rgba(200, 168, 75, 0.6);
+                display: block;
+                margin-bottom: 1rem;
+              "
+              >Or Follow &amp; Subscribe</span
+            >
+            <div class="notify-platforms">
+              <a
+                href="https://www.youtube.com/@thestronghandofjehovah"
+                target="_blank"
+                class="notify-plat"
+              >
+                <span class="notify-plat-icon yt"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                    />
+                    <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+                ></span>
+                Subscribe on YouTube — turn on the 🔔
+                <span class="notify-plat-arrow">→</span>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100063787395975"
+                target="_blank"
+                class="notify-plat"
+              >
+                <span class="notify-plat-icon fb"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    /></svg
+                ></span>
+                Follow on Facebook — he goes live here most
+                <span class="notify-plat-arrow">→</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@prophet_joshua1"
+                target="_blank"
+                class="notify-plat"
+              >
+                <span class="notify-plat-icon tt"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.15a8.16 8.16 0 0 0 4.77 1.52V7.24a4.85 4.85 0 0 1-1.01-.55z"
+                    /></svg
+                ></span>
+                Follow on TikTok — @prophet_joshua1
+                <span class="notify-plat-arrow">→</span>
+              </a>
+              <a
+                href="https://wa.me/2349019733420?text=Please%20add%20me%20to%20the%20SHJ%20live%20notification%20list"
+                target="_blank"
+                class="notify-plat"
+              >
+                <span class="notify-plat-icon wa"
+                  ><svg viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    /></svg
+                ></span>
+                WhatsApp — Live alerts &amp; updates
+                <span class="notify-plat-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="ft-top">
+          <div>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <div class="logo-circle" style="width: 48px; height: 48px">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div>
+                <div class="ft-logo-name">Strong Hand of Jehovah</div>
+                <div class="ft-logo-sub">Prophetic Ministry</div>
+              </div>
+            </div>
+            <p class="ft-brand-p">
+              A prophetic community burning with purpose — declaring the word,
+              demonstrating the power, discipling a generation of
+              world-changers.
+            </p>
+            <span class="ft-motto">Through Faith and Belief</span>
+          </div>
+          <div class="ft-col">
+            <h5>Watch</h5>
+            <ul>
+              <li>
+                <a
+                  href="https://www.youtube.com/@thestronghandofjehovah"
+                  target="_blank"
+                  >YouTube</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063787395975"
+                  target="_blank"
+                  >Facebook Live</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@prophet_joshua1"
+                  target="_blank"
+                  >TikTok</a
+                >
+              </li>
+              <li><a href="#sermons">Sermon Archive</a></li>
+              <li><a href="#schedule">Broadcast Schedule</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Pages</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="testimonies.html">Testimonies</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="give.html">Give / Partner</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="index.html#contact">Contact Us</a></li>
+              <li>
+                <a href="https://wa.me/2349019733420" target="_blank"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/2349019733420?text=Prayer%20Request"
+                  target="_blank"
+                  >Prayer Request</a
+                >
+              </li>
+              <li><a href="services.html#receive-jesus">Receive Jesus</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-btm">
+          <p>
+            &copy; 2025 Strong Hand of Jehovah Prophetic Ministry &middot;
+            <em>Through Faith and Belief</em>
+          </p>
+          <div class="socials">
+            <a
+              href="https://www.youtube.com/@thestronghandofjehovah"
+              target="_blank"
+              aria-label="YouTube"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+            ></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100063787395975"
+              target="_blank"
+              aria-label="Facebook"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a
+              href="https://wa.me/2349019733420"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      /* SCROLL PROGRESS */
+      (function () {
+        var bar = document.getElementById("scrollProg");
+        window.addEventListener(
+          "scroll",
+          function () {
+            var max =
+              document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (window.scrollY / max) * 100 + "%";
+          },
+          { passive: true },
+        );
+      })();
+
+      /* NAV SHADOW */
+      (function () {
+        var nav = document.getElementById("mainNav");
+        window.addEventListener(
+          "scroll",
+          function () {
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+          },
+          { passive: true },
+        );
+      })();
+
+      /* SIDEBAR */
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      var backdrop = document.getElementById("backdrop");
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      /* SCROLL REVEAL */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        document
+          .querySelectorAll(".reveal,.reveal-l,.reveal-r")
+          .forEach(function (el) {
+            io.observe(el);
+          });
+      })();
+
+      /* STAGGERED CARDS */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                var all = Array.from(
+                  document.querySelectorAll(
+                    ".sched-card,.plat-card,.sermon-card",
+                  ),
+                );
+                var idx = all.indexOf(e.target) % 6;
+                setTimeout(function () {
+                  e.target.classList.add("visible");
+                }, idx * 110);
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.06 },
+        );
+        document
+          .querySelectorAll(".sched-card,.plat-card,.sermon-card")
+          .forEach(function (c) {
+            io.observe(c);
+          });
+      })();
+
+      /* PLATFORM SWITCHER */
+      var platformUrls = {
+        yt: "https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID&autoplay=1&mute=1",
+        fb: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100063787395975&show_text=false&autoplay=true",
+      };
+      function switchPlatform(plat, btn) {
+        var tabs = document.querySelectorAll(".ptab");
+        tabs.forEach(function (t) {
+          t.className = "ptab";
+        });
+        btn.classList.add("active", "active-" + plat);
+        if (plat === "tt") {
+          window.open("https://www.tiktok.com/@prophet_joshua1", "_blank");
+          return;
+        }
+        var iframe = document.getElementById("liveIframe");
+        var offline = document.getElementById("playerOffline");
+        var url = platformUrls[plat];
+        if (url && !url.includes("YOUR_CHANNEL")) {
+          iframe.src = url;
+          iframe.style.display = "block";
+          if (offline) offline.style.display = "none";
+        }
+      }
+
+      /* SERMON FILTER */
+      (function () {
+        var tabs = document.querySelectorAll(".filter-tab");
+        var cards = document.querySelectorAll(".sermon-card");
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (t) {
+              t.classList.remove("active");
+            });
+            tab.classList.add("active");
+            var filter = tab.dataset.filter;
+            cards.forEach(function (card) {
+              card.style.display =
+                filter === "all" || card.dataset.cat === filter
+                  ? "block"
+                  : "none";
+            });
+          });
+        });
+      })();
+
+      /* 2-MINUTE SERMON CAP */
+      var CAP_SECS = 120;
+      var sermonIntervals = {};
+      function startSermon(n) {
+        var vid = document.getElementById("vid" + n);
+        var overlay = document.getElementById("overlay" + n);
+        var cap = document.getElementById("cap" + n);
+        var prog = document.getElementById("prog" + n);
+        var timer = document.getElementById("timer" + n);
+        if (!vid || (!vid.src && !vid.querySelector("source"))) {
+          window.open(
+            "https://www.facebook.com/profile.php?id=100063787395975",
+            "_blank",
+          );
+          return;
+        }
+        overlay.classList.add("hidden");
+        timer.classList.add("visible");
+        vid.play();
+        if (sermonIntervals[n]) clearInterval(sermonIntervals[n]);
+        sermonIntervals[n] = setInterval(function () {
+          if (vid.paused) return;
+          var elapsed = vid.currentTime;
+          var pct = Math.min((elapsed / CAP_SECS) * 100, 100);
+          prog.style.width = pct + "%";
+          var remaining = Math.max(0, CAP_SECS - Math.floor(elapsed));
+          var mm = Math.floor(remaining / 60);
+          var ss = remaining % 60;
+          timer.textContent =
+            mm + ":" + (ss < 10 ? "0" : "") + ss + " remaining";
+          if (elapsed >= CAP_SECS) {
+            clearInterval(sermonIntervals[n]);
+            vid.pause();
+            cap.classList.remove("hidden");
+            timer.classList.remove("visible");
+            prog.style.width = "100%";
+          }
+        }, 500);
+        vid.addEventListener("ended", function () {
+          clearInterval(sermonIntervals[n]);
+          timer.classList.remove("visible");
+        });
+      }
+
+      /* NOTIFY */
+      function sendNotifyRequest() {
+        var phone = document.getElementById("notifyPhone").value.trim();
+        var msg = phone
+          ? "I would like to be notified when SHJ goes live. My WhatsApp number is: " +
+            phone
+          : "Please add me to the SHJ live stream notification list.";
+        window.open(
+          "https://wa.me/2349019733420?text=" + encodeURIComponent(msg),
+          "_blank",
+        );
+      }
+
+      /* NEXT SERVICE BADGE */
+      (function () {
+        var badge = document.getElementById("nextServiceBadge");
+        if (!badge) return;
+        var now = new Date();
+        var day = now.getDay();
+        var services = [
+          { day: 0, name: "Sunday Praise & Worship", time: "8:00 AM" },
+          { day: 3, name: "Midweek Prayer", time: "6:00 PM" },
+          { day: 5, name: "Prophetic Night", time: "7:00 PM" },
+          { day: 6, name: "Youth Service", time: "4:00 PM" },
+        ];
+        var next = services.find(function (s) {
+          return s.day > day;
+        });
+        if (!next) next = services[0];
+        var days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        badge.textContent =
+          "Next: " + days[next.day] + " " + next.name + " — " + next.time;
+      })();
+    </script>
+  </body>
+</html>

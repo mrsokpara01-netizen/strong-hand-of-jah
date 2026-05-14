@@ -1,0 +1,2569 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Strong Hand of Jehovah Prophetic Ministry</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0a1c2e;
+        --navy2: #0d2540;
+        --gold: #c8a84b;
+        --gold2: #e8c96b;
+        --white: #ffffff;
+        --offwhite: #f7f4ef;
+        --gray: #f0ece4;
+        --text: #1a1a1a;
+        --muted: #666;
+        --topbar-h: 36px;
+        --nav-h: 76px;
+        --total-h: calc(var(--topbar-h) + var(--nav-h));
+        --f-display: "Playfair Display", Georgia, serif;
+        --f-serif: "Cormorant Garamond", Georgia, serif;
+        --f-body: "DM Sans", sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: #fff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* SCROLL PROGRESS */
+      .scroll-prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--gold);
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      /* TOP BAR */
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--topbar-h);
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.35);
+      }
+      .topbar-left {
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .topbar-link {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+      }
+      .topbar-link:hover {
+        color: var(--gold);
+      }
+      .topbar-sep {
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.7rem;
+      }
+
+      /* MAIN NAVBAR */
+      nav#mainNav {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 2px solid var(--gold);
+        transition: box-shadow 0.3s;
+      }
+      nav#mainNav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .logo-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+      }
+      .logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: stretch;
+        height: var(--nav-h);
+        margin-left: auto;
+        margin-right: 1.2rem;
+      }
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+        padding: 0 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        cursor: pointer;
+      }
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-item:hover > .nav-link {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .nav-link svg {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.5;
+        transition: transform 0.2s;
+      }
+      .nav-item:hover > .nav-link svg {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.22s,
+          transform 0.22s,
+          visibility 0.22s;
+        z-index: 998;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dd-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 1.1rem;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.02em;
+        border-bottom: 1px solid #eee;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .dd-link:last-child {
+        border-bottom: none;
+      }
+      .dd-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.4rem;
+      }
+      .dd-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .btn-give-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.55rem 1.4rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .btn-give-nav:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+
+      /* HAMBURGER */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* SIDEBAR */
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1001;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        left: auto;
+        width: min(320px, 88vw);
+        height: 100dvh;
+        background: #fff;
+        z-index: 1002;
+        overflow-y: auto;
+        transition: right 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 40px rgba(0, 0, 0, 0.25);
+      }
+      .sidebar.open {
+        right: 0;
+      }
+      .sb-header {
+        background: var(--navy);
+        padding: 1.2rem 1.2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--gold);
+        flex-shrink: 0;
+      }
+      .sb-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sb-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy2);
+        flex-shrink: 0;
+      }
+      .sb-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .sb-name {
+        font-family: var(--f-display);
+        font-size: 0.72rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .sb-sub {
+        font-family: var(--f-serif);
+        font-size: 0.6rem;
+        color: var(--gold);
+        font-style: italic;
+      }
+      .sb-close {
+        background: none;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-close:hover {
+        background: rgba(200, 168, 75, 0.12);
+      }
+      .sb-give-strip {
+        display: block;
+        background: var(--gold);
+        color: var(--navy);
+        text-align: center;
+        padding: 0.75rem;
+        font-family: var(--f-display);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-give-strip:hover {
+        background: var(--gold2);
+      }
+      .sb-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .sb-section {
+        border-bottom: 1px solid #eee;
+      }
+      .sb-section-title {
+        padding: 0.7rem 1.2rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--offwhite);
+        border-bottom: 1px solid #e8e0d0;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.82rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--navy);
+        border-bottom: 1px solid #f0f0f0;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .sb-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.7rem;
+      }
+      .sb-link-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+
+      /* PAGE */
+      .page-top {
+        padding-top: var(--total-h);
+      }
+
+      /* SHARED */
+      .eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .sh {
+        font-family: var(--f-display);
+        font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .sh-white {
+        color: #fff;
+      }
+      .body-p {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 168, 75, 0.25),
+          transparent
+        );
+      }
+
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-l {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-l.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-r {
+        opacity: 0;
+        transform: translateX(40px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-r.show {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.36s;
+      }
+      .d4 {
+        transition-delay: 0.5s;
+      }
+
+      /* ══════════════════════════════
+         HERO / PAGE BANNER
+      ══════════════════════════════ */
+      .contact-hero {
+        position: relative;
+        background: var(--navy);
+        padding: 5.5rem 5rem 5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        min-height: 360px;
+      }
+      .contact-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 90% at 80% 50%,
+          rgba(200, 168, 75, 0.07) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+      /* Decorative large word */
+      .contact-hero-word {
+        position: absolute;
+        right: -1rem;
+        bottom: -2rem;
+        font-family: var(--f-display);
+        font-size: clamp(7rem, 18vw, 16rem);
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.04);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        pointer-events: none;
+        user-select: none;
+      }
+      /* Gold accent bar top */
+      .contact-hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          var(--gold2),
+          transparent
+        );
+      }
+      .contact-hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: flex-end;
+      }
+      .contact-hero-left {
+      }
+      .contact-hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+      }
+      .contact-hero-eyebrow::before {
+        content: "";
+        width: 36px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .contact-hero h1 {
+        font-family: var(--f-display);
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        color: #fff;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        margin-bottom: 1rem;
+      }
+      .contact-hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .contact-hero-tagline {
+        font-family: var(--f-serif);
+        font-size: 1.1rem;
+        font-style: italic;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.7;
+        max-width: 420px;
+      }
+      .contact-hero-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      .hero-contact-pills {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+      }
+      .hero-pill {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 1rem 1.4rem;
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+        cursor: default;
+      }
+      .hero-pill:hover {
+        background: rgba(200, 168, 75, 0.07);
+        border-color: rgba(200, 168, 75, 0.45);
+      }
+      .hero-pill-ico {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .hero-pill-ico svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .hero-pill-label {
+        font-family: var(--f-body);
+        font-size: 0.57rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+        margin-bottom: 2px;
+      }
+      .hero-pill-val {
+        font-family: var(--f-body);
+        font-size: 0.84rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+      }
+
+      /* ══════════════════════════════
+         QUICK CONTACT STRIP
+      ══════════════════════════════ */
+      .quick-strip {
+        background: var(--gold);
+        padding: 0.9rem 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+      }
+      .qs-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--navy);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        transition: opacity 0.2s;
+      }
+      .qs-item:hover {
+        opacity: 0.75;
+      }
+      .qs-item svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--navy);
+        flex-shrink: 0;
+      }
+      .qs-sep {
+        width: 1px;
+        height: 28px;
+        background: rgba(10, 28, 46, 0.15);
+        flex-shrink: 0;
+      }
+
+      /* ══════════════════════════════
+         MAIN CONTACT SECTION
+      ══════════════════════════════ */
+      .contact-main {
+        padding: 6rem 5rem;
+        background: #fff;
+      }
+      .contact-main-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        gap: 5rem;
+        align-items: start;
+      }
+
+      /* LEFT — Info */
+      .contact-info {
+      }
+      .contact-info-head {
+        margin-bottom: 2.5rem;
+      }
+      .c-card {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 1.4rem 0;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.12);
+        transition: padding-left 0.2s;
+      }
+      .c-card:first-of-type {
+        border-top: 1px solid rgba(200, 168, 75, 0.12);
+      }
+      .c-card:hover {
+        padding-left: 6px;
+      }
+      .c-card-ico {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        background: var(--offwhite);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+      }
+      .c-card-ico svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .c-card-label {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+      .c-card-val {
+        font-family: var(--f-body);
+        font-size: 0.92rem;
+        color: var(--navy);
+        font-weight: 400;
+        line-height: 1.55;
+      }
+      .c-card-note {
+        font-family: var(--f-serif);
+        font-size: 0.82rem;
+        font-style: italic;
+        color: var(--muted);
+        margin-top: 2px;
+        font-weight: 300;
+      }
+      .c-card-link {
+        color: var(--gold);
+        text-decoration: underline;
+        text-decoration-color: rgba(200, 168, 75, 0.3);
+        transition: text-decoration-color 0.2s;
+      }
+      .c-card-link:hover {
+        text-decoration-color: var(--gold);
+      }
+
+      /* Social row */
+      .social-row {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(200, 168, 75, 0.12);
+      }
+      .social-row-label {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      .social-icons {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .soc-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.55rem 1rem;
+        border: 1px solid rgba(10, 28, 46, 0.12);
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.04em;
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .soc-btn:hover {
+        border-color: var(--navy);
+        background: var(--navy);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .soc-btn .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* Office hours */
+      .hours-grid {
+        margin-top: 2rem;
+        padding: 1.6rem;
+        background: var(--offwhite);
+        border-left: 3px solid var(--gold);
+      }
+      .hours-title {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.45rem 0;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.12);
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+      }
+      .hours-row:last-child {
+        border-bottom: none;
+      }
+      .hours-day {
+        color: var(--navy);
+        font-weight: 400;
+      }
+      .hours-time {
+        color: var(--muted);
+        font-weight: 300;
+        font-size: 0.78rem;
+      }
+      .hours-closed {
+        color: rgba(200, 168, 75, 0.5);
+        font-style: italic;
+      }
+
+      /* RIGHT — Form */
+      .contact-form-wrap {
+      }
+      .form-head {
+        margin-bottom: 2rem;
+      }
+      .form-note {
+        font-family: var(--f-serif);
+        font-size: 0.95rem;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--muted);
+        border-left: 2px solid var(--gold);
+        padding-left: 1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+      }
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+      .form-label {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--navy);
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        background: var(--offwhite);
+        border: 1px solid rgba(10, 28, 46, 0.1);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.88rem;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+        appearance: none;
+      }
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-color: var(--gold);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(200, 168, 75, 0.08);
+      }
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: rgba(10, 28, 46, 0.3);
+      }
+      .form-select {
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpolyline points='1 1 5 5 9 1' fill='none' stroke='%23c8a84b' stroke-width='1.5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+      }
+      .form-select option {
+        color: var(--navy);
+      }
+      .form-textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+      .form-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+      }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.9rem 2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 2px solid var(--gold);
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+        flex: 1;
+        justify-content: center;
+      }
+      .btn-primary:hover {
+        background: var(--gold2);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(200, 168, 75, 0.35);
+      }
+      .btn-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.9rem 1.8rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+        flex: 1;
+        justify-content: center;
+      }
+      .btn-wa:hover {
+        background: var(--navy2);
+        transform: translateY(-2px);
+      }
+      .btn-wa svg,
+      .btn-primary svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+      .form-success {
+        display: none;
+        padding: 1.5rem;
+        background: rgba(200, 168, 75, 0.08);
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        margin-top: 1rem;
+        text-align: center;
+      }
+      .form-success.show {
+        display: block;
+      }
+      .form-success p {
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--navy);
+      }
+
+      /* ══════════════════════════════
+         GOOGLE MAP SECTION
+      ══════════════════════════════ */
+      .map-section {
+        padding: 0 5rem 6rem;
+        background: #fff;
+      }
+      .map-section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .map-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .map-directions-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.6rem 1.4rem;
+        border: 1px solid rgba(200, 168, 75, 0.4);
+        font-family: var(--f-body);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        transition:
+          background 0.2s,
+          border-color 0.2s;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .map-directions-btn:hover {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+      .map-directions-btn svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      .map-wrap {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(200, 168, 75, 0.2);
+      }
+      .map-wrap iframe {
+        width: 100%;
+        height: 520px;
+        border: 0;
+        display: block;
+        filter: grayscale(5%) contrast(1.02);
+      }
+      /* Gold corner accents */
+      .map-wrap::before,
+      .map-wrap::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .map-wrap::before {
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border-top: 2px solid var(--gold);
+        border-left: 2px solid var(--gold);
+      }
+      .map-wrap::after {
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border-bottom: 2px solid var(--gold);
+        border-right: 2px solid var(--gold);
+      }
+      /* Map overlay address card */
+      .map-address-badge {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        z-index: 3;
+        background: var(--navy);
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        padding: 1.2rem 1.5rem;
+        max-width: 300px;
+        border-left: 3px solid var(--gold);
+      }
+      .mab-tag {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .mab-name {
+        font-family: var(--f-display);
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.4rem;
+        line-height: 1.2;
+      }
+      .mab-addr {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 300;
+        line-height: 1.55;
+      }
+
+      /* ══════════════════════════════
+         FIND US / DIRECTIONS STRIP
+      ══════════════════════════════ */
+      .find-us-strip {
+        background: var(--offwhite);
+        padding: 4rem 5rem;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+      }
+      .find-us-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1px;
+        background: rgba(200, 168, 75, 0.15);
+      }
+      .fu-card {
+        background: var(--offwhite);
+        padding: 2.2rem 2rem;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.25s;
+      }
+      .fu-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .fu-card:hover::before {
+        transform: scaleX(1);
+      }
+      .fu-card:hover {
+        background: #fff;
+      }
+      .fu-ico {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.2rem;
+        background: #fff;
+      }
+      .fu-ico svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.6;
+      }
+      .fu-title {
+        font-family: var(--f-display);
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.4rem;
+      }
+      .fu-desc {
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* ══════════════════════════════
+         PRAYER REQUEST BANNER
+      ══════════════════════════════ */
+      .prayer-banner {
+        background: var(--navy);
+        padding: 5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .prayer-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 80% at 50% 50%,
+          rgba(200, 168, 75, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .prayer-banner blockquote {
+        font-family: var(--f-serif);
+        font-size: clamp(1rem, 2.2vw, 1.4rem);
+        font-style: italic;
+        font-weight: 300;
+        color: rgba(245, 230, 190, 0.8);
+        max-width: 720px;
+        margin: 0 auto 1rem;
+        line-height: 1.7;
+        position: relative;
+        z-index: 1;
+      }
+      .prayer-banner cite {
+        display: block;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+        margin-bottom: 2.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      .prayer-banner .sh {
+        position: relative;
+        z-index: 1;
+      }
+      .prayer-banner .body-p {
+        color: rgba(255, 255, 255, 0.4);
+        max-width: 480px;
+        margin: 0 auto 2rem;
+        position: relative;
+        z-index: 1;
+      }
+      .prayer-banner-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+      .btn-gold-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.88rem 2rem;
+        background: transparent;
+        color: var(--gold);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(200, 168, 75, 0.4);
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .btn-gold-outline:hover {
+        background: rgba(200, 168, 75, 0.1);
+        border-color: var(--gold);
+      }
+      .btn-gold-solid {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.88rem 2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn-gold-solid:hover {
+        background: var(--gold2);
+        transform: translateY(-2px);
+      }
+      .btn-gold-solid svg,
+      .btn-gold-outline svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        flex-shrink: 0;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--navy);
+        padding: 4rem 5rem 2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .ft-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 1.8rem;
+      }
+      .ft-brand p {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.7;
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .ft-motto {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 0.7rem;
+      }
+      .ft-col h5 {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .ft-col li {
+        margin-bottom: 0.5rem;
+      }
+      .ft-col a {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        transition:
+          color 0.2s,
+          padding-left 0.15s;
+        display: inline-block;
+      }
+      .ft-col a:hover {
+        color: #fff;
+        padding-left: 5px;
+      }
+      .ft-btm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .ft-btm p {
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.35);
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background: rgba(200, 168, 75, 0.08);
+        transform: translateY(-2px);
+      }
+      .socials svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1024px) {
+        .contact-main-inner,
+        .contact-hero-inner {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .contact-hero {
+          padding: 4rem 2rem 3.5rem;
+          min-height: auto;
+        }
+        .find-us-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .map-section {
+          padding: 0 2rem 4rem;
+        }
+        .find-us-strip {
+          padding: 3rem 2rem;
+        }
+        .prayer-banner {
+          padding: 4rem 2rem;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-menu,
+        .btn-give-nav {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav#mainNav,
+        .topbar {
+          padding: 0 1rem;
+        }
+        .topbar-left {
+          display: none;
+        }
+        .contact-main,
+        footer {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+        .quick-strip {
+          padding: 0.9rem 1.2rem;
+          gap: 1rem;
+        }
+        .qs-sep {
+          display: none;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .find-us-inner {
+          grid-template-columns: 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .map-address-badge {
+          display: none;
+        }
+        .map-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+      @media (max-width: 540px) {
+        .ft-top {
+          grid-template-columns: 1fr;
+        }
+        .prayer-banner-btns {
+          flex-direction: column;
+        }
+        .form-btns {
+          flex-direction: column;
+        }
+        .social-icons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-prog" id="scrollProg"></div>
+    <div class="sidebar-backdrop" id="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-header">
+        <div class="sb-brand">
+          <div class="sb-circle">
+            <img
+              src="images/prophetlogo.jpeg"
+              alt="SHJ"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div>
+            <div class="sb-name">Strong Hand of Jehovah</div>
+            <div class="sb-sub">Prophetic Ministry</div>
+          </div>
+        </div>
+        <button class="sb-close" onclick="closeSidebar()">&#x2715;</button>
+      </div>
+      <a class="sb-give-strip" href="give.html" onclick="closeSidebar()"
+        >&#9829; Give / Partner With Us</a
+      >
+      <div class="sb-body">
+        <div class="sb-section">
+          <div class="sb-section-title">Help Me With</div>
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Faith</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Prayer</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Healing</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Counseling</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Explore</div>
+          <a class="sb-link" href="testimonies.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Testimonies</a
+          >
+          <a class="sb-link" href="services.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Services</a
+          >
+          <a class="sb-link" href="index.html#watch" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Watch Live</a
+          >
+          <a class="sb-link" href="shop.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Shop</a
+          >
+          <a class="sb-link" href="about.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>About Us</a
+          >
+          <a class="sb-link" href="contact.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Contact</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Watch On</div>
+          <a class="sb-link" href="#" target="_blank"
+            ><span class="sb-link-dot" style="background: #ff0000"></span
+            >YouTube</a
+          >
+          <a class="sb-link" href="#" target="_blank"
+            ><span class="sb-link-dot" style="background: #1877f2"></span
+            >Facebook</a
+          >
+          <a class="sb-link" href="#" target="_blank"
+            ><span class="sb-link-dot" style="background: #00f2ea"></span
+            >TikTok</a
+          >
+        </div>
+      </div>
+    </aside>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <span class="topbar-left">Through Faith and Belief</span>
+      <div class="topbar-right">
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+          >Prayer Request</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420"
+          target="_blank"
+          >WhatsApp: 09019733420</a
+        >
+        <span class="topbar-sep">|</span>
+        <a class="topbar-link" href="index.html#watch">Watch Live</a>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="mainNav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo">
+        <div class="logo-circle">
+          <img
+            src="images/prophetlogo.jpeg"
+            alt="SHJ Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Strong Hand of Jehovah</div>
+          <div class="logo-sub">Prophetic Ministry</div>
+        </div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#help"
+            role="button"
+            aria-haspopup="true"
+            >Help Me With
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+              target="_blank"
+              ><span class="dd-dot"></span>Faith</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+              target="_blank"
+              ><span class="dd-dot"></span>Prayer</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+              target="_blank"
+              ><span class="dd-dot"></span>Healing</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+              target="_blank"
+              ><span class="dd-dot"></span>Counseling</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonies.html">Testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="services.html"
+            role="button"
+            aria-haspopup="true"
+            >Services
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="services.html"
+              ><span class="dd-dot"></span>All Services</a
+            >
+            <a class="dd-link" href="services.html#sunday"
+              ><span class="dd-dot"></span>Sunday Worship</a
+            >
+            <a class="dd-link" href="services.html#wednesday"
+              ><span class="dd-dot"></span>Midweek Prayer</a
+            >
+            <a class="dd-link" href="services.html#friday"
+              ><span class="dd-dot"></span>Prophetic Night</a
+            >
+            <a class="dd-link" href="services.html#saturday"
+              ><span class="dd-dot"></span>Youth Service</a
+            >
+            <a class="dd-link" href="services.html#receive-jesus"
+              ><span class="dd-dot"></span>Receive Jesus</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="index.html#watch"
+            role="button"
+            aria-haspopup="true"
+            >Watch
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #ff0000"></span
+              >YouTube</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #1877f2"></span
+              >Facebook</a
+            >
+            <a class="dd-link" href="#" target="_blank"
+              ><span class="dd-dot" style="background: #00f2ea"></span>TikTok</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <a class="btn-give-nav" href="give.html">Give Now</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- PAGE -->
+    <div class="page-top">
+      <!-- ═══ HERO BANNER ═══ -->
+      <div class="contact-hero">
+        <div class="contact-hero-word">Contact</div>
+        <div class="contact-hero-inner">
+          <div class="contact-hero-left">
+            <span class="contact-hero-eyebrow">We're Here For You</span>
+            <h1>Reach Out —<br /><em>We're Waiting</em></h1>
+            <p class="contact-hero-tagline">
+              You don't have to carry it alone. Whether it's prayer, healing,
+              counseling, or simply finding your way home to God — the SHJ
+              family is open.
+            </p>
+          </div>
+          <div class="contact-hero-right">
+            <div class="hero-contact-pills">
+              <div class="hero-pill">
+                <div class="hero-pill-ico">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="hero-pill-label">We're Located At</div>
+                  <div class="hero-pill-val">
+                    4B Adeleke Crescent, off Ibilola St., Igando, Lagos
+                  </div>
+                </div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-ico">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.94a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="hero-pill-label">Call or WhatsApp</div>
+                  <div class="hero-pill-val">09019733420</div>
+                </div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-ico">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="hero-pill-label">Office Hours</div>
+                  <div class="hero-pill-val">
+                    Mon – Fri &nbsp;·&nbsp; 9:00 AM – 5:00 PM
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK CONTACT STRIP -->
+      <div class="quick-strip">
+        <a class="qs-item" href="https://wa.me/2349019733420" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          Message on WhatsApp
+        </a>
+        <div class="qs-sep"></div>
+        <a class="qs-item" href="mailto:info@stronghandofjehovah.org">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0a1c2e"
+            stroke-width="2"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          info@stronghandofjehovah.org
+        </a>
+        <div class="qs-sep"></div>
+        <a
+          class="qs-item"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0a1c2e"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+            <line x1="6" y1="1" x2="6" y2="4" />
+            <line x1="10" y1="1" x2="10" y2="4" />
+            <line x1="14" y1="1" x2="14" y2="4" />
+          </svg>
+          Submit a Prayer Request
+        </a>
+      </div>
+
+      <!-- ═══ MAIN CONTACT SECTION ═══ -->
+      <section class="contact-main" id="contact">
+        <div class="contact-main-inner">
+          <!-- LEFT — Contact Info -->
+          <div class="contact-info reveal-l">
+            <div class="contact-info-head">
+              <span class="eyebrow">Get In Touch</span>
+              <h2 class="sh">We'd Love to<br />Hear From You</h2>
+              <p class="body-p">
+                Whether you need prayer, have a testimony, want to connect with
+                our team, or are finding your way for the first time — reach
+                out. No need is too small, no situation too great for God.
+              </p>
+            </div>
+
+            <div class="c-card">
+              <div class="c-card-ico">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="c-card-label">Church Location</div>
+                <div class="c-card-val">
+                  No. 4B Adeleke Crescent,<br />off Ibilola Street, Igando,<br />Lagos
+                  105101
+                </div>
+                <div class="c-card-note">Igando, Lagos State, Nigeria</div>
+              </div>
+            </div>
+
+            <div class="c-card">
+              <div class="c-card-ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.94a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="c-card-label">Phone / WhatsApp</div>
+                <div class="c-card-val">
+                  <a class="c-card-link" href="tel:+2349019733420"
+                    >09019733420</a
+                  >
+                </div>
+                <div class="c-card-note">
+                  Available for prayer requests &amp; counseling
+                </div>
+              </div>
+            </div>
+
+            <div class="c-card">
+              <div class="c-card-ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="c-card-label">Email Address</div>
+                <div class="c-card-val">
+                  <a
+                    class="c-card-link"
+                    href="mailto:info@stronghandofjehovah.org"
+                    >info@stronghandofjehovah.org</a
+                  >
+                </div>
+                <div class="c-card-note">We respond within 24–48 hours</div>
+              </div>
+            </div>
+
+            <div class="hours-grid">
+              <div class="hours-title">Office Hours</div>
+              <div class="hours-row">
+                <span class="hours-day">Monday</span
+                ><span class="hours-time">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Tuesday</span
+                ><span class="hours-time">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Wednesday</span
+                ><span class="hours-time">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Thursday</span
+                ><span class="hours-time">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Friday</span
+                ><span class="hours-time">9:00 AM – 5:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Saturday</span
+                ><span class="hours-time">10:00 AM – 2:00 PM</span>
+              </div>
+              <div class="hours-row">
+                <span class="hours-day">Sunday</span
+                ><span class="hours-closed">Service Day</span>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <div class="social-row-label">Follow Us On</div>
+              <div class="social-icons">
+                <a class="soc-btn" href="#" target="_blank"
+                  ><span class="dot" style="background: #ff0000"></span
+                  >YouTube</a
+                >
+                <a class="soc-btn" href="#" target="_blank"
+                  ><span class="dot" style="background: #1877f2"></span
+                  >Facebook</a
+                >
+                <a class="soc-btn" href="#" target="_blank"
+                  ><span class="dot" style="background: #00f2ea"></span
+                  >TikTok</a
+                >
+                <a
+                  class="soc-btn"
+                  href="https://wa.me/2349019733420"
+                  target="_blank"
+                  ><span class="dot" style="background: #25d366"></span
+                  >WhatsApp</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT — Contact Form -->
+          <div class="contact-form-wrap reveal-r">
+            <div class="form-head">
+              <span class="eyebrow">Send a Message</span>
+              <h2 class="sh">How Can We<br />Serve You?</h2>
+            </div>
+            <p class="form-note">
+              "Ask, and it will be given to you; seek, and you will find; knock,
+              and it will be opened to you." — Matthew 7:7
+            </p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="fname">First Name *</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="fname"
+                  placeholder="Your first name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Last Name</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="lname"
+                  placeholder="Your last name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="phone"
+                  placeholder="e.g. 0901 234 5678"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="subject">I Need Help With</label>
+                <select class="form-select" id="subject">
+                  <option value="" disabled selected>Select a topic…</option>
+                  <option value="Prayer Request">Prayer Request</option>
+                  <option value="Faith Counseling">Faith Counseling</option>
+                  <option value="Healing Prayer">Healing Prayer</option>
+                  <option value="Deliverance">Deliverance</option>
+                  <option value="New Member Inquiry">New Member Inquiry</option>
+                  <option value="Testimony to Share">Testimony to Share</option>
+                  <option value="Partnership / Giving">
+                    Partnership / Giving
+                  </option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="message"
+                  >Your Message or Prayer Request *</label
+                >
+                <textarea
+                  class="form-textarea"
+                  id="message"
+                  placeholder="Share what's on your heart. Everything shared is kept in confidence…"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-btns">
+              <button class="btn-primary" onclick="sendViaWA()">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                Send via WhatsApp
+              </button>
+              <button class="btn-wa" onclick="sendViaEmail()">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Send via Email
+              </button>
+            </div>
+            <div class="form-success" id="formSuccess">
+              <p>
+                ✦ Message received! We will reach out to you within 24–48 hours.
+                God bless you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ═══ GOOGLE MAP SECTION ═══ -->
+      <section class="map-section" id="find-us">
+        <div class="map-section-inner">
+          <div class="map-header reveal">
+            <div>
+              <span class="eyebrow">Find the House of God</span>
+              <h2 class="sh" style="margin-bottom: 0">Our Location</h2>
+            </div>
+            <a
+              class="map-directions-btn"
+              href="https://maps.google.com/?q=4B+Adeleke+Crescent+Igando+Lagos"
+              target="_blank"
+            >
+              <svg viewBox="0 0 24 24">
+                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+              </svg>
+              Get Directions
+            </a>
+          </div>
+          <div class="map-wrap reveal d1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.972!2d3.2472!3d6.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4B+Adeleke+Crescent+Igando+Lagos!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Strong Hand of Jehovah Prophetic Ministry Location"
+            ></iframe>
+            <div class="map-address-badge">
+              <div class="mab-tag">&#10022; Strong Hand of Jehovah</div>
+              <div class="mab-name">Prophetic Ministry</div>
+              <div class="mab-addr">
+                No. 4B Adeleke Crescent, off Ibilola Street, Igando, Lagos
+                105101
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FIND US CARDS -->
+      <div class="find-us-strip">
+        <div class="find-us-inner">
+          <div class="fu-card reveal">
+            <div class="fu-ico">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="fu-title">By Bus (BRT)</div>
+            <p class="fu-desc">
+              Take BRT to Igando Bus Stop. Walk toward Ibilola Street and turn
+              at Adeleke Crescent — the church is at No. 4B.
+            </p>
+          </div>
+          <div class="fu-card reveal d1">
+            <div class="fu-ico">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10 8 16 12 10 16 10 8" />
+              </svg>
+            </div>
+            <div class="fu-title">By Car / Ride</div>
+            <p class="fu-desc">
+              Input "4B Adeleke Crescent Igando Lagos" into Google Maps or call
+              us on WhatsApp for live directions to the church.
+            </p>
+          </div>
+          <div class="fu-card reveal d2">
+            <div class="fu-ico">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.45 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.94a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"
+                />
+              </svg>
+            </div>
+            <div class="fu-title">Need Help Finding Us?</div>
+            <p class="fu-desc">
+              Call or WhatsApp us on <strong>09019733420</strong> and a member
+              of the SHJ team will guide you to us in real time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PRAYER / SCRIPTURE BANNER ═══ -->
+      <section class="prayer-banner">
+        <span
+          class="eyebrow reveal"
+          style="
+            text-align: center;
+            display: block;
+            color: rgba(200, 168, 75, 0.7);
+          "
+          >A Promise for Every Need</span
+        >
+        <blockquote class="reveal d1">
+          "Call to Me, and I will answer you, and I will tell you great and
+          mighty things, which you do not know."
+        </blockquote>
+        <cite class="reveal d2">Jeremiah 33:3 — NKJV</cite>
+        <h2
+          class="sh sh-white reveal d2"
+          style="max-width: 560px; margin: 0 auto 1rem"
+        >
+          Whatever You Need —<br /><em
+            style="font-style: italic; color: var(--gold)"
+            >We're a Message Away</em
+          >
+        </h2>
+        <p class="body-p reveal d3">
+          No prayer goes unheard. Our intercession team is available every day
+          to stand in agreement with you for your miracle, your healing, and
+          your breakthrough.
+        </p>
+        <div class="prayer-banner-btns reveal d3">
+          <a
+            class="btn-gold-solid"
+            href="https://wa.me/2349019733420?text=I%20have%20a%20prayer%20request%3A%20"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            Send Prayer Request
+          </a>
+          <a class="btn-gold-outline" href="services.html">
+            Join a Service →
+          </a>
+          <a class="btn-gold-outline" href="give.html"> Partner With Us → </a>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="ft-top">
+          <div class="ft-brand">
+            <div class="logo">
+              <div class="logo-circle">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div class="logo-text-wrap">
+                <div class="logo-name" style="color: #fff">
+                  Strong Hand of Jehovah
+                </div>
+                <div class="logo-sub">Prophetic Ministry</div>
+              </div>
+            </div>
+            <p>
+              A prophetic community burning with purpose — declaring the word,
+              demonstrating the power, discipling a generation of
+              world-changers.
+            </p>
+            <span class="ft-motto">Through Faith and Belief</span>
+          </div>
+          <div class="ft-col">
+            <h5>Ministry</h5>
+            <ul>
+              <li><a href="index.html#faith">Faith</a></li>
+              <li><a href="index.html#prayer">Prayer</a></li>
+              <li><a href="index.html#healing">Healing</a></li>
+              <li><a href="testimonies.html">Testimonies</a></li>
+              <li><a href="index.html#resources">Sermons</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Pages</h5>
+            <ul>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="give.html">Give / Partner</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Connect</h5>
+            <ul>
+              <li>
+                <a href="https://wa.me/2349019733420" target="_blank"
+                  >WhatsApp</a
+                >
+              </li>
+              <li><a href="#" target="_blank">YouTube</a></li>
+              <li><a href="#" target="_blank">Facebook</a></li>
+              <li><a href="#" target="_blank">TikTok</a></li>
+              <li>
+                <a href="mailto:info@stronghandofjehovah.org">Email Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-btm">
+          <p>
+            &copy; 2025 Strong Hand of Jehovah Prophetic Ministry &middot;
+            <em>Through Faith and Belief</em>
+          </p>
+          <div class="socials">
+            <a href="#" target="_blank" aria-label="YouTube"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon points="10 15 15.19 12 10 9 10 15" /></svg
+            ></a>
+            <a href="#" target="_blank" aria-label="Facebook"
+              ><svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a
+              href="https://wa.me/2349019733420"
+              target="_blank"
+              aria-label="WhatsApp"
+              ><svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      /* SCROLL PROGRESS */
+      (function () {
+        var bar = document.getElementById("scrollProg");
+        window.addEventListener(
+          "scroll",
+          function () {
+            var max =
+              document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (window.scrollY / max) * 100 + "%";
+          },
+          { passive: true },
+        );
+      })();
+
+      /* NAV SHADOW */
+      (function () {
+        var nav = document.getElementById("mainNav");
+        window.addEventListener(
+          "scroll",
+          function () {
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+          },
+          { passive: true },
+        );
+      })();
+
+      /* SIDEBAR */
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      var backdrop = document.getElementById("backdrop");
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      /* SCROLL REVEAL */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        document
+          .querySelectorAll(".reveal,.reveal-l,.reveal-r")
+          .forEach(function (el) {
+            io.observe(el);
+          });
+      })();
+
+      /* WHATSAPP FORM */
+      function sendViaWA() {
+        var fname = document.getElementById("fname").value.trim();
+        var lname = document.getElementById("lname").value.trim();
+        var phone = document.getElementById("phone").value.trim();
+        var subject = document.getElementById("subject").value;
+        var msg = document.getElementById("message").value.trim();
+        if (!fname) {
+          alert("Please enter your name.");
+          return;
+        }
+        if (!msg) {
+          alert("Please enter your message or prayer request.");
+          return;
+        }
+        var name = fname + (lname ? " " + lname : "");
+        var text =
+          "Hello Strong Hand of Jehovah!\n\nFrom: " +
+          name +
+          (phone ? "\nPhone: " + phone : "") +
+          (subject ? "\nTopic: " + subject : "") +
+          "\n\nMessage:\n" +
+          msg;
+        window.open(
+          "https://wa.me/2349019733420?text=" + encodeURIComponent(text),
+          "_blank",
+        );
+      }
+
+      /* EMAIL FORM */
+      function sendViaEmail() {
+        var fname = document.getElementById("fname").value.trim();
+        var lname = document.getElementById("lname").value.trim();
+        var subject =
+          document.getElementById("subject").value || "Contact Form Message";
+        var msg = document.getElementById("message").value.trim();
+        if (!fname) {
+          alert("Please enter your name.");
+          return;
+        }
+        if (!msg) {
+          alert("Please enter your message.");
+          return;
+        }
+        var name = fname + (lname ? " " + lname : "");
+        var body = "From: " + name + "\n\n" + msg;
+        window.location.href =
+          "mailto:info@stronghandofjehovah.org?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(body);
+      }
+    </script>
+  </body>
+</html>

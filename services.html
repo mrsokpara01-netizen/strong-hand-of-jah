@@ -1,0 +1,3269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Services | Strong Hand of Jehovah Prophetic Ministry</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0a1c2e;
+        --navy2: #0d2540;
+        --gold: #c8a84b;
+        --gold2: #e8c96b;
+        --offwhite: #f7f4ef;
+        --gray: #f0ece4;
+        --text: #1a1a1a;
+        --muted: #666;
+        --topbar-h: 36px;
+        --nav-h: 76px;
+        --total-h: calc(var(--topbar-h) + var(--nav-h));
+        --f-display: "Playfair Display", Georgia, serif;
+        --f-serif: "Cormorant Garamond", Georgia, serif;
+        --f-body: "DM Sans", sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--f-body);
+        background: #fff;
+        color: var(--text);
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ═══ GRAIN TEXTURE (global) ═══ */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.6;
+      }
+
+      /* ═══ SCROLL PROGRESS ═══ */
+      .scroll-prog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background: var(--gold);
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      /* ═══ TOP BAR ═══ */
+      .topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--topbar-h);
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(200, 168, 75, 0.35);
+      }
+      .topbar-left {
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .topbar-link {
+        font-family: var(--f-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.04em;
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+      .topbar-link:hover {
+        color: var(--gold);
+      }
+      .topbar-sep {
+        color: rgba(255, 255, 255, 0.18);
+        font-size: 0.7rem;
+      }
+
+      /* ═══ NAVBAR ═══ */
+      nav#mainNav {
+        position: fixed;
+        top: var(--topbar-h);
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+        z-index: 999;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-bottom: 2px solid var(--gold);
+        transition: box-shadow 0.3s;
+      }
+      nav#mainNav.scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .logo-circle {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .logo-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--navy);
+        line-height: 1.2;
+      }
+      .logo-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: stretch;
+        height: var(--nav-h);
+        margin-left: auto;
+        margin-right: 1.2rem;
+      }
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        height: 100%;
+        padding: 0 0.85rem;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        cursor: pointer;
+      }
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-item:hover > .nav-link {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .nav-link svg {
+        width: 10px;
+        height: 10px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2.5;
+        transition: transform 0.2s;
+      }
+      .nav-item:hover > .nav-link svg {
+        transform: rotate(180deg);
+      }
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background: #fff;
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition:
+          opacity 0.22s,
+          transform 0.22s,
+          visibility 0.22s;
+        z-index: 998;
+      }
+      .nav-item:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .dd-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 1.1rem;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: var(--navy);
+        border-bottom: 1px solid #eee;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .dd-link:last-child {
+        border-bottom: none;
+      }
+      .dd-link:hover {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.4rem;
+      }
+      .dd-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .btn-give-nav {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.55rem 1.4rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid var(--navy);
+        cursor: pointer;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          transform 0.15s;
+      }
+      .btn-give-nav:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+      }
+
+      /* ═══ HAMBURGER ═══ */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: var(--navy);
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--gold);
+        border-radius: 2px;
+        transition: all 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* ═══ SIDEBAR ═══ */
+      .sidebar-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 1001;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -110%;
+        left: auto;
+        width: min(320px, 88vw);
+        height: 100dvh;
+        background: #fff;
+        z-index: 1002;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        transition: right 0.42s cubic-bezier(0.77, 0, 0.175, 1);
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 40px rgba(0, 0, 0, 0.25);
+      }
+      .sidebar.open {
+        right: 0;
+      }
+      .sb-header {
+        background: var(--navy);
+        padding: 1.2rem 1.2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--gold);
+        flex-shrink: 0;
+      }
+      .sb-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sb-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        overflow: hidden;
+        background: var(--navy2);
+        flex-shrink: 0;
+      }
+      .sb-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .sb-name {
+        font-family: var(--f-display);
+        font-size: 0.72rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .sb-sub {
+        font-family: var(--f-serif);
+        font-size: 0.6rem;
+        color: var(--gold);
+        font-style: italic;
+      }
+      .sb-close {
+        background: none;
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        width: 32px;
+        height: 32px;
+        border-radius: 3px;
+        color: var(--gold);
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-close:hover {
+        background: rgba(200, 168, 75, 0.12);
+      }
+      .sb-give-strip {
+        display: block;
+        background: var(--gold);
+        color: var(--navy);
+        text-align: center;
+        padding: 0.75rem;
+        font-family: var(--f-display);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        flex-shrink: 0;
+        transition: background 0.2s;
+      }
+      .sb-give-strip:hover {
+        background: var(--gold2);
+      }
+      .sb-body {
+        flex: 1;
+        overflow-y: auto;
+      }
+      .sb-section {
+        border-bottom: 1px solid #eee;
+      }
+      .sb-section-title {
+        padding: 0.7rem 1.2rem;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        background: var(--offwhite);
+        border-bottom: 1px solid #e8e0d0;
+      }
+      .sb-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0.82rem 1.4rem;
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        color: var(--navy);
+        border-bottom: 1px solid #f0f0f0;
+        transition:
+          background 0.18s,
+          color 0.18s,
+          padding-left 0.18s;
+      }
+      .sb-link:last-child {
+        border-bottom: none;
+      }
+      .sb-link:hover,
+      .sb-link.active {
+        background: var(--offwhite);
+        color: var(--gold);
+        padding-left: 1.7rem;
+      }
+      .sb-link-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+      .sb-wa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 1rem 1.2rem;
+        padding: 0.82rem;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: background 0.2s;
+      }
+      .sb-wa:hover {
+        background: var(--navy2);
+      }
+      .sb-wa svg {
+        width: 17px;
+        height: 17px;
+        fill: #fff;
+        flex-shrink: 0;
+      }
+
+      /* ═══ PAGE OFFSET ═══ */
+      .page-top {
+        padding-top: var(--total-h);
+      }
+
+      /* ══════════════════════════════════════════
+         HERO  — REDESIGNED SPLIT LAYOUT
+      ══════════════════════════════════════════ */
+      .hero {
+        position: relative;
+        height: calc(100vh - var(--total-h));
+        min-height: 600px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        overflow: hidden;
+      }
+
+      /* LEFT — navy panel */
+      .hero-left {
+        background: var(--navy);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3.5rem 4rem 3.5rem 5.5rem;
+        z-index: 2;
+        overflow: hidden;
+      }
+      /* Diagonal cut on right edge of left panel */
+      .hero-left::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50px;
+        bottom: 0;
+        width: 100px;
+        background: var(--navy);
+        clip-path: polygon(0 0, 35% 0, 0 100%);
+        z-index: 3;
+      }
+      /* Ghost "SHJ" watermark */
+      .hero-ghost {
+        position: absolute;
+        bottom: -0.15em;
+        left: -0.1em;
+        font-family: var(--f-display);
+        font-size: clamp(9rem, 18vw, 20rem);
+        font-weight: 900;
+        font-style: italic;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(200, 168, 75, 0.055);
+        line-height: 1;
+        pointer-events: none;
+        letter-spacing: -0.06em;
+        z-index: 0;
+        user-select: none;
+      }
+      /* Vertical side label — removed */
+      .hero-vert {
+        display: none;
+      }
+
+      /* RIGHT — image panel */
+      .hero-right {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%;
+        animation: kenBurns 18s ease-in-out infinite alternate;
+      }
+      /* Hero background video */
+      .hero-vid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+      }
+      .hero-img-fallback {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%;
+        z-index: 0;
+        animation: kenBurns 18s ease-in-out infinite alternate;
+      }
+      @keyframes kenBurns {
+        from {
+          transform: scale(1) translateX(0);
+        }
+        to {
+          transform: scale(1.06) translateX(-14px);
+        }
+      }
+      /* Gradient bleed from left onto image/video */
+      .hero-right::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          95deg,
+          var(--navy) 0%,
+          rgba(10, 28, 46, 0.55) 28%,
+          rgba(10, 28, 46, 0.1) 60%,
+          transparent 100%
+        );
+        z-index: 2;
+      }
+      /* Bottom fade */
+      .hero-right::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to top, rgba(10, 28, 46, 0.6), transparent);
+        z-index: 2;
+      }
+      /* Floating service count card */
+      .hero-stat-card {
+        position: absolute;
+        bottom: 2.5rem;
+        right: 2rem;
+        z-index: 5;
+        background: rgba(10, 28, 46, 0.85);
+        border: 1px solid rgba(200, 168, 75, 0.25);
+        padding: 1.2rem 1.6rem;
+        backdrop-filter: blur(12px);
+        animation: fadeUp 0.9s 1.2s both;
+      }
+      .hero-stat-num {
+        font-family: var(--f-display);
+        font-size: 2.8rem;
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+      .hero-stat-label {
+        font-family: var(--f-body);
+        font-size: 0.52rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 4px;
+      }
+      /* Gold corner on image */
+      .hero-corner-tl,
+      .hero-corner-br {
+        position: absolute;
+        z-index: 4;
+        pointer-events: none;
+      }
+      .hero-corner-tl {
+        top: 1.5rem;
+        left: 0rem;
+        width: 50px;
+        height: 50px;
+        border-top: 2px solid rgba(200, 168, 75, 0.45);
+        border-left: 2px solid rgba(200, 168, 75, 0.45);
+      }
+      .hero-corner-br {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+        border-bottom: 2px solid rgba(200, 168, 75, 0.45);
+        border-right: 2px solid rgba(200, 168, 75, 0.45);
+      }
+
+      /* Hero text elements */
+      .hero-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--f-serif);
+        font-size: 0.9rem;
+        font-style: italic;
+        color: rgba(200, 168, 75, 0.7);
+        letter-spacing: 0.04em;
+        margin-bottom: 1.8rem;
+        position: relative;
+        z-index: 4;
+        animation: fadeUp 0.8s 0.2s both;
+      }
+      .hero-label::before {
+        content: "";
+        width: 32px;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--gold));
+        opacity: 0.7;
+      }
+      .hero-h1 {
+        font-family: var(--f-display);
+        font-size: clamp(2.4rem, 4vw, 4.8rem);
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1;
+        letter-spacing: -0.025em;
+        position: relative;
+        z-index: 4;
+        animation: fadeUp 0.8s 0.38s both;
+      }
+      .hero-h1-presence {
+        display: block;
+        font-style: italic;
+        font-weight: 900;
+        color: var(--gold);
+        font-size: 1.22em;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        margin-top: 0.05em;
+        animation: fadeUp 0.8s 0.52s both;
+        position: relative;
+        z-index: 4;
+      }
+      .hero-rule {
+        width: 48px;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          rgba(200, 168, 75, 0.3)
+        );
+        margin: 2.2rem 0 1.8rem;
+        position: relative;
+        z-index: 4;
+        animation: fadeIn 0.8s 0.7s both;
+      }
+      .hero-verse {
+        font-family: var(--f-serif);
+        font-size: 0.92rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.38);
+        line-height: 1.75;
+        max-width: 360px;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        position: relative;
+        z-index: 4;
+        animation: fadeUp 0.8s 0.85s both;
+      }
+      .hero-verse cite {
+        display: block;
+        font-style: normal;
+        font-family: var(--f-body);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: 0.5rem;
+        opacity: 0.8;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 4;
+        animation: fadeUp 0.8s 1.05s both;
+      }
+      /* Live badge */
+      .hero-live-badge {
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 0.4rem 0.9rem;
+        background: rgba(10, 28, 46, 0.82);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        backdrop-filter: blur(8px);
+        animation: fadeIn 1s 1.4s both;
+      }
+      .hero-live-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ef4444;
+        animation: livePulse 1.5s ease-in-out infinite;
+      }
+      @keyframes livePulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.7);
+        }
+      }
+      .hero-live-text {
+        font-family: var(--f-body);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ═══ BUTTONS ═══ */
+      .btn-primary {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          transform 0.15s,
+          box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--gold2);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 28px rgba(200, 168, 75, 0.35);
+      }
+      .btn-outline-w {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: transparent;
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        transition: all 0.2s;
+      }
+      .btn-outline-w:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background: rgba(200, 168, 75, 0.06);
+        transform: translateY(-3px);
+      }
+      .btn-outline-d {
+        display: inline-block;
+        padding: 0.85rem 2.2rem;
+        background: transparent;
+        color: var(--navy);
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid rgba(10, 28, 46, 0.3);
+        transition: all 0.2s;
+      }
+      .btn-outline-d:hover {
+        border-color: var(--navy);
+        background: var(--navy);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* ═══ LAYOUT ═══ */
+      .max-w {
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+      .section {
+        padding: 5rem 5rem;
+      }
+      .eyebrow {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.04em;
+      }
+      .sh {
+        font-family: var(--f-display);
+        font-size: clamp(1.9rem, 3vw, 2.9rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.6rem;
+      }
+      .sh-white {
+        color: #fff;
+      }
+      .verse-q {
+        font-family: var(--f-serif);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--muted);
+        border-left: 2px solid var(--gold);
+        padding-left: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.75;
+        font-weight: 300;
+      }
+      .body-p {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+      }
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 168, 75, 0.25),
+          transparent
+        );
+      }
+
+      /* ═══ REVEAL ═══ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-l {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-l.show {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal-r {
+        opacity: 0;
+        transform: translateX(30px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal-r.show {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.36s;
+      }
+      .d4 {
+        transition-delay: 0.5s;
+      }
+
+      /* ═══ SERVICES QUICK-JUMP NAV ═══ */
+      .services-nav {
+        position: sticky;
+        top: var(--total-h);
+        z-index: 88;
+        background: #fff;
+        border-bottom: 1px solid #e8e0d0;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        overflow-x: auto;
+        padding: 0 5rem;
+        scrollbar-width: none;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+      }
+      .services-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .sn-btn {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 1rem 1.3rem;
+        font-family: var(--f-body);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .sn-btn:hover,
+      .sn-btn.active {
+        color: var(--navy);
+        border-bottom-color: var(--gold);
+      }
+      .sn-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* ═══ OVERVIEW STRIP ═══ */
+      .overview-strip {
+        background: var(--navy);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background-color: rgba(255, 255, 255, 0.06);
+      }
+      .ov-item {
+        background: var(--navy);
+        padding: 2.2rem 2rem;
+        border-top: 2px solid transparent;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          border-color 0.3s;
+        text-decoration: none;
+        display: block;
+      }
+      .ov-item:hover,
+      .ov-item.highlight {
+        background: rgba(255, 255, 255, 0.04);
+        border-top-color: var(--gold);
+      }
+      .ov-day {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .ov-name {
+        font-family: var(--f-display);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.3rem;
+        line-height: 1.15;
+      }
+      .ov-time {
+        font-family: var(--f-serif);
+        font-size: 0.9rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+      }
+
+      /* ═══ SERVICE DETAIL SECTIONS ═══ */
+      .svc-detail {
+        padding: 6rem 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .svc-detail:nth-child(odd) {
+        background: #fff;
+      }
+      .svc-detail:nth-child(even) {
+        background: var(--offwhite);
+      }
+      .svc-bg-num {
+        position: absolute;
+        right: -0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--f-display);
+        font-size: 16rem;
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.045);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -0.04em;
+      }
+      .dark-section .svc-bg-num {
+        color: rgba(200, 168, 75, 0.06);
+      }
+      .svc-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .svc-inner.reverse {
+        direction: rtl;
+      }
+      .svc-inner.reverse > * {
+        direction: ltr;
+      }
+      .svc-media {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+      .svc-media video,
+      .svc-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .svc-media::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        width: 80px;
+        height: 80px;
+        border-top: 3px solid var(--gold);
+        border-left: 3px solid var(--gold);
+        z-index: 2;
+        pointer-events: none;
+        transition:
+          width 0.4s,
+          height 0.4s;
+      }
+      .svc-media::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        width: 80px;
+        height: 80px;
+        border-bottom: 3px solid var(--gold);
+        border-right: 3px solid var(--gold);
+        z-index: 2;
+        pointer-events: none;
+      }
+      .svc-media:hover::before,
+      .svc-media:hover::after {
+        width: 110px;
+        height: 110px;
+      }
+      /* Video — shows poster, plays on click */
+      .vid-placeholder {
+        display: none !important;
+      }
+      .svc-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.8rem;
+        border: 1px solid rgba(200, 168, 75, 0.35);
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+      }
+      .svc-h2 {
+        font-family: var(--f-display);
+        font-size: clamp(2rem, 3.5vw, 3.2rem);
+        font-weight: 900;
+        color: var(--navy);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
+      }
+      .dark-section .svc-h2 {
+        color: #fff;
+      }
+      .svc-time-badge {
+        font-family: var(--f-serif);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+        display: block;
+        font-weight: 300;
+      }
+      .svc-body {
+        font-family: var(--f-body);
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+        margin-bottom: 1.4rem;
+      }
+      .dark-section .svc-body {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .svc-bullets {
+        margin-bottom: 1.6rem;
+      }
+      .svc-bullet {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-family: var(--f-body);
+        font-size: 0.83rem;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: 0.6rem;
+      }
+      .dark-section .svc-bullet {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .svc-bullet::before {
+        content: "✦";
+        color: var(--gold);
+        font-size: 0.5rem;
+        flex-shrink: 0;
+        margin-top: 0.35rem;
+      }
+      .svc-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.82rem 1.8rem;
+        background: rgba(200, 168, 75, 0.1);
+        border: 1px solid rgba(200, 168, 75, 0.3);
+        color: var(--gold);
+        font-family: var(--f-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          transform 0.15s;
+        margin-top: 0.5rem;
+      }
+      .svc-wa:hover {
+        background: rgba(200, 168, 75, 0.18);
+        border-color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .svc-wa svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--gold);
+      }
+      .dark-section {
+        background: var(--navy) !important;
+      }
+      .dark-section .verse-q {
+        color: rgba(255, 255, 255, 0.38);
+        border-color: var(--gold);
+      }
+      .dark-section .svc-tag {
+        color: var(--gold);
+      }
+
+      /* ═══ SOCIAL LINKS ROW (Watch Live strip) ═══ */
+      .watch-strip {
+        background: #0b1f35;
+        border-top: 1px solid rgba(200, 168, 75, 0.15);
+        border-bottom: 1px solid rgba(200, 168, 75, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 0 5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .watch-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .watch-strip-label {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(200, 168, 75, 0.5);
+        white-space: nowrap;
+        padding-right: 1.8rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        margin-right: 1.8rem;
+      }
+      .watch-btn {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 0.95rem 1.5rem;
+        font-family: var(--f-body);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        white-space: nowrap;
+        transition:
+          color 0.2s,
+          background 0.2s;
+        border-radius: 2px;
+      }
+      .watch-btn:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .watch-btn svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .watch-btn.fb {
+      }
+      .watch-btn.fb:hover {
+        color: #6ca0e8;
+      }
+      .watch-btn.yt:hover {
+        color: #ff4444;
+      }
+      .watch-btn.tt:hover {
+        color: #69c9d0;
+      }
+
+      /* ═══ RECEIVE JESUS ═══ */
+      #receive-jesus {
+        background: var(--navy);
+        padding: 7rem 5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      #receive-jesus::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 80% at 50% 50%,
+          rgba(200, 168, 75, 0.07) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+      #receive-jesus::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 80px;
+        background: linear-gradient(to bottom, transparent, var(--gold));
+      }
+      .rj-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .rj-cross {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 2rem;
+        color: var(--gold);
+        opacity: 0.8;
+      }
+      .rj-h2 {
+        font-family: var(--f-display);
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        letter-spacing: -0.01em;
+      }
+      .rj-h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .rj-verse {
+        font-family: var(--f-serif);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.8;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+      }
+      .rj-verse cite {
+        display: block;
+        font-style: normal;
+        font-family: var(--f-body);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: 0.5rem;
+      }
+      .rj-steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        text-align: left;
+      }
+      .rj-step {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(200, 168, 75, 0.12);
+        padding: 1.8rem 1.6rem;
+        position: relative;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          background 0.3s;
+      }
+      .rj-step.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .rj-step:hover {
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .step-num {
+        font-family: var(--f-display);
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(200, 168, 75, 0.15);
+        line-height: 1;
+        margin-bottom: 0.8rem;
+      }
+      .step-title {
+        font-family: var(--f-display);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+      .step-body {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.4);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .rj-prayer-box {
+        background: rgba(200, 168, 75, 0.07);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
+        text-align: left;
+      }
+      .rj-prayer-title {
+        font-family: var(--f-body);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .rj-prayer-text {
+        font-family: var(--f-serif);
+        font-size: 1.05rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.85;
+        font-weight: 300;
+      }
+      .rj-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* ═══ SPECIAL EVENTS ═══ */
+      .events-section {
+        background: var(--offwhite);
+        padding: 5rem 5rem;
+      }
+      .events-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .event-card {
+        background: #fff;
+        border: 1px solid #e5ddd0;
+        border-top: 3px solid var(--gold);
+        padding: 2rem 1.8rem;
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.3s;
+      }
+      .event-card.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .event-card:hover {
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px) !important;
+      }
+      .event-freq {
+        font-family: var(--f-body);
+        font-size: 0.55rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .event-name {
+        font-family: var(--f-display);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.35rem;
+      }
+      .event-time {
+        font-family: var(--f-serif);
+        font-size: 0.9rem;
+        font-style: italic;
+        color: var(--muted);
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+      .event-desc {
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* ═══ CONNECT CTA ═══ */
+      .connect-cta {
+        background: var(--navy);
+        padding: 5rem;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .connect-cta-left .sh-white {
+        margin-bottom: 1rem;
+      }
+      .connect-cta-left .body-p {
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .connect-cta-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+      .cta-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1rem 1.4rem;
+        border: 1px solid rgba(200, 168, 75, 0.15);
+        color: rgba(255, 255, 255, 0.6);
+        font-family: var(--f-body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .cta-link:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: var(--gold);
+        color: #fff;
+      }
+      .cta-link-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(200, 168, 75, 0.1);
+        border: 1px solid rgba(200, 168, 75, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .cta-link-icon svg {
+        width: 15px;
+        height: 15px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .connect-form input,
+      .connect-form textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #fff;
+        font-family: var(--f-body);
+        font-size: 0.88rem;
+        outline: none;
+        transition: border-color 0.2s;
+        margin-bottom: 1rem;
+      }
+      .connect-form input:focus,
+      .connect-form textarea:focus {
+        border-color: var(--gold);
+        background: rgba(200, 168, 75, 0.04);
+      }
+      .connect-form input::placeholder,
+      .connect-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .connect-form textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      /* ═══ FOOTER ═══ */
+      footer {
+        background: var(--navy);
+        padding: 4rem 5rem 2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .ft-top {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 1.8rem;
+      }
+      .ft-brand-name {
+        font-family: var(--f-display);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .ft-brand-sub {
+        font-family: var(--f-serif);
+        font-size: 0.65rem;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        font-style: italic;
+        margin-top: 1px;
+      }
+      .ft-brand p {
+        font-family: var(--f-serif);
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.7;
+        margin-top: 0.8rem;
+        font-style: italic;
+        font-weight: 300;
+      }
+      .ft-motto {
+        display: block;
+        font-family: var(--f-serif);
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--gold);
+        margin-top: 0.7rem;
+      }
+      .ft-col h5 {
+        font-family: var(--f-body);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+      .ft-col li {
+        margin-bottom: 0.5rem;
+      }
+      .ft-col a {
+        font-family: var(--f-body);
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        transition:
+          color 0.2s,
+          padding-left 0.15s;
+        display: inline-block;
+      }
+      .ft-col a:hover {
+        color: #fff;
+        padding-left: 5px;
+      }
+      .ft-btm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .ft-btm p {
+        font-family: var(--f-body);
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.18);
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.35);
+        transition: all 0.2s;
+      }
+      .socials a:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .socials svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      /* ═══ RESPONSIVE ═══ */
+      @media (max-width: 1024px) {
+        .overview-strip {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .rj-steps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .events-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .connect-cta {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 860px) {
+        .nav-menu,
+        .btn-give-nav {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        nav#mainNav,
+        .topbar {
+          padding: 0 1rem;
+        }
+        .topbar-left {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          display: none;
+        }
+        .hero-left {
+          padding: 3rem 1.5rem 3rem 3rem;
+          min-height: calc(100vh - var(--total-h));
+        }
+        .hero-left::after {
+          display: none;
+        }
+        .hero-stat-card {
+          display: none;
+        }
+        .hero-live-badge {
+          display: none;
+        }
+        .svc-detail,
+        .events-section,
+        #receive-jesus,
+        .connect-cta,
+        .section,
+        footer {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+        .services-nav {
+          padding: 0 1.2rem;
+        }
+        .watch-strip {
+          padding: 0 1.2rem;
+        }
+        .svc-inner,
+        .svc-inner.reverse {
+          grid-template-columns: 1fr;
+          direction: ltr;
+        }
+        .svc-bg-num {
+          font-size: 8rem;
+        }
+        .ft-top {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .overview-strip {
+          grid-template-columns: 1fr;
+        }
+        .rj-steps {
+          grid-template-columns: 1fr;
+        }
+        .events-grid {
+          grid-template-columns: 1fr;
+        }
+        .ft-top {
+          grid-template-columns: 1fr;
+        }
+        .hero-btns {
+          flex-direction: column;
+        }
+        .rj-btns {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-prog" id="scrollProg"></div>
+    <div class="sidebar-backdrop" id="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-header">
+        <div class="sb-brand">
+          <div class="sb-circle">
+            <img
+              src="images/prophetlogo.jpeg"
+              alt="SHJ"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div>
+            <div class="sb-name">Strong Hand of Jehovah</div>
+            <div class="sb-sub">Prophetic Ministry</div>
+          </div>
+        </div>
+        <button class="sb-close" onclick="closeSidebar()">&#x2715;</button>
+      </div>
+      <a class="sb-give-strip" href="give.html" onclick="closeSidebar()"
+        >&#9829; Give / Partner With Us</a
+      >
+      <div class="sb-body">
+        <div class="sb-section">
+          <div class="sb-section-title">Help Me With</div>
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Faith</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Prayer</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Healing</a
+          >
+          <a
+            class="sb-link"
+            href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+            target="_blank"
+            ><span class="sb-link-dot"></span>Counseling</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Explore</div>
+          <a class="sb-link" href="index.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Home</a
+          >
+          <a class="sb-link" href="testimonies.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Testimonies</a
+          >
+          <a
+            class="sb-link active"
+            href="services.html"
+            onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Services</a
+          >
+          <a class="sb-link" href="index.html#watch" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Watch Live</a
+          >
+          <a class="sb-link" href="shop.html" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Shop</a
+          >
+          <a class="sb-link" href="index.html#about" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>About Us</a
+          >
+          <a class="sb-link" href="index.html#contact" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Contact</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Our Services</div>
+          <a class="sb-link" href="#sunday" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Sunday Worship</a
+          >
+          <a class="sb-link" href="#wednesday" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Midweek Prayer</a
+          >
+          <a class="sb-link" href="#friday" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Prophetic Night</a
+          >
+          <a class="sb-link" href="#saturday" onclick="closeSidebar()"
+            ><span class="sb-link-dot"></span>Youth Service</a
+          >
+          <a class="sb-link" href="#receive-jesus" onclick="closeSidebar()"
+            ><span class="sb-link-dot" style="background: var(--gold)"></span
+            >Receive Jesus</a
+          >
+        </div>
+        <div class="sb-section">
+          <div class="sb-section-title">Watch Live On</div>
+          <a
+            class="sb-link"
+            href="https://www.facebook.com/profile.php?id=100063787395975"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #1877f2"></span
+            >Facebook (Live)</a
+          >
+          <a
+            class="sb-link"
+            href="https://www.youtube.com/@thestronghandofjehovah"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #ff0000"></span
+            >YouTube</a
+          >
+          <a
+            class="sb-link"
+            href="https://www.tiktok.com/@prophet_joshua1"
+            target="_blank"
+            ><span class="sb-link-dot" style="background: #00f2ea"></span
+            >TikTok</a
+          >
+        </div>
+        <a class="sb-wa" href="https://wa.me/2349019733420" target="_blank">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            />
+          </svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </aside>
+
+    <!-- ═══ TOP BAR ═══ -->
+    <div class="topbar">
+      <span class="topbar-left">Through Faith and Belief</span>
+      <div class="topbar-right">
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420?text=I%20need%20Prayer"
+          target="_blank"
+          >Prayer Request</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://wa.me/2349019733420"
+          target="_blank"
+          >WhatsApp: 09019733420</a
+        >
+        <span class="topbar-sep">|</span>
+        <a
+          class="topbar-link"
+          href="https://www.facebook.com/profile.php?id=100063787395975"
+          target="_blank"
+          >Watch Live</a
+        >
+      </div>
+    </div>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav id="mainNav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Home">
+        <div class="logo-circle">
+          <img
+            src="images/prophetlogo.jpeg"
+            alt="SHJ Logo"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <div>
+          <div class="logo-name">Strong Hand of Jehovah</div>
+          <div class="logo-sub">Prophetic Ministry</div>
+        </div>
+      </a>
+      <ul class="nav-menu" role="list">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#help"
+            >Help Me With
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20help%20with%20Faith"
+              target="_blank"
+              ><span class="dd-dot"></span>Faith</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Prayer%20support"
+              target="_blank"
+              ><span class="dd-dot"></span>Prayer</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Healing%20prayer"
+              target="_blank"
+              ><span class="dd-dot"></span>Healing</a
+            >
+            <a
+              class="dd-link"
+              href="https://wa.me/2349019733420?text=I%20need%20Counseling"
+              target="_blank"
+              ><span class="dd-dot"></span>Counseling</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="testimonies.html">Testimonies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="services.html"
+            >Services
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a class="dd-link" href="services.html"
+              ><span class="dd-dot"></span>All Services</a
+            >
+            <a class="dd-link" href="#sunday"
+              ><span class="dd-dot"></span>Sunday Worship</a
+            >
+            <a class="dd-link" href="#wednesday"
+              ><span class="dd-dot"></span>Midweek Prayer</a
+            >
+            <a class="dd-link" href="#friday"
+              ><span class="dd-dot"></span>Prophetic Night</a
+            >
+            <a class="dd-link" href="#saturday"
+              ><span class="dd-dot"></span>Youth Service</a
+            >
+            <a class="dd-link" href="#receive-jesus"
+              ><span class="dd-dot"></span>Receive Jesus</a
+            >
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://www.facebook.com/profile.php?id=100063787395975"
+            target="_blank"
+            >Watch
+            <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1" /></svg
+          ></a>
+          <div class="dropdown">
+            <a
+              class="dd-link"
+              href="https://www.facebook.com/profile.php?id=100063787395975"
+              target="_blank"
+              ><span class="dd-dot" style="background: #1877f2"></span>Facebook
+              Live</a
+            >
+            <a
+              class="dd-link"
+              href="https://www.youtube.com/@thestronghandofjehovah"
+              target="_blank"
+              ><span class="dd-dot" style="background: #ff0000"></span
+              >YouTube</a
+            >
+            <a
+              class="dd-link"
+              href="https://www.tiktok.com/@prophet_joshua1"
+              target="_blank"
+              ><span class="dd-dot" style="background: #00f2ea"></span>TikTok</a
+            >
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#contact">Contact</a>
+        </li>
+      </ul>
+      <a class="btn-give-nav" href="give.html">Give Now</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ══════════════════════════ PAGE ══════════════════════════ -->
+    <div class="page-top">
+      <!-- ═══ HERO — SPLIT LAYOUT ═══ -->
+      <section class="hero" aria-label="Services hero">
+        <!-- LEFT: Navy text panel -->
+        <div class="hero-left">
+          <div class="hero-vert">Prophetic Ministry · Abuja, Nigeria</div>
+          <div class="hero-ghost">SHJ</div>
+
+          <span class="hero-label">Strong Hand of Jehovah</span>
+
+          <h1 class="hero-h1">Come Into His</h1>
+          <span class="hero-h1-presence">Presence</span>
+
+          <div class="hero-rule"></div>
+
+          <figure class="hero-verse">
+            <blockquote>
+              "Not forsaking the assembling of ourselves together, as the manner
+              of some is; but exhorting one another — and so much the more, as
+              ye see the day approaching."
+            </blockquote>
+            <cite>— Hebrews 10:25</cite>
+          </figure>
+
+          <div class="hero-btns">
+            <a href="#sunday" class="btn-primary">View Services</a>
+            <a href="#receive-jesus" class="btn-outline-w">Receive Jesus</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Video panel -->
+        <div class="hero-right">
+          <video autoplay muted loop playsinline class="hero-vid">
+            <source src="videos/prophetpraying.mp4" type="video/mp4" />
+          </video>
+          <!-- Fallback image if video doesn't load -->
+
+          <!-- Floating live badge -->
+          <div class="hero-live-badge">
+            <div class="hero-live-dot"></div>
+            <span class="hero-live-text">Watch on Facebook</span>
+          </div>
+
+          <!-- Stat card -->
+          <div class="hero-stat-card">
+            <div class="hero-stat-num">4</div>
+            <div class="hero-stat-label">Services Weekly</div>
+          </div>
+
+          <!-- Gold corners -->
+          <div class="hero-corner-tl"></div>
+          <div class="hero-corner-br"></div>
+        </div>
+      </section>
+
+      <!-- ═══ WATCH LIVE STRIP ═══ -->
+      <div class="watch-strip">
+        <span class="watch-strip-label">Watch Live On</span>
+
+        <!-- Facebook (PRIMARY) -->
+        <a
+          class="watch-btn fb"
+          href="https://www.facebook.com/profile.php?id=100063787395975"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="#1877f2">
+            <path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            />
+          </svg>
+          Facebook Live
+        </a>
+
+        <!-- YouTube -->
+        <a
+          class="watch-btn yt"
+          href="https://www.youtube.com/@thestronghandofjehovah"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="#ff0000">
+            <path
+              d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+            />
+            <polygon fill="#fff" points="10 15 15.19 12 10 9 10 15" />
+          </svg>
+          YouTube
+        </a>
+
+        <!-- TikTok -->
+        <a
+          class="watch-btn tt"
+          href="https://www.tiktok.com/@prophet_joshua1"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" style="color: #69c9d0">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"
+            />
+          </svg>
+          TikTok
+        </a>
+      </div>
+
+      <!-- ═══ OVERVIEW STRIP ═══ -->
+      <div class="overview-strip reveal">
+        <a class="ov-item" href="#sunday">
+          <div class="ov-day">Sunday</div>
+          <div class="ov-name">Praise &amp; Worship</div>
+          <div class="ov-time">8:00 AM &amp; 10:30 AM</div>
+        </a>
+        <a class="ov-item" href="#wednesday">
+          <div class="ov-day">Wednesday</div>
+          <div class="ov-name">Midweek Prayer</div>
+          <div class="ov-time">6:00 PM</div>
+        </a>
+        <a class="ov-item" href="#friday">
+          <div class="ov-day">Friday</div>
+          <div class="ov-name">Prophetic Night</div>
+          <div class="ov-time">7:00 PM</div>
+        </a>
+        <a class="ov-item" href="#saturday">
+          <div class="ov-day">Saturday</div>
+          <div class="ov-name">Youth Service</div>
+          <div class="ov-time">4:00 PM</div>
+        </a>
+      </div>
+
+      <!-- ═══ STICKY SERVICE NAV ═══ -->
+      <nav class="services-nav" aria-label="Jump to service">
+        <button class="sn-btn active" onclick="jumpTo('#sunday')">
+          <span class="sn-dot" style="background: #c8a84b"></span>Sunday Worship
+        </button>
+        <button class="sn-btn" onclick="jumpTo('#wednesday')">
+          <span class="sn-dot" style="background: #3b82f6"></span>Midweek Prayer
+        </button>
+        <button class="sn-btn" onclick="jumpTo('#friday')">
+          <span class="sn-dot" style="background: #ef4444"></span>Prophetic
+          Night
+        </button>
+        <button class="sn-btn" onclick="jumpTo('#saturday')">
+          <span class="sn-dot" style="background: #22c55e"></span>Youth Service
+        </button>
+        <button class="sn-btn" onclick="jumpTo('#special-events')">
+          <span class="sn-dot" style="background: #a855f7"></span>Special Events
+        </button>
+        <button class="sn-btn" onclick="jumpTo('#receive-jesus')">
+          <span class="sn-dot" style="background: #f59e0b"></span>Receive Jesus
+        </button>
+      </nav>
+
+      <!-- ════════════════════════
+           SUNDAY — Praise & Worship
+      ════════════════════════ -->
+      <section id="sunday" class="svc-detail">
+        <div class="svc-bg-num">SUN</div>
+        <div class="svc-inner">
+          <div class="svc-text reveal-l">
+            <span class="svc-tag">Every Sunday</span>
+            <h2 class="svc-h2">Praise &amp;<br />Worship Service</h2>
+            <span class="svc-time-badge">8:00 AM &amp; 10:30 AM</span>
+            <blockquote class="verse-q">
+              "Enter his gates with thanksgiving and his courts with praise;
+              give thanks to him and praise his name." — Psalm 100:4
+            </blockquote>
+            <p class="svc-body">
+              The Sunday service is the heartbeat of SHJ — a Spirit-filled
+              gathering where heaven meets earth. Expect anointed praise and
+              worship, a prophetic word from God, and powerful community
+              fellowship.
+            </p>
+            <div class="svc-bullets">
+              <div class="svc-bullet">
+                Spirit-led worship and prophetic music ministry
+              </div>
+              <div class="svc-bullet">
+                Anointed preaching and teaching from the Word
+              </div>
+              <div class="svc-bullet">
+                Prayer ministry and altar call available
+              </div>
+              <div class="svc-bullet">
+                Children's ministry runs concurrently
+              </div>
+              <div class="svc-bullet">
+                First-timers welcome — no dress code, come as you are
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+              <a
+                href="https://wa.me/2349019733420?text=I%20would%20like%20to%20attend%20Sunday%20service"
+                target="_blank"
+                class="svc-wa"
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                I'll Be There
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100063787395975"
+                target="_blank"
+                class="btn-outline-d"
+                style="font-size: 0.65rem; padding: 0.7rem 1.4rem"
+                >Watch Live</a
+              >
+            </div>
+          </div>
+          <div class="svc-media reveal-r">
+            <video
+              controls
+              preload="metadata"
+              poster="images/prophet2.jpeg"
+              style="position: relative; z-index: 1"
+            >
+              <source src="videos/prophetaddressing.mp4" type="video/mp4" />
+            </video>
+            <div class="vid-placeholder"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ════════════════════════
+           WEDNESDAY — Midweek Prayer
+      ════════════════════════ -->
+      <section id="wednesday" class="svc-detail">
+        <div class="svc-bg-num">WED</div>
+        <div class="svc-inner reverse">
+          <div class="svc-text reveal-r">
+            <span class="svc-tag">Every Wednesday</span>
+            <h2 class="svc-h2">Midweek<br />Prayer Service</h2>
+            <span class="svc-time-badge">6:00 PM</span>
+            <blockquote class="verse-q">
+              "The effective, fervent prayer of a righteous man avails much." —
+              James 5:16
+            </blockquote>
+            <p class="svc-body">
+              The midweek prayer service keeps you anchored and empowered
+              through the working week. We intercede together for personal
+              needs, families, Nigeria, and the nations of the world.
+            </p>
+            <div class="svc-bullets">
+              <div class="svc-bullet">
+                Targeted intercessory prayer for specific needs
+              </div>
+              <div class="svc-bullet">Worship-driven prayer atmosphere</div>
+              <div class="svc-bullet">
+                Mid-week prophetic word to sustain you
+              </div>
+              <div class="svc-bullet">
+                Prayer points sent to members in advance
+              </div>
+            </div>
+            <a
+              href="https://wa.me/2349019733420?text=I%20would%20like%20to%20attend%20Midweek%20Prayer"
+              target="_blank"
+              class="svc-wa"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Join This Week
+            </a>
+          </div>
+          <div class="svc-media reveal-l">
+            <video
+              controls
+              preload="metadata"
+              poster="images/pastor.jpg"
+              style="position: relative; z-index: 1"
+            >
+              <source src="videos/prophetpraying.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ════════════════════════
+           FRIDAY — Prophetic Night
+      ════════════════════════ -->
+      <section id="friday" class="svc-detail dark-section">
+        <div class="svc-bg-num" style="color: rgba(200, 168, 75, 0.05)">
+          FRI
+        </div>
+        <div class="svc-inner">
+          <div class="svc-text reveal-l">
+            <span class="svc-tag" style="border-color: rgba(200, 168, 75, 0.4)"
+              >Every Friday</span
+            >
+            <h2 class="svc-h2">Prophetic<br />Night</h2>
+            <span class="svc-time-badge">7:00 PM — Late</span>
+            <blockquote class="verse-q">
+              "Surely the Lord God does nothing, without revealing His secret to
+              His servants the prophets." — Amos 3:7
+            </blockquote>
+            <p class="svc-body">
+              Friday night belongs to the Spirit. The Prophetic Night is an
+              open, unscripted gathering where the Holy Spirit moves freely —
+              expect personal prophecies, healings, signs, wonders, and divine
+              encounters that will mark your life forever.
+            </p>
+            <div class="svc-bullets">
+              <div class="svc-bullet">
+                Personal prophetic ministry and words of knowledge
+              </div>
+              <div class="svc-bullet">Healing and deliverance prayer</div>
+              <div class="svc-bullet">
+                Spontaneous worship — no fixed programme
+              </div>
+              <div class="svc-bullet">
+                Prophetic declarations over families and businesses
+              </div>
+              <div class="svc-bullet">
+                Live on Facebook, YouTube &amp; TikTok
+              </div>
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 0.8rem;
+                flex-wrap: wrap;
+                margin-top: 0.5rem;
+              "
+            >
+              <a
+                href="https://wa.me/2349019733420?text=I%20would%20like%20to%20attend%20Prophetic%20Night"
+                target="_blank"
+                class="svc-wa"
+                style="
+                  background: rgba(200, 168, 75, 0.12);
+                  border-color: rgba(200, 168, 75, 0.4);
+                "
+              >
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                Reserve My Seat
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100063787395975"
+                target="_blank"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 7px;
+                  padding: 0.82rem 1.4rem;
+                  border: 1px solid rgba(24, 119, 242, 0.35);
+                  color: #6ca0e8;
+                  font-family: var(--f-body);
+                  font-size: 0.65rem;
+                  font-weight: 700;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  transition: all 0.2s;
+                "
+                >Watch Live</a
+              >
+            </div>
+          </div>
+          <div class="svc-media reveal-r">
+            <video
+              controls
+              preload="metadata"
+              poster="images/prophet3.jpeg"
+              style="position: relative; z-index: 1"
+            >
+              <source src="videos/prophetknelling.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" style="background: rgba(255, 255, 255, 0.05)"></div>
+
+      <!-- ════════════════════════
+           SATURDAY — Youth Service
+      ════════════════════════ -->
+      <section
+        id="saturday"
+        class="svc-detail"
+        style="background: var(--offwhite)"
+      >
+        <div class="svc-bg-num">SAT</div>
+        <div class="svc-inner reverse">
+          <div class="svc-text reveal-r">
+            <span class="svc-tag">Every Saturday</span>
+            <h2 class="svc-h2">Youth<br />Service</h2>
+            <span class="svc-time-badge">4:00 PM</span>
+            <blockquote class="verse-q">
+              "Don't let anyone look down on you because you are young, but set
+              an example in speech, conduct, love, faith and purity." — 1
+              Timothy 4:12
+            </blockquote>
+            <p class="svc-body">
+              SHJ Youth Service is where the next generation encounters God on
+              their own terms. High-energy, relevant, and deeply rooted in truth
+              — we disciple young people to become world-changers, not just
+              churchgoers.
+            </p>
+            <div class="svc-bullets">
+              <div class="svc-bullet">
+                Energetic praise and contemporary worship
+              </div>
+              <div class="svc-bullet">
+                Relevant teaching on identity, purpose, and relationships
+              </div>
+              <div class="svc-bullet">
+                Peer mentorship and discipleship circles
+              </div>
+              <div class="svc-bullet">
+                Creative expression — arts, media, and gifts
+              </div>
+              <div class="svc-bullet">Open to ages 13 – 35</div>
+            </div>
+            <a
+              href="https://wa.me/2349019733420?text=I%20would%20like%20to%20attend%20Youth%20Service"
+              target="_blank"
+              class="svc-wa"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Join Youth Service
+            </a>
+          </div>
+          <div class="svc-media reveal-l">
+            <video
+              controls
+              preload="metadata"
+              poster="images/prophet2.jpeg"
+              style="position: relative; z-index: 1"
+            >
+              <source src="videos/building.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ════════════════════════
+           SPECIAL EVENTS
+      ════════════════════════ -->
+      <section id="special-events" class="events-section">
+        <div class="max-w">
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              justify-content: space-between;
+              gap: 2rem;
+              margin-bottom: 0.5rem;
+            "
+          >
+            <div>
+              <span class="eyebrow reveal">Throughout the Year</span>
+              <h2 class="sh reveal d1">Special Services<br />&amp; Events</h2>
+            </div>
+            <p
+              class="reveal d2"
+              style="
+                font-family: var(--f-serif);
+                font-size: 0.95rem;
+                font-style: italic;
+                color: var(--muted);
+                max-width: 280px;
+                line-height: 1.7;
+                font-weight: 300;
+                text-align: right;
+              "
+            >
+              Beyond the weekly calendar, SHJ hosts powerful gatherings that
+              mark seasons of breakthrough.
+            </p>
+          </div>
+          <div class="events-grid" id="eventsGrid">
+            <article class="event-card">
+              <div class="event-freq">Monthly — Last Friday</div>
+              <div class="event-name">All-Night Vigil</div>
+              <div class="event-time">10:00 PM – 4:00 AM</div>
+              <p class="event-desc">
+                A night of intense intercession, prophetic worship, and
+                breakthrough prayer. Many testimonies of divine turnarounds have
+                emerged from these vigils. Come hungry, leave transformed.
+              </p>
+            </article>
+            <article class="event-card">
+              <div class="event-freq">Quarterly</div>
+              <div class="event-name">Prophetic Summit</div>
+              <div class="event-time">Friday – Sunday</div>
+              <p class="event-desc">
+                A three-day intensive gathering focused on hearing God,
+                receiving prophetic activation, and understanding your season.
+                Guest prophets and ministers alongside our leadership.
+              </p>
+            </article>
+            <article class="event-card">
+              <div class="event-freq">Annual — January</div>
+              <div class="event-name">21 Days of Prayer &amp; Fasting</div>
+              <div class="event-time">6:00 AM Daily</div>
+              <p class="event-desc">
+                We open every year with 21 days of corporate fasting and prayer.
+                This is the spiritual foundation that carries the ministry
+                through the year. Prayer guides distributed to all members.
+              </p>
+            </article>
+            <article class="event-card">
+              <div class="event-freq">Annual — December</div>
+              <div class="event-name">Crossover Night</div>
+              <div class="event-time">10:00 PM – Midnight</div>
+              <p class="event-desc">
+                End the year in the presence of God and cross into the New Year
+                with prophetic declarations and supernatural positioning. One of
+                the most anticipated nights of the SHJ calendar.
+              </p>
+            </article>
+            <article class="event-card">
+              <div class="event-freq">Bi-Annual</div>
+              <div class="event-name">Healing &amp; Miracle Service</div>
+              <div class="event-time">Saturday, 10:00 AM</div>
+              <p class="event-desc">
+                Dedicated entirely to healing ministry. The anointing for
+                healing flows powerfully in these services. Bring the sick —
+                bring those who need a miracle. Nothing is impossible with God.
+              </p>
+            </article>
+            <article class="event-card">
+              <div class="event-freq">Monthly</div>
+              <div class="event-name">New Members Induction</div>
+              <div class="event-time">Sunday, After 2nd Service</div>
+              <p class="event-desc">
+                A warm welcome and foundational orientation for all new members
+                of the SHJ family. Includes connection with leadership, ministry
+                discovery, and covenant membership teaching.
+              </p>
+            </article>
+          </div>
+          <div style="text-align: center; margin-top: 2.5rem" class="reveal">
+            <a
+              href="https://wa.me/2349019733420?text=Please%20add%20me%20to%20the%20SHJ%20events%20notification%20list"
+              target="_blank"
+              class="btn-primary"
+              >Get Event Notifications</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ════════════════════════
+           RECEIVE JESUS
+      ════════════════════════ -->
+      <section id="receive-jesus">
+        <div class="rj-inner reveal">
+          <svg
+            class="rj-cross"
+            viewBox="0 0 56 56"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <line x1="28" y1="6" x2="28" y2="50" />
+            <line x1="10" y1="18" x2="46" y2="18" />
+          </svg>
+          <h2 class="rj-h2">Have You Met<br /><em>Jesus Christ?</em></h2>
+          <p class="rj-verse">
+            "For God so loved the world that he gave his one and only Son, that
+            whoever believes in him shall not perish but have eternal life."
+            <cite>— John 3:16</cite>
+          </p>
+        </div>
+        <div class="rj-steps" id="rjSteps">
+          <div class="rj-step">
+            <div class="step-num">01</div>
+            <div class="step-title">Admit</div>
+            <p class="step-body">
+              Acknowledge that you are a sinner and that you cannot save
+              yourself. "For all have sinned and fall short of the glory of
+              God." — Romans 3:23
+            </p>
+          </div>
+          <div class="rj-step">
+            <div class="step-num">02</div>
+            <div class="step-title">Believe</div>
+            <p class="step-body">
+              Believe that Jesus Christ died for your sins and rose from the
+              dead. He is the only way, the truth, and the life. — John 14:6
+            </p>
+          </div>
+          <div class="rj-step">
+            <div class="step-num">03</div>
+            <div class="step-title">Confess</div>
+            <p class="step-body">
+              "If you confess with your mouth that Jesus is Lord and believe in
+              your heart that God raised him from the dead, you will be saved."
+              — Romans 10:9
+            </p>
+          </div>
+        </div>
+        <div class="rj-prayer-box reveal">
+          <div class="rj-prayer-title">Pray This Prayer Out Loud</div>
+          <p class="rj-prayer-text">
+            Lord Jesus, I come before you today as a sinner. I believe that you
+            died on the cross for my sins and rose again on the third day. I
+            repent of all my sins and I ask you to forgive me. Come into my
+            heart, Lord Jesus. I confess you as my Lord and my Saviour. From
+            this day forward, I belong to you. Fill me with your Holy Spirit and
+            help me to live for you. In Jesus' name.
+            <strong style="color: var(--gold)">Amen.</strong>
+          </p>
+        </div>
+        <div class="rj-btns reveal">
+          <a
+            href="https://wa.me/2349019733420?text=I%20just%20prayed%20the%20salvation%20prayer%20and%20would%20like%20to%20connect%20with%20a%20minister"
+            target="_blank"
+            class="btn-primary"
+            style="font-size: 0.72rem"
+            >Tell Us You Prayed — We'd Love to Connect</a
+          >
+          <a
+            href="testimonies.html#salvation"
+            class="btn-outline-w"
+            style="font-size: 0.72rem"
+            >Read Salvation Testimonies</a
+          >
+        </div>
+      </section>
+
+      <!-- ════════════════════════
+           CONNECT / PRAYER REQUEST
+      ════════════════════════ -->
+      <section class="connect-cta">
+        <div class="connect-cta-left reveal-l">
+          <span class="eyebrow" style="color: rgba(200, 168, 75, 0.7)"
+            >We're Here For You</span
+          >
+          <h2 class="sh sh-white">Can't Make It<br />In Person?</h2>
+          <p class="body-p" style="color: rgba(255, 255, 255, 0.45)">
+            We serve you wherever you are. Send a prayer request, watch online,
+            or reach us on WhatsApp — the ministry of SHJ is available to you
+            24/7.
+          </p>
+          <div class="connect-cta-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=100063787395975"
+              target="_blank"
+              class="cta-link"
+            >
+              <span class="cta-link-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--gold)"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  /></svg
+              ></span>
+              Watch us live on Facebook (primary stream)
+            </a>
+            <a
+              href="https://www.youtube.com/@thestronghandofjehovah"
+              target="_blank"
+              class="cta-link"
+            >
+              <span class="cta-link-icon"
+                ><svg viewBox="0 0 24 24">
+                  <polygon
+                    stroke="var(--gold)"
+                    stroke-width="1.8"
+                    points="23 7 16 12 23 17 23 7"
+                    fill="none"
+                  />
+                  <rect
+                    x="1"
+                    y="5"
+                    width="15"
+                    height="14"
+                    rx="2"
+                    ry="2"
+                    stroke="var(--gold)"
+                    stroke-width="1.8"
+                    fill="none"
+                  /></svg
+              ></span>
+              Subscribe on YouTube — sermons &amp; highlights
+            </a>
+            <a
+              href="https://www.tiktok.com/@prophet_joshua1"
+              target="_blank"
+              class="cta-link"
+            >
+              <span class="cta-link-icon"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--gold)"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg
+              ></span>
+              Follow on TikTok @prophet_joshua1
+            </a>
+            <a
+              href="https://wa.me/2349019733420?text=I%20have%20a%20prayer%20request%3A%20"
+              target="_blank"
+              class="cta-link"
+            >
+              <span class="cta-link-icon"
+                ><svg viewBox="0 0 24 24">
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    stroke="var(--gold)"
+                    stroke-width="1.8"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  /></svg
+              ></span>
+              Send a prayer request via WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="connect-form reveal-r">
+          <span
+            class="eyebrow"
+            style="
+              display: block;
+              margin-bottom: 1.2rem;
+              color: rgba(200, 168, 75, 0.7);
+            "
+            >Quick Prayer Request</span
+          >
+          <input type="text" id="pName" placeholder="Your Name" />
+          <input
+            type="text"
+            id="pNeed"
+            placeholder="Your prayer need or request…"
+          />
+          <button
+            class="btn-primary"
+            onclick="sendPrayer()"
+            style="
+              width: 100%;
+              padding: 1rem;
+              font-size: 0.7rem;
+              letter-spacing: 0.14em;
+            "
+          >
+            Send Prayer Request via WhatsApp
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ FOOTER ═══ -->
+      <footer>
+        <div class="ft-top">
+          <div class="ft-brand">
+            <div style="display: flex; align-items: center; gap: 12px">
+              <div class="logo-circle" style="width: 48px; height: 48px">
+                <img
+                  src="images/prophetlogo.jpeg"
+                  alt="SHJ"
+                  onerror="this.style.display = 'none'"
+                />
+              </div>
+              <div>
+                <div class="ft-brand-name">Strong Hand of Jehovah</div>
+                <div class="ft-brand-sub">Prophetic Ministry</div>
+              </div>
+            </div>
+            <p>
+              A prophetic community burning with purpose — declaring the word,
+              demonstrating the power, discipling a generation of
+              world-changers.
+            </p>
+            <span class="ft-motto">Through Faith and Belief</span>
+          </div>
+          <div class="ft-col">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#sunday">Sunday Worship</a></li>
+              <li><a href="#wednesday">Midweek Prayer</a></li>
+              <li><a href="#friday">Prophetic Night</a></li>
+              <li><a href="#saturday">Youth Service</a></li>
+              <li><a href="#receive-jesus">Receive Jesus</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Pages</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="testimonies.html">Testimonies</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="give.html">Give / Partner</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="index.html#contact">Contact Us</a></li>
+              <li>
+                <a href="https://wa.me/2349019733420" target="_blank"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063787395975"
+                  target="_blank"
+                  >Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@thestronghandofjehovah"
+                  target="_blank"
+                  >YouTube</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.tiktok.com/@prophet_joshua1"
+                  target="_blank"
+                  >TikTok</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-btm">
+          <p>
+            &copy; 2025 Strong Hand of Jehovah Prophetic Ministry &middot;
+            <em>Through Faith and Belief</em>
+          </p>
+          <div class="socials">
+            <a
+              href="https://www.facebook.com/profile.php?id=100063787395975"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.youtube.com/@thestronghandofjehovah"
+              target="_blank"
+              aria-label="YouTube"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon points="10 15 15.19 12 10 9 10 15" />
+              </svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@prophet_joshua1"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              >
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/2349019733420"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.93 4.93 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      /* SCROLL PROGRESS */
+      (function () {
+        var bar = document.getElementById("scrollProg");
+        window.addEventListener(
+          "scroll",
+          function () {
+            var max =
+              document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.width = (window.scrollY / max) * 100 + "%";
+          },
+          { passive: true },
+        );
+      })();
+
+      /* NAV SHADOW */
+      (function () {
+        var nav = document.getElementById("mainNav");
+        window.addEventListener(
+          "scroll",
+          function () {
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+          },
+          { passive: true },
+        );
+      })();
+
+      /* SIDEBAR */
+      var hamburger = document.getElementById("hamburger");
+      var sidebar = document.getElementById("sidebar");
+      var backdrop = document.getElementById("backdrop");
+      function openSidebar() {
+        sidebar.classList.add("open");
+        backdrop.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        backdrop.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      hamburger.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      /* SCROLL REVEAL */
+      (function () {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        document
+          .querySelectorAll(".reveal,.reveal-l,.reveal-r")
+          .forEach(function (el) {
+            io.observe(el);
+          });
+      })();
+
+      /* STAGGERED CARDS */
+      (function () {
+        var cards = document.querySelectorAll(".event-card,.rj-step");
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                var idx = Array.from(cards).indexOf(e.target);
+                setTimeout(function () {
+                  e.target.classList.add("visible");
+                }, idx * 120);
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.08 },
+        );
+        cards.forEach(function (c) {
+          io.observe(c);
+        });
+      })();
+
+      /* videos load naturally via preload="metadata" */
+
+      /* SERVICES NAV — active on scroll */
+      (function () {
+        var btns = document.querySelectorAll(".sn-btn");
+        var ids = [
+          "#sunday",
+          "#wednesday",
+          "#friday",
+          "#saturday",
+          "#special-events",
+          "#receive-jesus",
+        ];
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                var id = "#" + e.target.id;
+                var idx = ids.indexOf(id);
+                if (idx > -1)
+                  btns.forEach(function (b, i) {
+                    b.classList.toggle("active", i === idx);
+                  });
+              }
+            });
+          },
+          { threshold: 0.35 },
+        );
+        ids.forEach(function (s) {
+          var el = document.querySelector(s);
+          if (el) io.observe(el);
+        });
+      })();
+
+      function jumpTo(target) {
+        var el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      /* PRAYER REQUEST VIA WHATSAPP */
+      function sendPrayer() {
+        var name = document.getElementById("pName").value.trim();
+        var need = document.getElementById("pNeed").value.trim();
+        if (!need) {
+          alert("Please enter your prayer need.");
+          return;
+        }
+        window.open(
+          "https://wa.me/2349019733420?text=" +
+            encodeURIComponent(
+              "Prayer Request from SHJ Website\n\nFrom: " +
+                (name || "A visitor") +
+                "\n\nPrayer Need: " +
+                need,
+            ),
+          "_blank",
+        );
+      }
+    </script>
+  </body>
+</html>
